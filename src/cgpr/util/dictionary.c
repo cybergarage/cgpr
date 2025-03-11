@@ -16,7 +16,6 @@
  *
  ******************************************************************/
 
-
 #include <cgpr/util/dictionary.h>
 #include <cgpr/util/log.h>
 

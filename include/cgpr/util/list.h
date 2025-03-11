@@ -40,11 +40,11 @@ typedef void (*CG_LIST_DESTRUCTORFUNC)(void*);
  *
  */
 
-#define CG_LIST_STRUCT_MEMBERS          \
+#define CG_LIST_STRUCT_MEMBERS             \
   /** Marks the beginning of a list */     \
   bool headFlag;                           \
   /** Pointer to the next list node */     \
-  struct _CGList* prev;                 \
+  struct _CGList* prev;                    \
   /** Pointer to the previous list node */ \
   struct _CGList* next;
 

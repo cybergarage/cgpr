@@ -47,7 +47,7 @@ extern "C" {
 typedef struct UEchoThread {
   cg_LIST_STRUCT_MEMBERS
 
-  bool runnableFlag;
+      bool runnableFlag;
 
 #if defined(WIN32)
   HANDLE hThread;
@@ -91,7 +91,7 @@ CGThreadList* cg_threadlist_new(void);
 void cg_threadlist_delete(CGThreadList* thread_list);
 
 #define cg_threadlist_clear(threadList) \
-  cg_list_clear((CGList*)threadList, \
+  cg_list_clear((CGList*)threadList,    \
       (CG_LIST_DESTRUCTORFUNC)cg_thread_delete)
 #define cg_threadlist_size(threadList) \
   cg_list_size((CGList*)threadList)
