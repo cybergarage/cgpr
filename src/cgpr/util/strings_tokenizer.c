@@ -22,12 +22,12 @@
  * cg_string_tokenizer_new
  ****************************************/
 
-cgprStringTokenizer* cg_string_tokenizer_new(const char* value,
+CGStringTokenizer* cg_string_tokenizer_new(const char* value,
     const char* delim)
 {
-  cgprStringTokenizer* str_token;
+  CGStringTokenizer* str_token;
 
-  str_token = (cgprStringTokenizer*)malloc(sizeof(cgprStringTokenizer));
+  str_token = (CGStringTokenizer*)malloc(sizeof(CGStringTokenizer));
 
   if (NULL != str_token) {
     str_token->value = cg_strdup(value);
@@ -47,7 +47,7 @@ cgprStringTokenizer* cg_string_tokenizer_new(const char* value,
  * cg_string_tokenizer_delete
  ****************************************/
 
-void cg_string_tokenizer_delete(cgprStringTokenizer* str_token)
+void cg_string_tokenizer_delete(CGStringTokenizer* str_token)
 {
   free(str_token->value);
   free(str_token->delim);
@@ -58,7 +58,7 @@ void cg_string_tokenizer_delete(cgprStringTokenizer* str_token)
  * cg_string_tokenizer_hasmoretoken
  ****************************************/
 
-bool cg_string_tokenizer_hasmoretoken(cgprStringTokenizer* str_token)
+bool cg_string_tokenizer_hasmoretoken(CGStringTokenizer* str_token)
 {
   return str_token->has_next_tokens;
 }
@@ -67,7 +67,7 @@ bool cg_string_tokenizer_hasmoretoken(cgprStringTokenizer* str_token)
  * cg_string_tokenizer_nexttoken
  ****************************************/
 
-char* cg_string_tokenizer_nexttoken(cgprStringTokenizer* str_token)
+char* cg_string_tokenizer_nexttoken(CGStringTokenizer* str_token)
 {
   size_t token_cnt;
   size_t i, j;
@@ -113,7 +113,7 @@ char* cg_string_tokenizer_nexttoken(cgprStringTokenizer* str_token)
  * cg_string_tokenizer_nextalltoken
  ****************************************/
 
-char* cg_string_tokenizer_nextalltoken(cgprStringTokenizer* str_token)
+char* cg_string_tokenizer_nextalltoken(CGStringTokenizer* str_token)
 {
   size_t next_token_len;
 

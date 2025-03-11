@@ -33,10 +33,10 @@ extern "C" {
 #define cg_STRING_MEMORY_ALLOCATION_UNIT 64
 
 /* UINT_MAX : 4294967295U */
-#define cg_STRING_INTEGER_BUFLEN 16
+#define CG_STRING_INTEGER_BUFLEN 16
 
 /* ULONG_MAX : 4294967295UL */
-#define cg_STRING_LONG_BUFLEN 32
+#define CG_STRING_LONG_BUFLEN 32
 
 /*  ULLONG_MAX : 18446744073709551615ULL */
 #define cg_STRING_LONGLONG_BUFLEN 32
@@ -92,7 +92,7 @@ typedef struct UEchoString {
   char* value;
   size_t mem_size;
   size_t value_size;
-} cgprString;
+} CGString;
 
 typedef struct UEchoStringTokenizer {
   char* value;
@@ -104,36 +104,36 @@ typedef struct UEchoStringTokenizer {
   char* next_token;
   char rep_token;
   bool has_next_tokens;
-} cgprStringTokenizer;
+} CGStringTokenizer;
 
 /****************************************
  * Function (StringTokenizer)
  ****************************************/
 
-cgprStringTokenizer* cg_string_tokenizer_new(const char* str,
+CGStringTokenizer* cg_string_tokenizer_new(const char* str,
     const char* delim);
-void cg_string_tokenizer_delete(cgprStringTokenizer* str_token);
-bool cg_string_tokenizer_hasmoretoken(cgprStringTokenizer* str_token);
-char* cg_string_tokenizer_nexttoken(cgprStringTokenizer* str_token);
-char* cg_string_tokenizer_nextalltoken(cgprStringTokenizer* str_token);
+void cg_string_tokenizer_delete(CGStringTokenizer* str_token);
+bool cg_string_tokenizer_hasmoretoken(CGStringTokenizer* str_token);
+char* cg_string_tokenizer_nexttoken(CGStringTokenizer* str_token);
+char* cg_string_tokenizer_nextalltoken(CGStringTokenizer* str_token);
 
 /****************************************
  * Function (String)
  ****************************************/
 
-cgprString* cg_string_new(void);
-void cg_string_delete(cgprString* str);
-void cg_string_clear(cgprString* str);
+CGString* cg_string_new(void);
+void cg_string_delete(CGString* str);
+void cg_string_clear(CGString* str);
 
-void cg_string_setvalue(cgprString* str, const char* value);
-void cg_string_setintvalue(cgprString* str, int value);
-void cg_string_setlongvalue(cgprString* str, long value);
-void cg_string_setfloatvalue(cgprString* str, float value);
-void cg_string_setdoublevalue(cgprString* str, double value);
-void cg_string_setnvalue(cgprString* str, const char* value, size_t len);
-void cg_string_setpointervalue(cgprString* str, char* value, size_t len);
+void cg_string_setvalue(CGString* str, const char* value);
+void cg_string_setintvalue(CGString* str, int value);
+void cg_string_setlongvalue(CGString* str, long value);
+void cg_string_setfloatvalue(CGString* str, float value);
+void cg_string_setdoublevalue(CGString* str, double value);
+void cg_string_setnvalue(CGString* str, const char* value, size_t len);
+void cg_string_setpointervalue(CGString* str, char* value, size_t len);
 
-char* cg_string_getvalue(cgprString* str);
+char* cg_string_getvalue(CGString* str);
 #define cg_string_getintvalue(str) \
   cg_str2int(cg_string_getvalue(str))
 #define cg_string_getlongvalue(str) \
@@ -143,16 +143,16 @@ char* cg_string_getvalue(cgprString* str);
 #define cg_string_getdoublevalue(str) \
   cg_str2double(cg_string_getvalue(str))
 
-size_t cg_string_length(cgprString* str);
+size_t cg_string_length(CGString* str);
 
-char* cg_string_addvalue(cgprString* str, const char* value);
-char* cg_string_naddvalue(cgprString* str, const char* value, size_t value_len);
-char* cg_string_addrepvalue(cgprString* str, const char* value, size_t repeat_cnt);
-char* cg_string_naddrepvalue(cgprString* str, const char* value, size_t value_len, size_t repeat_cnt);
+char* cg_string_addvalue(CGString* str, const char* value);
+char* cg_string_naddvalue(CGString* str, const char* value, size_t value_len);
+char* cg_string_addrepvalue(CGString* str, const char* value, size_t repeat_cnt);
+char* cg_string_naddrepvalue(CGString* str, const char* value, size_t value_len, size_t repeat_cnt);
 
-char* cg_string_replace(cgprString* str, char* from_str[], char* to_str[], size_t from_str_cnt);
+char* cg_string_replace(CGString* str, char* from_str[], char* to_str[], size_t from_str_cnt);
 
-size_t cg_string_getmemorysize(cgprString* str);
+size_t cg_string_getmemorysize(CGString* str);
 
 #ifdef __cplusplus
 }

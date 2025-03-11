@@ -28,11 +28,11 @@
  * cg_string_new
  ****************************************/
 
-cgprString* cg_string_new(void)
+CGString* cg_string_new(void)
 {
-  cgprString* str;
+  CGString* str;
 
-  str = (cgprString*)malloc(sizeof(cgprString));
+  str = (CGString*)malloc(sizeof(CGString));
 
   if (NULL != str) {
     str->value = NULL;
@@ -47,7 +47,7 @@ cgprString* cg_string_new(void)
  * cg_string_delete
  ****************************************/
 
-void cg_string_delete(cgprString* str)
+void cg_string_delete(CGString* str)
 {
   if (NULL != str) {
     cg_string_clear(str);
@@ -59,7 +59,7 @@ void cg_string_delete(cgprString* str)
  * cg_string_delete
  ****************************************/
 
-void cg_string_clear(cgprString* str)
+void cg_string_clear(CGString* str)
 {
   if (NULL != str) {
     if (str->value != NULL) {
@@ -75,7 +75,7 @@ void cg_string_clear(cgprString* str)
  * cg_string_setvalue
  ****************************************/
 
-void cg_string_setvalue(cgprString* str, const char* value)
+void cg_string_setvalue(CGString* str, const char* value)
 {
   if (NULL != str) {
     if (value != NULL)
@@ -87,9 +87,9 @@ void cg_string_setvalue(cgprString* str, const char* value)
  * cg_string_setintvalue
  ****************************************/
 
-void cg_string_setintvalue(cgprString* str, int value)
+void cg_string_setintvalue(CGString* str, int value)
 {
-  char buf[cg_STRING_INTEGER_BUFLEN];
+  char buf[CG_STRING_INTEGER_BUFLEN];
 
   cg_string_setvalue(str, cg_int2str(value, buf, sizeof(buf)));
 }
@@ -98,9 +98,9 @@ void cg_string_setintvalue(cgprString* str, int value)
  * cg_string_setlongvalue
  ****************************************/
 
-void cg_string_setlongvalue(cgprString* str, long value)
+void cg_string_setlongvalue(CGString* str, long value)
 {
-  char buf[cg_STRING_LONG_BUFLEN];
+  char buf[CG_STRING_LONG_BUFLEN];
 
   cg_string_setvalue(str, cg_long2str(value, buf, sizeof(buf)));
 }
@@ -109,7 +109,7 @@ void cg_string_setlongvalue(cgprString* str, long value)
  * cg_string_setnvalue
  ****************************************/
 
-void cg_string_setnvalue(cgprString* str, const char* value, size_t len)
+void cg_string_setnvalue(CGString* str, const char* value, size_t len)
 {
   if (NULL != str) {
     cg_string_clear(str);
@@ -133,7 +133,7 @@ void cg_string_setnvalue(cgprString* str, const char* value, size_t len)
  * cg_string_setpointervalue
  ****************************************/
 
-void cg_string_setpointervalue(cgprString* str, char* value, size_t len)
+void cg_string_setpointervalue(CGString* str, char* value, size_t len)
 {
   if (NULL != str) {
     cg_string_clear(str);
@@ -147,7 +147,7 @@ void cg_string_setpointervalue(cgprString* str, char* value, size_t len)
  * cg_string_getvalue
  ****************************************/
 
-char* cg_string_getvalue(cgprString* str)
+char* cg_string_getvalue(CGString* str)
 {
   return (NULL != str) ? str->value : NULL;
 }
@@ -156,7 +156,7 @@ char* cg_string_getvalue(cgprString* str)
  * cg_string_getmemorysize
  ****************************************/
 
-size_t cg_string_getmemorysize(cgprString* str)
+size_t cg_string_getmemorysize(CGString* str)
 {
   if (NULL == str)
     return 0;
@@ -168,7 +168,7 @@ size_t cg_string_getmemorysize(cgprString* str)
  * cg_string_length
  ****************************************/
 
-size_t cg_string_length(cgprString* str)
+size_t cg_string_length(CGString* str)
 {
   if (NULL == str)
     return 0;
@@ -183,7 +183,7 @@ size_t cg_string_length(cgprString* str)
  * cg_string_add
  ****************************************/
 
-char* cg_string_addvalue(cgprString* str, const char* value)
+char* cg_string_addvalue(CGString* str, const char* value)
 {
   return cg_string_naddvalue(str, value, cg_strlen(value));
 }
@@ -192,7 +192,7 @@ char* cg_string_addvalue(cgprString* str, const char* value)
  * cg_string_add
  ****************************************/
 
-char* cg_string_naddvalue(cgprString* str, const char* value, size_t value_len)
+char* cg_string_naddvalue(CGString* str, const char* value, size_t value_len)
 {
   char* new_value = NULL;
   size_t new_mem_size = 0;
@@ -237,7 +237,7 @@ char* cg_string_naddvalue(cgprString* str, const char* value, size_t value_len)
  * cg_string_addrep
  ****************************************/
 
-char* cg_string_addrepvalue(cgprString* str, const char* value, size_t repeat_cnt)
+char* cg_string_addrepvalue(CGString* str, const char* value, size_t repeat_cnt)
 {
   int n;
 
@@ -251,7 +251,7 @@ char* cg_string_addrepvalue(cgprString* str, const char* value, size_t repeat_cn
  * cg_string_naddrep
  ****************************************/
 
-char* cg_string_naddrepvalue(cgprString* str, const char* value, size_t value_len, size_t repeat_cnt)
+char* cg_string_naddrepvalue(CGString* str, const char* value, size_t value_len, size_t repeat_cnt)
 {
   int n;
 
@@ -265,14 +265,14 @@ char* cg_string_naddrepvalue(cgprString* str, const char* value, size_t value_le
  * cg_string_replace
  ****************************************/
 
-char* cg_string_replace(cgprString* str, char* from_str[], char* to_str[], size_t from_str_cnt)
+char* cg_string_replace(CGString* str, char* from_str[], char* to_str[], size_t from_str_cnt)
 {
   char* org_value = NULL;
   size_t org_value_len = 0;
   int n = 0;
   int copy_pos = 0;
   size_t* from_str_len = NULL;
-  cgprString* rep_value = NULL;
+  CGString* rep_value = NULL;
   bool is_replaced = false;
 
   if (NULL == str)
