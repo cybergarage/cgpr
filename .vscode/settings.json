@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "_scanner.h": "c",
+        "cstdio": "c",
+        "__threading_support": "c",
+        "list": "c"
+    }
+}

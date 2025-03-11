@@ -1,0 +1,106 @@
+##################################################################
+#
+# cgpr for C
+#
+# Copyright (C) The Cyber Garage Portable Runtime for C Authors 2015
+#
+# This is licensed under BSD-style license, see file COPYING.
+#
+##################################################################
+
+AC_CONFIG_AUX_DIR(config)
+AC_CONFIG_HEADERS([config.h])
+
+AC_INIT([cgpr],[1.0.0])
+AC_CONFIG_SRCDIR([include/cgpr/typedef.h])
+AM_INIT_AUTOMAKE([subdir-objects])
+
+##############################
+# Checks for programs.
+##############################
+
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_INSTALL
+AC_PROG_AWK
+#AC_PROG_LIBTOOL
+AC_PROG_RANLIB
+
+##############################
+# Checks for header files.
+##############################
+
+AC_CHECK_HEADERS([stdbool.h])
+
+##############################
+# Checks for pthread
+##############################
+
+AC_CHECK_HEADERS([pthread.h],,[AC_MSG_ERROR(cgpr needs POSIX thread library)])
+AC_CHECK_LIB([pthread],[main])
+
+##############################
+# Debug
+##############################
+
+AC_ARG_ENABLE(
+ 	[debug],
+	AS_HELP_STRING([--enable-debug],[ enable debugging (default = no) ]),
+	[case "${enableval}" in
+    	yes | no ) enable_debug="${enableval}" ;;
+	esac],
+	[]
+)
+
+if [ test "$enable_debug" = yes ]; then
+	AC_DEFINE([DEBUG],1,[Define to 1 if you want to debug])
+fi
+
+##############################
+# Testing
+##############################
+
+AC_ARG_ENABLE(
+ 	[test],
+	AS_HELP_STRING([--enable-test],[ build tests (default = no) ]),
+	[case "${enableval}" in
+    	yes | no ) build_test="${enableval}" ;;
+	esac],
+	[]
+)
+
+AM_CONDITIONAL(CG_ENABLE_TEST,test "$build_test" = yes)
+if [ test "$build_test" = yes ]; then
+	AC_CHECK_LIB([boost_system-mt],[main],,
+		[AC_CHECK_LIB([boost_system],[main],,[AC_MSG_ERROR(cgpr needs boost::system)])])
+	AC_CHECK_LIB([boost_unit_test_framework-mt],[main],,
+		[AC_CHECK_LIB([boost_unit_test_framework],[main],,[AC_MSG_ERROR(cgpr needs boost::unit_test_framework)])])
+fi
+
+##############################
+# Examples
+##############################
+
+AC_ARG_ENABLE(
+	[examples],
+	AS_HELP_STRING([--enable-examples],[ build examples (default = yes) ]),
+	[case "${enableval}" in
+	yes | no ) build_examples="${enableval}" ;;
+	esac],
+	[build_examples="yes"]
+)
+AM_CONDITIONAL(CG_ENABLE_EXAMPLES,test "$build_examples" = yes)
+
+##############################
+# Makefiles
+##############################
+
+AC_CONFIG_FILES([
+Makefile
+include/Makefile
+lib/Makefile
+lib/unix/Makefile
+test/Makefile
+test/unix/Makefile
+])
+AC_OUTPUT
