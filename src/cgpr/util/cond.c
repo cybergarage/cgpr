@@ -33,8 +33,8 @@ CGCond* cg_cond_new(void)
   if (!cond)
     return NULL;
 
-  pthread_mutex_init(&cond->mutexID, NULL);
-  pthread_cond_init(&cond->cond_id, NULL);
+  pthread_mutex_init(&cond->mutexId, NULL);
+  pthread_cond_init(&cond->condId, NULL);
 
   return cond;
 }
@@ -48,8 +48,8 @@ bool cg_cond_delete(CGCond* cond)
   if (!cond)
     return false;
 
-  pthread_mutex_destroy(&cond->mutexID);
-  pthread_cond_destroy(&cond->cond_id);
+  pthread_mutex_destroy(&cond->mutexId);
+  pthread_cond_destroy(&cond->condId);
 
   free(cond);
 
@@ -65,9 +65,9 @@ bool cg_cond_wait(CGCond* cond)
   if (!cond)
     return false;
 
-  pthread_mutex_lock(&cond->mutexID);
-  pthread_cond_wait(&cond->cond_id, &cond->mutexID);
-  pthread_mutex_unlock(&cond->mutexID);
+  pthread_mutex_lock(&cond->mutexId);
+  pthread_cond_wait(&cond->condId, &cond->mutexId);
+  pthread_mutex_unlock(&cond->mutexId);
 
   return true;
 }
@@ -87,9 +87,9 @@ bool cg_cond_timedwait(CGCond* cond, clock_t mtime)
   to.tv_sec = time(NULL) + (mtime / CLOCKS_PER_SEC);
   to.tv_nsec = 0;
 
-  pthread_mutex_lock(&cond->mutexID);
-  c = pthread_cond_timedwait(&cond->cond_id, &cond->mutexID, &to);
-  pthread_mutex_unlock(&cond->mutexID);
+  pthread_mutex_lock(&cond->mutexId);
+  c = pthread_cond_timedwait(&cond->condId, &cond->mutexId, &to);
+  pthread_mutex_unlock(&cond->mutexId);
 
   return (c == 0) ? true : false;
 }
@@ -103,9 +103,9 @@ bool cg_cond_signal(CGCond* cond)
   if (!cond)
     return false;
 
-  pthread_mutex_lock(&cond->mutexID);
-  pthread_cond_signal(&cond->cond_id);
-  pthread_mutex_unlock(&cond->mutexID);
+  pthread_mutex_lock(&cond->mutexId);
+  pthread_cond_signal(&cond->condId);
+  pthread_mutex_unlock(&cond->mutexId);
 
   return true;
 }

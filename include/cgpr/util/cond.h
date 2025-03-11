@@ -20,18 +20,9 @@
 #define _CGPR_UTIL_COND_H_
 
 #include <cgpr/typedef.h>
-#include <cgpr/util/mutex.h>
 
-#if defined(WIN32) && !defined(ITRON)
+#if defined(WIN32)
 #include <winsock2.h>
-#elif defined(BTRON)
-#include <btron/taskcomm.h>
-#elif defined(ITRON)
-#include <kernel.h>
-#elif defined(TENGINE) && !defined(PROCESS_BASE)
-#include <tk/tkernel.h>
-#elif defined(TENGINE) && defined(PROCESS_BASE)
-#include <btron/taskcomm.h>
 #else
 #include <pthread.h>
 #endif
@@ -44,59 +35,20 @@ extern "C" {
  * Data Types
  ****************************************/
 
-/**
- * \brief The generic wrapper struct for mUPnP's conds.
- *
- * This wrapper has been created to enable 100% code
- * compatibility for different platforms (Linux, Win32 etc..)
- */
-typedef struct _CGCond {
-#if defined(WIN32) && !defined(ITRON)
-  HANDLE condID;
-#elif defined(BTRON)
-  WERR condID;
-#elif defined(ITRON)
-  ER_ID condID;
-#elif defined(TENGINE) && !defined(PROCESS_BASE)
-  ID condID;
-#elif defined(TENGINE) && defined(PROCESS_BASE)
-  WERR condID;
-#else
-  /** The cond entity */
-  pthread_cond_t condID;
-#endif
+typedef struct UEchoCond {
+  pthread_mutex_t mutexId;
+  pthread_cond_t condId;
 } CGCond;
 
 /****************************************
  * Functions
  ****************************************/
 
-/**
- * Create a new condition variable
- */
 CGCond* cg_cond_new(void);
-
-/**
- * Destroy a condition variable
- *
- * \param cond The cond to destroy
- */
 bool cg_cond_delete(CGCond* cond);
 
-/**
- * Wait for condition variable to be signalled.
- *
- * \param cond Cond to be waited
- * \param mutex Mutex used for synchronization
- * \param timeout Maximum time in seconds to wait, 0 to wait forever
- */
-bool cg_cond_wait(CGCond* cond, CGMutex* mutex, unsigned long timeout);
-
-/**
- * Signal a condition variable
- *
- * \param cond Cond to be signalled
- */
+bool cg_cond_wait(CGCond* cond);
+bool cg_cond_timedwait(CGCond* cond, clock_t mtime);
 bool cg_cond_signal(CGCond* cond);
 
 #ifdef __cplusplus
