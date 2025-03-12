@@ -1,5 +1,8 @@
 # Cyber Garage Portable Runtime (CGPR)
 
+![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/cybergarage/cgpr-c)
+[![Build Status](https://github.com/cybergarage/cgpr-c/actions/workflows/make.yml/badge.svg)](https://github.com/cybergarage/cgpr-c/actions/workflows/make.yml)
+
 The Cyber Garage Portable Runtime (CGPR) is an open-source, cross-platform runtime library designed to provide a consistent and portable interface for C programming. CGPR aims to simplify the development of C applications by offering a set of utilities and abstractions that work seamlessly across different operating systems, including Windows, macOS, and various Unix-like systems.
 
 ## Key Features
