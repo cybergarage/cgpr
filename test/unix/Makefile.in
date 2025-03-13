@@ -120,7 +120,7 @@ CONFIG_CLEAN_VPATH_FILES =
 am__dirstamp = $(am__leading_dot)dirstamp
 am_cgprtest_OBJECTS = ../BytesTest.$(OBJEXT) \
 	../DictionaryTest.$(OBJEXT) ../TestMain.$(OBJEXT) \
-	../StringTest.$(OBJEXT)
+	../StringTest.$(OBJEXT) ../InterfaceTest.$(OBJEXT)
 cgprtest_OBJECTS = $(am_cgprtest_OBJECTS)
 cgprtest_DEPENDENCIES = ../../lib/unix/libcgpr.a
 AM_V_P = $(am__v_P_@AM_V@)
@@ -139,8 +139,8 @@ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ../$(DEPDIR)/BytesTest.Po \
-	../$(DEPDIR)/DictionaryTest.Po ../$(DEPDIR)/StringTest.Po \
-	../$(DEPDIR)/TestMain.Po
+	../$(DEPDIR)/DictionaryTest.Po ../$(DEPDIR)/InterfaceTest.Po \
+	../$(DEPDIR)/StringTest.Po ../$(DEPDIR)/TestMain.Po
 am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
@@ -492,7 +492,8 @@ cgprtest_SOURCES = \
 	..//BytesTest.cpp \
 	..//DictionaryTest.cpp \
 	..//TestMain.cpp \
-	..//StringTest.cpp
+	..//StringTest.cpp \
+	..//InterfaceTest.cpp
 
 
 #if HAVE_LIBTOOL
@@ -548,6 +549,8 @@ clean-checkPROGRAMS:
 ../TestMain.$(OBJEXT): ../$(am__dirstamp) ../$(DEPDIR)/$(am__dirstamp)
 ../StringTest.$(OBJEXT): ../$(am__dirstamp) \
 	../$(DEPDIR)/$(am__dirstamp)
+../InterfaceTest.$(OBJEXT): ../$(am__dirstamp) \
+	../$(DEPDIR)/$(am__dirstamp)
 
 cgprtest$(EXEEXT): $(cgprtest_OBJECTS) $(cgprtest_DEPENDENCIES) $(EXTRA_cgprtest_DEPENDENCIES) 
 	@rm -f cgprtest$(EXEEXT)
@@ -562,6 +565,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/BytesTest.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/DictionaryTest.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/InterfaceTest.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/StringTest.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/TestMain.Po@am__quote@ # am--include-marker
 
@@ -907,6 +911,7 @@ clean-am: clean-checkPROGRAMS clean-generic mostlyclean-am
 distclean: distclean-am
 	-rm -f ../$(DEPDIR)/BytesTest.Po
 	-rm -f ../$(DEPDIR)/DictionaryTest.Po
+	-rm -f ../$(DEPDIR)/InterfaceTest.Po
 	-rm -f ../$(DEPDIR)/StringTest.Po
 	-rm -f ../$(DEPDIR)/TestMain.Po
 	-rm -f Makefile
@@ -956,6 +961,7 @@ installcheck-am:
 maintainer-clean: maintainer-clean-am
 	-rm -f ../$(DEPDIR)/BytesTest.Po
 	-rm -f ../$(DEPDIR)/DictionaryTest.Po
+	-rm -f ../$(DEPDIR)/InterfaceTest.Po
 	-rm -f ../$(DEPDIR)/StringTest.Po
 	-rm -f ../$(DEPDIR)/TestMain.Po
 	-rm -f Makefile

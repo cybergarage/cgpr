@@ -16,8 +16,8 @@
  *
  ******************************************************************/
 
-#ifndef _CG_UTIL_LOG_H_
-#define _CG_UTIL_LOG_H_
+#ifndef _CGPR_UTIL_LOG_H_
+#define _CGPR_UTIL_LOG_H_
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -68,4 +68,4 @@ void cg_log_output(int severity, const char* file, int line_n, const char* funct
 } /* extern "C" */
 #endif
 
-#endif /* _CG_UTIL_LOG_H_ */
+#endif /* _CGPR_UTIL_LOG_H_ */

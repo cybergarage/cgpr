@@ -17,6 +17,9 @@
 ######################################################################
 
 cgprheaders = \
+	./cgpr/net/socket_opt.h \
+	./cgpr/net/interface.h \
+	./cgpr/net/socket.h \
 	./cgpr/util/time.h \
 	./cgpr/util/timer.h \
 	./cgpr/util/list.h \

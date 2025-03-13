@@ -279,6 +279,9 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 cgprheaders = \
+	./cgpr/net/socket_opt.h \
+	./cgpr/net/interface.h \
+	./cgpr/net/socket.h \
 	./cgpr/util/time.h \
 	./cgpr/util/timer.h \
 	./cgpr/util/list.h \

@@ -27,7 +27,8 @@ cgprtest_SOURCES = \
 	..//BytesTest.cpp \
 	..//DictionaryTest.cpp \
 	..//TestMain.cpp \
-	..//StringTest.cpp
+	..//StringTest.cpp \
+	..//InterfaceTest.cpp
 
 #if HAVE_LIBTOOL
 #cgprtest_LDADD = ../../lib/unix/libcgpr.la
