@@ -118,9 +118,10 @@ CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__dirstamp = $(am__leading_dot)dirstamp
-am_cgprtest_OBJECTS = ../BytesTest.$(OBJEXT) \
+am_cgprtest_OBJECTS = ../BytesTest.$(OBJEXT) ../ThreadTest.$(OBJEXT) \
 	../DictionaryTest.$(OBJEXT) ../TestMain.$(OBJEXT) \
-	../StringTest.$(OBJEXT) ../InterfaceTest.$(OBJEXT)
+	../SocketTest.$(OBJEXT) ../StringTest.$(OBJEXT) \
+	../MutexTest.$(OBJEXT) ../InterfaceTest.$(OBJEXT)
 cgprtest_OBJECTS = $(am_cgprtest_OBJECTS)
 cgprtest_DEPENDENCIES = ../../lib/unix/libcgpr.a
 AM_V_P = $(am__v_P_@AM_V@)
@@ -140,7 +141,9 @@ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ../$(DEPDIR)/BytesTest.Po \
 	../$(DEPDIR)/DictionaryTest.Po ../$(DEPDIR)/InterfaceTest.Po \
-	../$(DEPDIR)/StringTest.Po ../$(DEPDIR)/TestMain.Po
+	../$(DEPDIR)/MutexTest.Po ../$(DEPDIR)/SocketTest.Po \
+	../$(DEPDIR)/StringTest.Po ../$(DEPDIR)/TestMain.Po \
+	../$(DEPDIR)/ThreadTest.Po
 am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
@@ -490,9 +493,12 @@ top_srcdir = @top_srcdir@
 AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/src -I../
 cgprtest_SOURCES = \
 	..//BytesTest.cpp \
+	..//ThreadTest.cpp \
 	..//DictionaryTest.cpp \
 	..//TestMain.cpp \
+	..//SocketTest.cpp \
 	..//StringTest.cpp \
+	..//MutexTest.cpp \
 	..//InterfaceTest.cpp
 
 
@@ -544,10 +550,16 @@ clean-checkPROGRAMS:
 	@: >>../$(DEPDIR)/$(am__dirstamp)
 ../BytesTest.$(OBJEXT): ../$(am__dirstamp) \
 	../$(DEPDIR)/$(am__dirstamp)
+../ThreadTest.$(OBJEXT): ../$(am__dirstamp) \
+	../$(DEPDIR)/$(am__dirstamp)
 ../DictionaryTest.$(OBJEXT): ../$(am__dirstamp) \
 	../$(DEPDIR)/$(am__dirstamp)
 ../TestMain.$(OBJEXT): ../$(am__dirstamp) ../$(DEPDIR)/$(am__dirstamp)
+../SocketTest.$(OBJEXT): ../$(am__dirstamp) \
+	../$(DEPDIR)/$(am__dirstamp)
 ../StringTest.$(OBJEXT): ../$(am__dirstamp) \
+	../$(DEPDIR)/$(am__dirstamp)
+../MutexTest.$(OBJEXT): ../$(am__dirstamp) \
 	../$(DEPDIR)/$(am__dirstamp)
 ../InterfaceTest.$(OBJEXT): ../$(am__dirstamp) \
 	../$(DEPDIR)/$(am__dirstamp)
@@ -566,8 +578,11 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/BytesTest.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/DictionaryTest.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/InterfaceTest.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/MutexTest.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/SocketTest.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/StringTest.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/TestMain.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@../$(DEPDIR)/ThreadTest.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -912,8 +927,11 @@ distclean: distclean-am
 	-rm -f ../$(DEPDIR)/BytesTest.Po
 	-rm -f ../$(DEPDIR)/DictionaryTest.Po
 	-rm -f ../$(DEPDIR)/InterfaceTest.Po
+	-rm -f ../$(DEPDIR)/MutexTest.Po
+	-rm -f ../$(DEPDIR)/SocketTest.Po
 	-rm -f ../$(DEPDIR)/StringTest.Po
 	-rm -f ../$(DEPDIR)/TestMain.Po
+	-rm -f ../$(DEPDIR)/ThreadTest.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -962,8 +980,11 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ../$(DEPDIR)/BytesTest.Po
 	-rm -f ../$(DEPDIR)/DictionaryTest.Po
 	-rm -f ../$(DEPDIR)/InterfaceTest.Po
+	-rm -f ../$(DEPDIR)/MutexTest.Po
+	-rm -f ../$(DEPDIR)/SocketTest.Po
 	-rm -f ../$(DEPDIR)/StringTest.Po
 	-rm -f ../$(DEPDIR)/TestMain.Po
+	-rm -f ../$(DEPDIR)/ThreadTest.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

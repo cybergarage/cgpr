@@ -25,9 +25,12 @@ AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/src -I../
 
 cgprtest_SOURCES = \
 	..//BytesTest.cpp \
+	..//ThreadTest.cpp \
 	..//DictionaryTest.cpp \
 	..//TestMain.cpp \
+	..//SocketTest.cpp \
 	..//StringTest.cpp \
+	..//MutexTest.cpp \
 	..//InterfaceTest.cpp
 
 #if HAVE_LIBTOOL
