@@ -68,3 +68,6 @@ stamp-h2
 cgprtest
 cgprtest.*
 test-suite.log
+
+# Doxygen
+doc/html
