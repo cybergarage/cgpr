@@ -17,20 +17,20 @@
 ######################################################################
 
 cgprheaders = \
-	./cgpr/net/socket_opt.h \
-	./cgpr/net/interface.h \
+	./cgpr/typedef.h \
 	./cgpr/net/socket.h \
-	./cgpr/util/time.h \
-	./cgpr/util/timer.h \
-	./cgpr/util/list.h \
-	./cgpr/util/thread.h \
-	./cgpr/util/dictionary.h \
-	./cgpr/util/log.h \
-	./cgpr/util/bytes.h \
+	./cgpr/net/interface.h \
+	./cgpr/net/socket_opt.h \
 	./cgpr/util/cond.h \
-	./cgpr/util/mutex.h \
+	./cgpr/util/list.h \
+	./cgpr/util/log.h \
+	./cgpr/util/dictionary.h \
+	./cgpr/util/timer.h \
 	./cgpr/util/string.h \
-	./cgpr/typedef.h
+	./cgpr/util/mutex.h \
+	./cgpr/util/bytes.h \
+	./cgpr/util/thread.h \
+	./cgpr/util/time.h
 
 nobase_include_HEADERS = \
 	$(cgprheaders)

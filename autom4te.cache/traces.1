@@ -1,12 +1,12 @@
-m4trace:aclocal.m4:661: -1- AC_SUBST([am__quote])
-m4trace:aclocal.m4:661: -1- AC_SUBST_TRACE([am__quote])
-m4trace:aclocal.m4:661: -1- m4_pattern_allow([^am__quote$])
+m4trace:aclocal.m4:699: -1- AC_SUBST([am__quote])
+m4trace:aclocal.m4:699: -1- AC_SUBST_TRACE([am__quote])
+m4trace:aclocal.m4:699: -1- m4_pattern_allow([^am__quote$])
 m4trace:configure.ac:11: -1- AC_CONFIG_AUX_DIR([config])
 m4trace:configure.ac:12: -1- AC_CONFIG_HEADERS([config.h])
 m4trace:configure.ac:14: -1- AC_INIT([cgpr], [1.0.0])
 m4trace:configure.ac:14: -1- m4_pattern_forbid([^_?A[CHUM]_])
 m4trace:configure.ac:14: -1- m4_pattern_forbid([_AC_])
-m4trace:configure.ac:14: -1- m4_pattern_forbid([^LIBOBJS$], [do not use LIBOBJS directly, use AC_LIBOBJ (see section 'AC_LIBOBJ vs LIBOBJS'])
+m4trace:configure.ac:14: -1- m4_pattern_forbid([^LIBOBJS$], [do not use LIBOBJS directly, use AC_LIBOBJ (see section `AC_LIBOBJ vs LIBOBJS'])
 m4trace:configure.ac:14: -1- m4_pattern_allow([^AS_FLAGS$])
 m4trace:configure.ac:14: -1- m4_pattern_forbid([^_?m4_])
 m4trace:configure.ac:14: -1- m4_pattern_forbid([^dnl$])
@@ -156,7 +156,7 @@ m4trace:configure.ac:14: -1- AC_SUBST_TRACE([target_alias])
 m4trace:configure.ac:14: -1- m4_pattern_allow([^target_alias$])
 m4trace:configure.ac:16: -1- AM_INIT_AUTOMAKE([subdir-objects])
 m4trace:configure.ac:16: -1- m4_pattern_allow([^AM_[A-Z]+FLAGS$])
-m4trace:configure.ac:16: -1- AM_AUTOMAKE_VERSION([1.17])
+m4trace:configure.ac:16: -1- AM_AUTOMAKE_VERSION([1.16.5])
 m4trace:configure.ac:16: -1- AC_REQUIRE_AUX_FILE([install-sh])
 m4trace:configure.ac:16: -1- AC_SUBST([INSTALL_PROGRAM])
 m4trace:configure.ac:16: -1- AC_SUBST_TRACE([INSTALL_PROGRAM])
@@ -247,6 +247,7 @@ m4trace:configure.ac:16: -1- m4_pattern_allow([^ETAGS$])
 m4trace:configure.ac:16: -1- AC_SUBST([CSCOPE])
 m4trace:configure.ac:16: -1- AC_SUBST_TRACE([CSCOPE])
 m4trace:configure.ac:16: -1- m4_pattern_allow([^CSCOPE$])
+m4trace:configure.ac:16: -1- AM_SILENT_RULES
 m4trace:configure.ac:16: -1- AC_SUBST([AM_V])
 m4trace:configure.ac:16: -1- AC_SUBST_TRACE([AM_V])
 m4trace:configure.ac:16: -1- m4_pattern_allow([^AM_V$])
@@ -262,12 +263,6 @@ m4trace:configure.ac:16: -1- AC_SUBST([AM_BACKSLASH])
 m4trace:configure.ac:16: -1- AC_SUBST_TRACE([AM_BACKSLASH])
 m4trace:configure.ac:16: -1- m4_pattern_allow([^AM_BACKSLASH$])
 m4trace:configure.ac:16: -1- _AM_SUBST_NOTMAKE([AM_BACKSLASH])
-m4trace:configure.ac:16: -1- AC_SUBST([am__rm_f_notfound])
-m4trace:configure.ac:16: -1- AC_SUBST_TRACE([am__rm_f_notfound])
-m4trace:configure.ac:16: -1- m4_pattern_allow([^am__rm_f_notfound$])
-m4trace:configure.ac:16: -1- AC_SUBST([am__xargs_n])
-m4trace:configure.ac:16: -1- AC_SUBST_TRACE([am__xargs_n])
-m4trace:configure.ac:16: -1- m4_pattern_allow([^am__xargs_n$])
 m4trace:configure.ac:22: -1- AC_SUBST([CC])
 m4trace:configure.ac:22: -1- AC_SUBST_TRACE([CC])
 m4trace:configure.ac:22: -1- m4_pattern_allow([^CC$])
@@ -408,7 +403,7 @@ m4trace:configure.ac:33: -1- AH_OUTPUT([HAVE_UNISTD_H], [/* Define to 1 if you h
 @%:@undef HAVE_UNISTD_H])
 m4trace:configure.ac:33: -1- AC_DEFINE_TRACE_LITERAL([STDC_HEADERS])
 m4trace:configure.ac:33: -1- m4_pattern_allow([^STDC_HEADERS$])
-m4trace:configure.ac:33: -1- AH_OUTPUT([STDC_HEADERS], [/* Define to 1 if all of the C89 standard headers exist (not just the ones
+m4trace:configure.ac:33: -1- AH_OUTPUT([STDC_HEADERS], [/* Define to 1 if all of the C90 standard headers exist (not just the ones
    required in a freestanding environment). This macro is provided for
    backward compatibility; new code need not use it. */
 @%:@undef STDC_HEADERS])
@@ -418,7 +413,7 @@ m4trace:configure.ac:39: -1- AH_OUTPUT([HAVE_PTHREAD_H], [/* Define to 1 if you 
 @%:@undef HAVE_PTHREAD_H])
 m4trace:configure.ac:39: -1- AC_DEFINE_TRACE_LITERAL([HAVE_PTHREAD_H])
 m4trace:configure.ac:39: -1- m4_pattern_allow([^HAVE_PTHREAD_H$])
-m4trace:configure.ac:40: -1- AH_OUTPUT([HAVE_LIBPTHREAD], [/* Define to 1 if you have the \'pthread\' library (-lpthread). */
+m4trace:configure.ac:40: -1- AH_OUTPUT([HAVE_LIBPTHREAD], [/* Define to 1 if you have the `pthread\' library (-lpthread). */
 @%:@undef HAVE_LIBPTHREAD])
 m4trace:configure.ac:40: -1- AC_DEFINE_TRACE_LITERAL([HAVE_LIBPTHREAD])
 m4trace:configure.ac:40: -1- m4_pattern_allow([^HAVE_LIBPTHREAD$])
@@ -435,21 +430,21 @@ m4trace:configure.ac:72: -1- AC_SUBST_TRACE([CG_ENABLE_TEST_FALSE])
 m4trace:configure.ac:72: -1- m4_pattern_allow([^CG_ENABLE_TEST_FALSE$])
 m4trace:configure.ac:72: -1- _AM_SUBST_NOTMAKE([CG_ENABLE_TEST_TRUE])
 m4trace:configure.ac:72: -1- _AM_SUBST_NOTMAKE([CG_ENABLE_TEST_FALSE])
-m4trace:configure.ac:74: -1- AH_OUTPUT([HAVE_LIBBOOST_SYSTEM_MT], [/* Define to 1 if you have the \'boost_system-mt\' library (-lboost_system-mt).
+m4trace:configure.ac:74: -1- AH_OUTPUT([HAVE_LIBBOOST_SYSTEM_MT], [/* Define to 1 if you have the `boost_system-mt\' library (-lboost_system-mt).
    */
 @%:@undef HAVE_LIBBOOST_SYSTEM_MT])
 m4trace:configure.ac:74: -1- AC_DEFINE_TRACE_LITERAL([HAVE_LIBBOOST_SYSTEM_MT])
 m4trace:configure.ac:74: -1- m4_pattern_allow([^HAVE_LIBBOOST_SYSTEM_MT$])
-m4trace:configure.ac:74: -1- AH_OUTPUT([HAVE_LIBBOOST_SYSTEM], [/* Define to 1 if you have the \'boost_system\' library (-lboost_system). */
+m4trace:configure.ac:74: -1- AH_OUTPUT([HAVE_LIBBOOST_SYSTEM], [/* Define to 1 if you have the `boost_system\' library (-lboost_system). */
 @%:@undef HAVE_LIBBOOST_SYSTEM])
 m4trace:configure.ac:74: -1- AC_DEFINE_TRACE_LITERAL([HAVE_LIBBOOST_SYSTEM])
 m4trace:configure.ac:74: -1- m4_pattern_allow([^HAVE_LIBBOOST_SYSTEM$])
-m4trace:configure.ac:76: -1- AH_OUTPUT([HAVE_LIBBOOST_UNIT_TEST_FRAMEWORK_MT], [/* Define to 1 if you have the \'boost_unit_test_framework-mt\' library
+m4trace:configure.ac:76: -1- AH_OUTPUT([HAVE_LIBBOOST_UNIT_TEST_FRAMEWORK_MT], [/* Define to 1 if you have the `boost_unit_test_framework-mt\' library
    (-lboost_unit_test_framework-mt). */
 @%:@undef HAVE_LIBBOOST_UNIT_TEST_FRAMEWORK_MT])
 m4trace:configure.ac:76: -1- AC_DEFINE_TRACE_LITERAL([HAVE_LIBBOOST_UNIT_TEST_FRAMEWORK_MT])
 m4trace:configure.ac:76: -1- m4_pattern_allow([^HAVE_LIBBOOST_UNIT_TEST_FRAMEWORK_MT$])
-m4trace:configure.ac:76: -1- AH_OUTPUT([HAVE_LIBBOOST_UNIT_TEST_FRAMEWORK], [/* Define to 1 if you have the \'boost_unit_test_framework\' library
+m4trace:configure.ac:76: -1- AH_OUTPUT([HAVE_LIBBOOST_UNIT_TEST_FRAMEWORK], [/* Define to 1 if you have the `boost_unit_test_framework\' library
    (-lboost_unit_test_framework). */
 @%:@undef HAVE_LIBBOOST_UNIT_TEST_FRAMEWORK])
 m4trace:configure.ac:76: -1- AC_DEFINE_TRACE_LITERAL([HAVE_LIBBOOST_UNIT_TEST_FRAMEWORK])
