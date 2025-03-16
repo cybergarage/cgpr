@@ -16,7 +16,7 @@
  *
  ******************************************************************/
 
- #include <boost/test/unit_test.hpp>
+#include <boost/test/unit_test.hpp>
 
 #include <cgpr/util/mutex.h>
 

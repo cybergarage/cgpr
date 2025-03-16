@@ -64,7 +64,7 @@ bool cg_threadlist_start(CGThreadList* thread_list)
     return false;
 
   for (thread = cg_threadlist_gets(thread_list); thread != NULL;
-      thread = cg_thread_next(thread)) {
+       thread = cg_thread_next(thread)) {
     cg_thread_start(thread);
   }
 
@@ -83,7 +83,7 @@ bool cg_threadlist_stop(CGThreadList* thread_list)
     return false;
 
   for (thread = cg_threadlist_gets(thread_list); thread != NULL;
-      thread = cg_thread_next(thread))
+       thread = cg_thread_next(thread))
     cg_thread_stop(thread);
 
   return true;
