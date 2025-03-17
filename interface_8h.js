@@ -17,7 +17,7 @@ var interface_8h =
     [ "CG_NET_IPV6_LOOPBACK", "interface_8h.html#a41377dcbfee0e090f17613748f92b1d8", null ],
     [ "CG_NET_MACADDR_SIZE", "interface_8h.html#ad42bc44c4a153160fedebbb6df425709", null ],
     [ "CGNetworkInterfaceList", "interface_8h.html#a1a19bba906a968bf774047109360fb4b", null ],
-    [ "cg_net_gethostinterfaces", "interface_8h.html#aa96d8bdc0a01083720b5cf03918849fb", null ],
+    [ "cg_net_gethostinterfaces", "interface_8h.html#a31525a598d0af2039ca49e974c89db2d", null ],
     [ "cg_net_getipv6scopeid", "interface_8h.html#a6353876c87139b537e7b27d7a7d01066", null ],
     [ "cg_net_interface_delete", "interface_8h.html#a840717ecff0308810d5e75eab79f030c", null ],
     [ "cg_net_interface_getaddress", "interface_8h.html#a5824c3e10789f61ca6f7111fcf4e3ff2", null ],
@@ -28,7 +28,7 @@ var interface_8h =
     [ "cg_net_interface_setaddress", "interface_8h.html#a1272deb43ff1a96705b73b77c354cff8", null ],
     [ "cg_net_interface_setname", "interface_8h.html#aa563eb2acee32f82d80f1afdddf0b34b", null ],
     [ "cg_net_interface_setnetmask", "interface_8h.html#a8bf02ce48991768bcee1e8a095d8b5e7", null ],
-    [ "cg_net_interfacelist_delete", "interface_8h.html#a07ecfcb9b9a3d12563893f01b2d39b9e", null ],
+    [ "cg_net_interfacelist_delete", "interface_8h.html#a53fa34c20b3beacc79474455ab796536", null ],
     [ "cg_net_interfacelist_new", "interface_8h.html#ae73cd12caf44820fb2f275684265e55e", null ],
     [ "cg_net_isipv6address", "interface_8h.html#a1ef91f38ba38734d4bdbff8af95a33be", null ],
     [ "cg_net_selectaddr", "interface_8h.html#adfddbf827a301fdc033d4a12be07b169", null ]

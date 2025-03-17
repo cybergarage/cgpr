@@ -153,8 +153,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="list_8c.html#a4ae86801a9ca240e1c6510c3b866cbdd">cg_list_add</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dir, (<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dirElem)</div>
-<div class="ttc" id="alist_8c_html_a4ae86801a9ca240e1c6510c3b866cbdd"><div class="ttname"><a href="list_8c.html#a4ae86801a9ca240e1c6510c3b866cbdd">cg_list_add</a></div><div class="ttdeci">bool cg_list_add(CGList *head_list, CGList *list)</div><div class="ttdef"><b>Definition</b> list.c:114</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="list_8c.html#a1702128a444c1dfab10fc8c3f5c6c98d">cg_list_add</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dir, (<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dirElem)</div>
+<div class="ttc" id="alist_8c_html_a1702128a444c1dfab10fc8c3f5c6c98d"><div class="ttname"><a href="list_8c.html#a1702128a444c1dfab10fc8c3f5c6c98d">cg_list_add</a></div><div class="ttdeci">bool cg_list_add(CGList *headList, CGList *list)</div><div class="ttdef"><b>Definition</b> list.c:114</div></div>
 <div class="ttc" id="astruct__CGList_html"><div class="ttname"><a href="struct__CGList.html">_CGList</a></div><div class="ttdoc">The generic list interface in mUPnP.</div><div class="ttdef"><b>Definition</b> list.h:63</div></div>
 </div><!-- fragment --><p>Add a dictionary into a dictionary list</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -181,9 +181,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="list_8c.html#ae53381da9e8f10703e8a2fc0225d1bf9">cg_list_clear</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dir, (<a class="code hl_typedef" href="list_8h.html#a9f7470f132165d4fe4e6710d916f8a61">CG_LIST_DESTRUCTORFUNC</a>)<a class="code hl_function" href="#a88fc95b78f8c0e346b82f7a1e45befbf">cg_dictionary_element_delete</a>)</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="list_8c.html#a9073eddccfcad6ed4ef8d20ead917142">cg_list_clear</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dir, (<a class="code hl_typedef" href="list_8h.html#a9f7470f132165d4fe4e6710d916f8a61">CG_LIST_DESTRUCTORFUNC</a>)<a class="code hl_function" href="#a88fc95b78f8c0e346b82f7a1e45befbf">cg_dictionary_element_delete</a>)</div>
 <div class="ttc" id="adictionary_8h_html_a88fc95b78f8c0e346b82f7a1e45befbf"><div class="ttname"><a href="#a88fc95b78f8c0e346b82f7a1e45befbf">cg_dictionary_element_delete</a></div><div class="ttdeci">bool cg_dictionary_element_delete(CGDictionaryElement *dirElem)</div><div class="ttdef"><b>Definition</b> dictionary_elem.c:45</div></div>
-<div class="ttc" id="alist_8c_html_ae53381da9e8f10703e8a2fc0225d1bf9"><div class="ttname"><a href="list_8c.html#ae53381da9e8f10703e8a2fc0225d1bf9">cg_list_clear</a></div><div class="ttdeci">bool cg_list_clear(CGList *head_list, CG_LIST_DESTRUCTORFUNC dstructor_func)</div><div class="ttdef"><b>Definition</b> list.c:234</div></div>
+<div class="ttc" id="alist_8c_html_a9073eddccfcad6ed4ef8d20ead917142"><div class="ttname"><a href="list_8c.html#a9073eddccfcad6ed4ef8d20ead917142">cg_list_clear</a></div><div class="ttdeci">bool cg_list_clear(CGList *headList, CG_LIST_DESTRUCTORFUNC dstructorFunc)</div><div class="ttdef"><b>Definition</b> list.c:234</div></div>
 <div class="ttc" id="alist_8h_html_a9f7470f132165d4fe4e6710d916f8a61"><div class="ttname"><a href="list_8h.html#a9f7470f132165d4fe4e6710d916f8a61">CG_LIST_DESTRUCTORFUNC</a></div><div class="ttdeci">void(* CG_LIST_DESTRUCTORFUNC)(void *)</div><div class="ttdef"><b>Definition</b> list.h:36</div></div>
 </div><!-- fragment --><p>Clear the contents of a dictionary list</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -410,8 +410,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="list_8c.html#a951c4cceff8406fbd8d628fa4f28ab82">cg_list_size</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dir)</div>
-<div class="ttc" id="alist_8c_html_a951c4cceff8406fbd8d628fa4f28ab82"><div class="ttname"><a href="list_8c.html#a951c4cceff8406fbd8d628fa4f28ab82">cg_list_size</a></div><div class="ttdeci">size_t cg_list_size(CGList *head_list)</div><div class="ttdef"><b>Definition</b> list.c:55</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="list_8c.html#ac314c126a549169705701245d13b523f">cg_list_size</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dir)</div>
+<div class="ttc" id="alist_8c_html_ac314c126a549169705701245d13b523f"><div class="ttname"><a href="list_8c.html#ac314c126a549169705701245d13b523f">cg_list_size</a></div><div class="ttdeci">size_t cg_list_size(CGList *headList)</div><div class="ttdef"><b>Definition</b> list.c:55</div></div>
 </div><!-- fragment --><p>Get the size of a dictionary list</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

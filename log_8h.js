@@ -13,6 +13,6 @@ var log_8h =
       [ "CG_LOG_DEBUG", "log_8h.html#a307fea16b7298ce3ffe7d4a0873b2574a37b5a6ca299e9e4d03e9a0ce7c39b4c1", null ],
       [ "CG_LOG_ALL", "log_8h.html#a307fea16b7298ce3ffe7d4a0873b2574a6999efa3cf8748460bd47c28bbfe6e77", null ]
     ] ],
-    [ "cg_log_output", "log_8h.html#a1f194ca7abcd3c856d422e234735d232", null ],
+    [ "cg_log_output", "log_8h.html#a7ead9e8eb4a2a312f43b725e355e8798", null ],
     [ "cg_log_setlevel", "log_8h.html#aea1ffb61aad829f2ce490f3c7be805b2", null ]
 ];
