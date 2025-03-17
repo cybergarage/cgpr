@@ -7,6 +7,8 @@ CheckOptions:
     value:           CamelCase
   - key:             readability-identifier-naming.StructCase
     value:           CamelCase
+  - key:             readability-identifier-naming.StructIgnoredRegexp
+    value:           '^_.*'
   - key:             readability-identifier-naming.EnumCase
     value:           CamelCase
   - key:             readability-identifier-naming.UnionCase
