@@ -68,12 +68,12 @@ char* cg_strncpy(char* str1, const char* str2, size_t cnt);
 char* cg_strncat(char* str1, const char* str2, size_t cnt);
 bool cg_strloc(const char* str, char** buf);
 
-const char* cg_int2str(int value, char* buf, size_t buf_size);
-const char* cg_long2str(long value, char* buf, size_t buf_size);
-const char* cg_float2str(float value, char* buf, size_t buf_size);
-const char* cg_double2str(double value, char* buf, size_t buf_size);
-const char* cg_sizet2str(size_t value, char* buf, size_t buf_size);
-const char* cg_ssizet2str(ssize_t value, char* buf, size_t buf_size);
+const char* cg_int2str(int value, char* buf, size_t bufSize);
+const char* cg_long2str(long value, char* buf, size_t bufSize);
+const char* cg_float2str(float value, char* buf, size_t bufSize);
+const char* cg_double2str(double value, char* buf, size_t bufSize);
+const char* cg_sizet2str(size_t value, char* buf, size_t bufSize);
+const char* cg_ssizet2str(ssize_t value, char* buf, size_t bufSize);
 
 #define cg_str2int(value) (value ? atoi(value) : 0)
 #define cg_str2long(value) (value ? atol(value) : 0)
@@ -90,20 +90,20 @@ const char* cg_ssizet2str(ssize_t value, char* buf, size_t buf_size);
 
 typedef struct UEchoString {
   char* value;
-  size_t mem_size;
-  size_t value_size;
+  size_t memSize;
+  size_t valueSize;
 } CGString;
 
 typedef struct UEchoStringTokenizer {
   char* value;
   char* delim;
-  size_t delim_cnt;
-  size_t next_start_pos;
-  size_t last_pos;
-  char* curr_token;
-  char* next_token;
-  char rep_token;
-  bool has_next_tokens;
+  size_t delimCnt;
+  size_t nextStartPos;
+  size_t lastPos;
+  char* currToken;
+  char* nextToken;
+  char repToken;
+  bool hasNextTokens;
 } CGStringTokenizer;
 
 /****************************************
@@ -112,10 +112,10 @@ typedef struct UEchoStringTokenizer {
 
 CGStringTokenizer* cg_string_tokenizer_new(const char* str,
     const char* delim);
-void cg_string_tokenizer_delete(CGStringTokenizer* str_token);
-bool cg_string_tokenizer_hasmoretoken(CGStringTokenizer* str_token);
-char* cg_string_tokenizer_nexttoken(CGStringTokenizer* str_token);
-char* cg_string_tokenizer_nextalltoken(CGStringTokenizer* str_token);
+void cg_string_tokenizer_delete(CGStringTokenizer* strToken);
+bool cg_string_tokenizer_hasmoretoken(CGStringTokenizer* strToken);
+char* cg_string_tokenizer_nexttoken(CGStringTokenizer* strToken);
+char* cg_string_tokenizer_nextalltoken(CGStringTokenizer* strToken);
 
 /****************************************
  * Function (String)
@@ -146,11 +146,11 @@ char* cg_string_getvalue(CGString* str);
 size_t cg_string_length(CGString* str);
 
 char* cg_string_addvalue(CGString* str, const char* value);
-char* cg_string_naddvalue(CGString* str, const char* value, size_t value_len);
-char* cg_string_addrepvalue(CGString* str, const char* value, size_t repeat_cnt);
-char* cg_string_naddrepvalue(CGString* str, const char* value, size_t value_len, size_t repeat_cnt);
+char* cg_string_naddvalue(CGString* str, const char* value, size_t valueLen);
+char* cg_string_addrepvalue(CGString* str, const char* value, size_t repeatCnt);
+char* cg_string_naddrepvalue(CGString* str, const char* value, size_t valueLen, size_t repeatCnt);
 
-char* cg_string_replace(CGString* str, char* from_str[], char* to_str[], size_t from_str_cnt);
+char* cg_string_replace(CGString* str, char* fromStr[], char* toStr[], size_t fromStrCnt);
 
 size_t cg_string_getmemorysize(CGString* str);
 

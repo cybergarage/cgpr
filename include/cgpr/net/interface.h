@@ -88,7 +88,7 @@ char* cg_net_selectaddr(struct sockaddr* remoteaddr);
  ****************************************/
 
 CGNetworkInterfaceList* cg_net_interfacelist_new(void);
-void cg_net_interfacelist_delete(CGNetworkInterfaceList* netIf_list);
+void cg_net_interfacelist_delete(CGNetworkInterfaceList* netIfList);
 
 #define cg_net_interfacelist_clear(netIfList) cg_list_clear((CGList*)netIfList, (CG_LIST_DESTRUCTORFUNC)cg_net_interface_delete)
 #define cg_net_interfacelist_size(netIfList) cg_list_size((CGList*)netIfList)
@@ -99,7 +99,7 @@ void cg_net_interfacelist_delete(CGNetworkInterfaceList* netIf_list);
  * Function
  ****************************************/
 
-size_t cg_net_gethostinterfaces(CGNetworkInterfaceList* netIf_list);
+size_t cg_net_gethostinterfaces(CGNetworkInterfaceList* netIfList);
 
 bool cg_net_isipv6address(const char* addr);
 int cg_net_getipv6scopeid(const char* addr);

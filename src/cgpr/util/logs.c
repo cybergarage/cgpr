@@ -25,13 +25,13 @@
  * cg_net_socket_log
  ****************************************/
 
-void cg_net_socket_log(int severity, const char* prefix, const char* from_addr, const char* to_addr, const byte* msg_bytes, size_t msg_len)
+void cg_net_socket_log(int severity, const char* prefix, const char* fromAddr, const char* toAddr, const byte* msgBytes, size_t msgLen)
 {
   char buf[256];
   size_t offset;
   size_t n;
 
-  if (msg_len <= 0)
+  if (msgLen <= 0)
     return;
 
   offset = 0;
@@ -39,10 +39,10 @@ void cg_net_socket_log(int severity, const char* prefix, const char* from_addr, 
     snprintf(buf, sizeof(buf), "%s ", prefix);
     offset = strlen(buf);
   }
-  snprintf((buf + offset), (sizeof(buf) - offset), "%-15s -> %-15s ", from_addr, to_addr);
+  snprintf((buf + offset), (sizeof(buf) - offset), "%-15s -> %-15s ", fromAddr, toAddr);
   offset = strlen(buf);
-  for (n = 0; n < msg_len; n++) {
-    snprintf((buf + offset), (sizeof(buf) - offset), "%02X", msg_bytes[n]);
+  for (n = 0; n < msgLen; n++) {
+    snprintf((buf + offset), (sizeof(buf) - offset), "%02X", msgBytes[n]);
     offset += 2;
   }
 
@@ -53,14 +53,14 @@ void cg_net_socket_log(int severity, const char* prefix, const char* from_addr, 
  * cg_net_socket_*
  ****************************************/
 
-void cg_net_socket_debug(const char* prefix, const char* from_addr, const char* to_addr, const byte* pkt_bytes, size_t pkt_len)
+void cg_net_socket_debug(const char* prefix, const char* fromAddr, const char* toAddr, const byte* pktBytes, size_t pktLen)
 {
-  return cg_net_socket_log(CG_LOG_DEBUG, prefix, from_addr, to_addr, pkt_bytes, pkt_len);
+  return cg_net_socket_log(CG_LOG_DEBUG, prefix, fromAddr, toAddr, pktBytes, pktLen);
 }
 
-void cg_net_socket_error(const char* prefix, const char* from_addr, const char* to_addr, const byte* pkt_bytes, size_t pkt_len)
+void cg_net_socket_error(const char* prefix, const char* fromAddr, const char* toAddr, const byte* pktBytes, size_t pktLen)
 {
-  return cg_net_socket_log(CG_LOG_ERROR, prefix, from_addr, to_addr, pkt_bytes, pkt_len);
+  return cg_net_socket_log(CG_LOG_ERROR, prefix, fromAddr, toAddr, pktBytes, pktLen);
 }
 
 /****************************************
@@ -74,8 +74,8 @@ void cg_net_socket_error(const char* prefix, const char* from_addr, const char* 
 
 //   return cg_net_socket_error(
 //       prefix,
-//       cg_socket_datagram_packet_getremoteaddress(dpkt),
-//       cg_socket_datagram_packet_getlocaladdress(dpkt),
+//       cg_socket_datagram_packet_getremoteAddr(dpkt),
+//       cg_socket_datagram_packet_getlocalAddr(dpkt),
 //       cg_socket_datagram_packet_getdata(dpkt),
 //       cg_socket_datagram_packet_getlength(dpkt));
 // }
@@ -87,8 +87,8 @@ void cg_net_socket_error(const char* prefix, const char* from_addr, const char* 
 
 //   return cg_net_socket_debug(
 //       prefix,
-//       cg_socket_datagram_packet_getremoteaddress(dpkt),
-//       cg_socket_datagram_packet_getlocaladdress(dpkt),
+//       cg_socket_datagram_packet_getremoteAddr(dpkt),
+//       cg_socket_datagram_packet_getlocalAddr(dpkt),
 //       cg_socket_datagram_packet_getdata(dpkt),
 //       cg_socket_datagram_packet_getlength(dpkt));
 // }

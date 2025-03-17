@@ -29,8 +29,8 @@ extern "C" {
  * Function
  ****************************************/
 
-int cg_bytes_toint(byte* byte_data, size_t byte_size);
-byte* cg_bytes_fromint(int val, size_t bytes_size);
+int cg_bytes_toint(byte* byteData, size_t byteSize);
+byte* cg_bytes_fromint(int val, size_t bytesSize);
 
 #ifdef __cplusplus
 }

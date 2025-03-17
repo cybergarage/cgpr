@@ -30,58 +30,58 @@
 #define vsnprintf _vsnprintf
 #endif
 
-static CGLogLevel log_level = CG_LOG_NONE;
-static const char* log_error_s = CG_LOG_ERROR_S;
-static const char* log_warning_s = CG_LOG_WARN_S;
-static const char* log_info_s = CG_LOG_INFO_S;
-static const char* log_debug_s = CG_LOG_DEBUG_S;
+static CGLogLevel logLevel = CG_LOG_NONE;
+static const char* logErrorS = CG_LOG_ERROR_S;
+static const char* logWarningS = CG_LOG_WARN_S;
+static const char* logInfoS = CG_LOG_INFO_S;
+static const char* logDebugS = CG_LOG_DEBUG_S;
 
 static const char* cg_log_type2string(int type)
 {
   switch (type) {
   case CG_LOG_ERROR:
-    return log_error_s;
+    return logErrorS;
     break;
 
   case CG_LOG_WARN:
-    return log_warning_s;
+    return logWarningS;
     break;
 
   case CG_LOG_INFO:
-    return log_info_s;
+    return logInfoS;
     break;
 
   case CG_LOG_DEBUG:
-    return log_debug_s;
+    return logDebugS;
     break;
   }
 
   return "";
 }
 
-void cg_log_setlevel(CGLogLevel level) { log_level = level; }
+void cg_log_setlevel(CGLogLevel level) { logLevel = level; }
 
-void cg_log_output(int severity, const char* file, int line_n, const char* function, const char* format, ...)
+void cg_log_output(int severity, const char* file, int lineN, const char* function, const char* format, ...)
 {
   va_list list;
 
-  char msg[MAX_LOG_BUF], ts_prefix[MAX_LOG_BUF];
+  char msg[MAX_LOG_BUF], tsPrefix[MAX_LOG_BUF];
   time_t ts;
   struct tm* localts;
-  size_t prefix_len = -1;
+  size_t prefixLen = -1;
 
-  if (log_level < severity)
+  if (logLevel < severity)
     return;
 
   ts = time(NULL);
   localts = localtime(&ts);
 
-  strftime(ts_prefix, MAX_LOG_BUF, "%F %T", localts);
+  strftime(tsPrefix, MAX_LOG_BUF, "%F %T", localts);
 
-  prefix_len = snprintf(msg, MAX_LOG_BUF, "%s : %s ", ts_prefix, cg_log_type2string(severity));
+  prefixLen = snprintf(msg, MAX_LOG_BUF, "%s : %s ", tsPrefix, cg_log_type2string(severity));
 
   va_start(list, format);
-  vsnprintf(msg + prefix_len, MAX_LOG_BUF - prefix_len, format, list);
+  vsnprintf(msg + prefixLen, MAX_LOG_BUF - prefixLen, format, list);
   va_end(list);
 
   printf("%s\n", msg);

@@ -78,13 +78,13 @@ typedef struct UEchoSocket {
 
 typedef struct UEchoDatagramPacket {
   byte* data;
-  size_t data_len;
+  size_t dataLen;
 
-  CGString* local_address;
-  int local_port;
+  CGString* localAddr;
+  int localPort;
 
-  CGString* remote_address;
-  int remote_port;
+  CGString* remoteAddr;
+  int remotePort;
 } CGDatagramPacket;
 
 /****************************************
@@ -124,22 +124,22 @@ bool cg_socket_close(CGSocket* socket);
 
 bool cg_socket_listen(CGSocket* socket);
 
-bool cg_socket_bind(CGSocket* sock, int bind_port, const char* bind_addr, CGSocketOption* opt);
-bool cg_socket_accept(CGSocket* sock, CGSocket* client_sock);
+bool cg_socket_bind(CGSocket* sock, int bindPort, const char* bindAddr, CGSocketOption* opt);
+bool cg_socket_accept(CGSocket* sock, CGSocket* clientSock);
 bool cg_socket_connect(CGSocket* sock, const char* addr, int port);
-ssize_t cg_socket_read(CGSocket* sock, char* buffer, size_t buffer_len);
-size_t cg_socket_write(CGSocket* sock, const char* buffer, size_t buffer_len);
-ssize_t cg_socket_readline(CGSocket* sock, char* buffer, size_t buffer_len);
-size_t cg_socket_skip(CGSocket* sock, size_t skip_len);
+ssize_t cg_socket_read(CGSocket* sock, char* buffer, size_t bufferLen);
+size_t cg_socket_write(CGSocket* sock, const char* buffer, size_t bufferLen);
+ssize_t cg_socket_readline(CGSocket* sock, char* buffer, size_t bufferLen);
+size_t cg_socket_skip(CGSocket* sock, size_t skipLen);
 
-size_t cg_socket_sendto(CGSocket* sock, const char* addr, int port, const byte* data, size_t datae_len);
-ssize_t cg_socket_recv(CGSocket* sock, CGDatagramPacket* dgm_pkt);
+size_t cg_socket_sendto(CGSocket* sock, const char* addr, int port, const byte* data, size_t dataeLen);
+ssize_t cg_socket_recv(CGSocket* sock, CGDatagramPacket* dgmPkt);
 
 /****************************************
  * Function (Multicast)
  ****************************************/
 
-bool cg_socket_joingroup(CGSocket* sock, const char* mcast_addr, const char* if_addr);
+bool cg_socket_joingroup(CGSocket* sock, const char* mcastAddr, const char* ifAddr);
 
 /****************************************
  * Function (Option)
@@ -155,23 +155,23 @@ bool cg_socket_settimeout(CGSocket* sock, int sec);
  ****************************************/
 
 CGDatagramPacket* cg_socket_datagram_packet_new(void);
-void cg_socket_datagram_packet_delete(CGDatagramPacket* dgm_pkt);
-bool cg_socket_datagram_packet_setdata(CGDatagramPacket* dgm_pkt, const byte* data, size_t data_len);
-bool cg_socket_datagram_packet_clear(CGDatagramPacket* dgm_pkt);
+void cg_socket_datagram_packet_delete(CGDatagramPacket* dgmPkt);
+bool cg_socket_datagram_packet_setdata(CGDatagramPacket* dgmPkt, const byte* data, size_t dataLen);
+bool cg_socket_datagram_packet_clear(CGDatagramPacket* dgmPkt);
 
 #define cg_socket_datagram_packet_getdata(dgmPkt) (dgmPkt->data)
-#define cg_socket_datagram_packet_getlength(dgmPkt) (dgmPkt->data_len)
+#define cg_socket_datagram_packet_getlength(dgmPkt) (dgmPkt->dataLen)
 
-#define cg_socket_datagram_packet_setlocaladdress(dgmPkt, addr) cg_string_setvalue(dgmPkt->local_address, addr)
-#define cg_socket_datagram_packet_getlocaladdress(dgmPkt) cg_string_getvalue(dgmPkt->local_address)
-#define cg_socket_datagram_packet_setlocalport(dgmPkt, port) (dgmPkt->local_port = port)
-#define cg_socket_datagram_packet_getlocalport(dgmPkt) (dgmPkt->local_port)
-#define cg_socket_datagram_packet_setremoteaddress(dgmPkt, addr) cg_string_setvalue(dgmPkt->remote_address, addr)
-#define cg_socket_datagram_packet_getremoteaddress(dgmPkt) cg_string_getvalue(dgmPkt->remote_address)
-#define cg_socket_datagram_packet_setremoteport(dgmPkt, port) (dgmPkt->remote_port = port)
-#define cg_socket_datagram_packet_getremoteport(dgmPkt) (dgmPkt->remote_port)
+#define cg_socket_datagram_packet_setlocalAddr(dgmPkt, addr) cg_string_setvalue(dgmPkt->localAddr, addr)
+#define cg_socket_datagram_packet_getlocalAddr(dgmPkt) cg_string_getvalue(dgmPkt->localAddr)
+#define cg_socket_datagram_packet_setlocalport(dgmPkt, port) (dgmPkt->localPort = port)
+#define cg_socket_datagram_packet_getlocalport(dgmPkt) (dgmPkt->localPort)
+#define cg_socket_datagram_packet_setremoteAddr(dgmPkt, addr) cg_string_setvalue(dgmPkt->remoteAddr, addr)
+#define cg_socket_datagram_packet_getremoteAddr(dgmPkt) cg_string_getvalue(dgmPkt->remoteAddr)
+#define cg_socket_datagram_packet_setremoteport(dgmPkt, port) (dgmPkt->remotePort = port)
+#define cg_socket_datagram_packet_getremoteport(dgmPkt) (dgmPkt->remotePort)
 
-bool cg_socket_datagram_packet_copy(CGDatagramPacket* dst_dgm_pkt, CGDatagramPacket* src_dgm_pkt);
+bool cg_socket_datagram_packet_copy(CGDatagramPacket* dstDgmPkt, CGDatagramPacket* srcDgmPkt);
 
 /****************************************
  * Function (SSLSocket)

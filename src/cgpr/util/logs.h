@@ -25,8 +25,8 @@
 #define CG_LOG_NET_PREFIX_SEND "S"
 #define CG_LOG_NET_PREFIX_RECV "R"
 
-void cg_net_socket_error(const char* prefix, const char* from_addr, const char* to_addr, const byte* pkt_bytes, size_t pkt_len);
-void cg_net_socket_debug(const char* prefix, const char* from_addr, const char* to_addr, const byte* pkt_bytes, size_t pkt_len);
+void cg_net_socket_error(const char* prefix, const char* fromAddr, const char* toAddr, const byte* pktBytes, size_t pktLen);
+void cg_net_socket_debug(const char* prefix, const char* fromAddr, const char* toAddr, const byte* pktBytes, size_t pktLen);
 
 // void cg_net_datagram_packet_error(const char* prefix, CGDatagramPacket* dpkt);
 // void cg_net_datagram_packet_debug(const char* prefix, CGDatagramPacket* dpkt);

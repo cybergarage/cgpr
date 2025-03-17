@@ -26,8 +26,8 @@
  * global variables
  ****************************************/
 
-static bool cg_net_use_only_ip_v4_addr = false;
-static bool cg_net_use_only_ip_v6_addr = false;
+static bool cgNetUseOnlyIpV4Addr = false;
+static bool cgNetUseOnlyIpV6Addr = false;
 
 ////////////////////////////////////////////////
 // cg_net_isuseaddress
@@ -35,11 +35,11 @@ static bool cg_net_use_only_ip_v6_addr = false;
 
 bool cg_net_isuseaddress(char* addr)
 {
-  if (cg_net_use_only_ip_v6_addr == true) {
+  if (cgNetUseOnlyIpV6Addr == true) {
     if (cg_net_isipv6address(addr) == false)
       return false;
   }
-  if (cg_net_use_only_ip_v4_addr == true) {
+  if (cgNetUseOnlyIpV4Addr == true) {
     if (cg_net_isipv6address(addr) == true)
       return false;
   }
@@ -67,18 +67,18 @@ bool cg_net_isipv6address(const char* addr)
 
 int cg_net_getipv6scopeid(const char* addr)
 {
-  ssize_t per_idx;
-  char scope_id_buf[8 + 1];
+  ssize_t perIdx;
+  char scopeIdBuf[8 + 1];
 
   if (cg_net_isipv6address(addr) == false)
     return 0;
 
-  per_idx = cg_strchr(addr, "%", 1);
-  if (per_idx < 0)
+  perIdx = cg_strchr(addr, "%", 1);
+  if (perIdx < 0)
     return 0;
 
-  cg_strncpy(scope_id_buf, (addr + per_idx + 1), sizeof(scope_id_buf) - 1);
-  scope_id_buf[sizeof(scope_id_buf) - 1] = '\0';
+  cg_strncpy(scopeIdBuf, (addr + perIdx + 1), sizeof(scopeIdBuf) - 1);
+  scopeIdBuf[sizeof(scopeIdBuf) - 1] = '\0';
 
-  return atoi(scope_id_buf);
+  return atoi(scopeIdBuf);
 }

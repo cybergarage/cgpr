@@ -25,25 +25,25 @@
 
 CGNetworkInterfaceList* cg_net_interfacelist_new(void)
 {
-  CGNetworkInterfaceList* netIf_list;
+  CGNetworkInterfaceList* netIfList;
 
-  netIf_list = (CGNetworkInterfaceList*)malloc(sizeof(CGNetworkInterfaceList));
-  if (!netIf_list)
+  netIfList = (CGNetworkInterfaceList*)malloc(sizeof(CGNetworkInterfaceList));
+  if (!netIfList)
     return NULL;
 
-  cg_list_header_init((CGList*)netIf_list);
-  netIf_list->name = NULL;
-  netIf_list->ipaddr = NULL;
+  cg_list_header_init((CGList*)netIfList);
+  netIfList->name = NULL;
+  netIfList->ipaddr = NULL;
 
-  return netIf_list;
+  return netIfList;
 }
 
 /****************************************
  * cg_net_interfacelist_delete
  ****************************************/
 
-void cg_net_interfacelist_delete(CGNetworkInterfaceList* netIf_list)
+void cg_net_interfacelist_delete(CGNetworkInterfaceList* netIfList)
 {
-  cg_net_interfacelist_clear(netIf_list);
-  free(netIf_list);
+  cg_net_interfacelist_clear(netIfList);
+  free(netIfList);
 }

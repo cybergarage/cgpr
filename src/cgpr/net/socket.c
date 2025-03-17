@@ -333,8 +333,8 @@ bool cg_socket_accept(CGSocket* server_sock, CGSocket* client_sock)
 {
   struct sockaddr_in sockaddr;
   socklen_t socklen;
-  char local_addr[CG_NET_SOCKET_MAXHOST];
-  char local_port[CG_NET_SOCKET_MAXSERV];
+  char localAddr[CG_NET_SOCKET_MAXHOST];
+  char localPort[CG_NET_SOCKET_MAXSERV];
   struct sockaddr_storage sock_client_addr;
   socklen_t n_length = sizeof(sock_client_addr);
 
@@ -352,9 +352,9 @@ bool cg_socket_accept(CGSocket* server_sock, CGSocket* client_sock)
   cg_socket_setport(client_sock, cg_socket_getport(server_sock));
   socklen = sizeof(struct sockaddr_in);
 
-  if (getsockname(client_sock->id, (struct sockaddr*)&sockaddr, &socklen) == 0 && getnameinfo((struct sockaddr*)&sockaddr, socklen, local_addr, sizeof(local_addr), local_port, sizeof(local_port), NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
+  if (getsockname(client_sock->id, (struct sockaddr*)&sockaddr, &socklen) == 0 && getnameinfo((struct sockaddr*)&sockaddr, socklen, localAddr, sizeof(localAddr), localPort, sizeof(localPort), NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
     /* Set address for the sockaddr to real addr */
-    cg_socket_setaddress(client_sock, local_addr);
+    cg_socket_setaddress(client_sock, localAddr);
   }
 
   return true;
@@ -545,7 +545,7 @@ size_t cg_socket_skip(CGSocket* sock, size_t skip_len)
  * cg_socket_sendto
  ****************************************/
 
-size_t cg_socket_sendto(CGSocket* sock, const char* addr, int port, const byte* data, size_t data_len)
+size_t cg_socket_sendto(CGSocket* sock, const char* addr, int port, const byte* data, size_t dataLen)
 {
   struct addrinfo* addr_info;
   ssize_t sent_len;
@@ -554,7 +554,7 @@ size_t cg_socket_sendto(CGSocket* sock, const char* addr, int port, const byte* 
   if (!sock)
     return 0;
 
-  if (!data && (data_len <= 0))
+  if (!data && (dataLen <= 0))
     return 0;
 
   is_bound_flag = cg_socket_isbound(sock);
@@ -569,9 +569,9 @@ size_t cg_socket_sendto(CGSocket* sock, const char* addr, int port, const byte* 
   cg_socket_setmulticastttl(sock, CG_NET_SOCKET_MULTICAST_DEFAULT_TTL);
 
   if (0 <= sock->id)
-    sent_len = sendto(sock->id, data, data_len, 0, addr_info->ai_addr, addr_info->ai_addrlen);
+    sent_len = sendto(sock->id, data, dataLen, 0, addr_info->ai_addr, addr_info->ai_addrlen);
 
-  cg_net_socket_debug(CG_LOG_NET_PREFIX_SEND, cg_socket_getaddress(sock), addr, data, data_len);
+  cg_net_socket_debug(CG_LOG_NET_PREFIX_SEND, cg_socket_getaddress(sock), addr, data, dataLen);
 
   freeaddrinfo(addr_info);
 
@@ -589,9 +589,9 @@ ssize_t cg_socket_recv(CGSocket* sock, CGDatagramPacket* dgm_pkt)
 {
   ssize_t recv_len = 0;
   byte recv_buf[CG_NET_SOCKET_DGRAM_RECV_BUFSIZE + 1];
-  char remote_addr[CG_NET_SOCKET_MAXHOST];
-  char remote_port[CG_NET_SOCKET_MAXSERV];
-  char* local_addr;
+  char remoteAddr[CG_NET_SOCKET_MAXHOST];
+  char remotePort[CG_NET_SOCKET_MAXSERV];
+  char* localAddr;
   struct sockaddr_storage from;
   socklen_t from_len;
 
@@ -607,20 +607,20 @@ ssize_t cg_socket_recv(CGSocket* sock, CGDatagramPacket* dgm_pkt)
   cg_socket_datagram_packet_setdata(dgm_pkt, recv_buf, recv_len);
 
   cg_socket_datagram_packet_setlocalport(dgm_pkt, cg_socket_getport(sock));
-  cg_socket_datagram_packet_setremoteaddress(dgm_pkt, "");
+  cg_socket_datagram_packet_setremoteAddr(dgm_pkt, "");
   cg_socket_datagram_packet_setremoteport(dgm_pkt, 0);
 
-  if (getnameinfo((struct sockaddr*)&from, from_len, remote_addr, sizeof(remote_addr), remote_port, sizeof(remote_port), NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
-    cg_socket_datagram_packet_setremoteaddress(dgm_pkt, remote_addr);
-    cg_socket_datagram_packet_setremoteport(dgm_pkt, cg_str2int(remote_port));
+  if (getnameinfo((struct sockaddr*)&from, from_len, remoteAddr, sizeof(remoteAddr), remotePort, sizeof(remotePort), NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
+    cg_socket_datagram_packet_setremoteAddr(dgm_pkt, remoteAddr);
+    cg_socket_datagram_packet_setremoteport(dgm_pkt, cg_str2int(remotePort));
   }
 
-  local_addr = cg_net_selectaddr((struct sockaddr*)&from);
-  cg_socket_datagram_packet_setlocaladdress(dgm_pkt, local_addr);
+  localAddr = cg_net_selectaddr((struct sockaddr*)&from);
+  cg_socket_datagram_packet_setlocalAddr(dgm_pkt, localAddr);
 
-  cg_net_socket_debug(CG_LOG_NET_PREFIX_RECV, remote_addr, local_addr, recv_buf, recv_len);
+  cg_net_socket_debug(CG_LOG_NET_PREFIX_RECV, remoteAddr, localAddr, recv_buf, recv_len);
 
-  free(local_addr);
+  free(localAddr);
 
   return recv_len;
 }

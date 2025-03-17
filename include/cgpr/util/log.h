@@ -62,7 +62,7 @@ void cg_log_setlevel(CGLogLevel level);
   cg_log_output(CG_LOG_DEBUG, __FILE__, __LINE__, __PRETTY_FUNCTION__, format)
 #endif
 
-void cg_log_output(int severity, const char* file, int line_n, const char* function, const char* format, ...);
+void cg_log_output(int severity, const char* file, int lineN, const char* function, const char* format, ...);
 
 #ifdef __cplusplus
 } /* extern "C" */

@@ -52,35 +52,35 @@ bool cg_list_node_init(CGList* list)
  * cg_list_size
  ****************************************/
 
-size_t cg_list_size(CGList* head_list)
+size_t cg_list_size(CGList* headList)
 {
   CGList* list;
-  int list_cnt;
+  int listCnt;
 
-  if (!head_list)
+  if (!headList)
     return 0;
 
-  list_cnt = 0;
-  for (list = cg_list_next(head_list); list != NULL;
-       list = cg_list_next(list))
-    list_cnt++;
+  listCnt = 0;
+  for (list = cg_list_next(headList); list != NULL;
+      list = cg_list_next(list))
+    listCnt++;
 
-  return list_cnt;
+  return listCnt;
 }
 
 /****************************************
  * cg_list_get
  ****************************************/
 
-CGList* cg_list_get(CGList* head_list, int index)
+CGList* cg_list_get(CGList* headList, int index)
 {
   CGList* list;
   int n;
 
-  if (!head_list)
+  if (!headList)
     return NULL;
 
-  list = cg_list_next(head_list);
+  list = cg_list_next(headList);
   for (n = 0; n < index; n++) {
     if (!list)
       break;
@@ -94,15 +94,15 @@ CGList* cg_list_get(CGList* head_list, int index)
  * cg_list_insert
  ****************************************/
 
-bool cg_list_insert(CGList* prev_list, CGList* list)
+bool cg_list_insert(CGList* prevList, CGList* list)
 {
-  if (!prev_list || !list)
+  if (!prevList || !list)
     return false;
 
-  list->prev = prev_list;
-  list->next = prev_list->next;
-  prev_list->next->prev = list;
-  prev_list->next = list;
+  list->prev = prevList;
+  list->next = prevList->next;
+  prevList->next->prev = list;
+  prevList->next = list;
 
   return true;
 }
@@ -111,15 +111,15 @@ bool cg_list_insert(CGList* prev_list, CGList* list)
  * cg_list_add
  ****************************************/
 
-bool cg_list_add(CGList* head_list, CGList* list)
+bool cg_list_add(CGList* headList, CGList* list)
 {
-  if (!head_list || !list)
+  if (!headList || !list)
     return false;
 
-  if (!head_list->prev)
+  if (!headList->prev)
     return false;
 
-  cg_list_insert(head_list->prev, list);
+  cg_list_insert(headList->prev, list);
 
   return true;
 }
@@ -201,12 +201,12 @@ CGList* cg_list_next_circular(CGList* list)
  * cg_list_gets
  ****************************************/
 
-CGList* cg_list_gets(CGList* head_list)
+CGList* cg_list_gets(CGList* headList)
 {
-  if (!head_list)
+  if (!headList)
     return NULL;
 
-  return cg_list_next(head_list);
+  return cg_list_next(headList);
 }
 
 /****************************************
@@ -231,25 +231,25 @@ CGList* cg_list_next(CGList* list)
  * cg_list_clear
  ****************************************/
 
-bool cg_list_clear(CGList* head_list,
-    CG_LIST_DESTRUCTORFUNC dstructor_func)
+bool cg_list_clear(CGList* headList,
+    CG_LIST_DESTRUCTORFUNC dstructorFunc)
 {
-  CGList *list, *next_list;
+  CGList *list, *nextList;
 
-  if (!head_list)
+  if (!headList)
     return false;
 
-  list = cg_list_next(head_list);
+  list = cg_list_next(headList);
   while (list != NULL) {
-    next_list = cg_list_next(list);
+    nextList = cg_list_next(list);
     cg_list_remove(list);
-    if (dstructor_func != NULL) {
-      dstructor_func(list);
+    if (dstructorFunc != NULL) {
+      dstructorFunc(list);
     }
     else {
       free(list);
     }
-    list = next_list;
+    list = nextList;
   }
 
   return true;

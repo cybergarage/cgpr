@@ -24,47 +24,47 @@
 
 CGThreadList* cg_threadlist_new(void)
 {
-  CGThreadList* thread_list;
+  CGThreadList* threadList;
 
-  thread_list = (CGThreadList*)malloc(sizeof(CGThreadList));
+  threadList = (CGThreadList*)malloc(sizeof(CGThreadList));
 
-  if (!thread_list)
+  if (!threadList)
     return NULL;
 
-  cg_list_header_init((CGList*)thread_list);
-  thread_list->runnableFlag = false;
-  thread_list->action = NULL;
-  thread_list->userData = NULL;
+  cg_list_header_init((CGList*)threadList);
+  threadList->runnableFlag = false;
+  threadList->action = NULL;
+  threadList->userData = NULL;
 
-  return thread_list;
+  return threadList;
 }
 
 /****************************************
  * cg_threadlist_delete
  ****************************************/
 
-void cg_threadlist_delete(CGThreadList* thread_list)
+void cg_threadlist_delete(CGThreadList* threadList)
 {
-  if (!thread_list)
+  if (!threadList)
     return;
 
-  cg_threadlist_clear(thread_list);
-  free(thread_list);
+  cg_threadlist_clear(threadList);
+  free(threadList);
 }
 
 /****************************************
  * cg_threadlist_start
  ****************************************/
 
-bool cg_threadlist_start(CGThreadList* thread_list)
+bool cg_threadlist_start(CGThreadList* threadList)
 {
   CGThreadList* thread;
 
-  if (!thread_list)
+  if (!threadList)
     return false;
 
-  for (thread = cg_threadlist_gets(thread_list); thread != NULL;
-       thread = cg_thread_next(thread)) {
+  for (thread = cg_threadlist_gets(threadList); thread != NULL;
+      thread = cg_thread_next(thread)) {
     cg_thread_start(thread);
   }
 
@@ -75,15 +75,15 @@ bool cg_threadlist_start(CGThreadList* thread_list)
  * cg_threadlist_stop
  ****************************************/
 
-bool cg_threadlist_stop(CGThreadList* thread_list)
+bool cg_threadlist_stop(CGThreadList* threadList)
 {
   CGThreadList* thread;
 
-  if (!thread_list)
+  if (!threadList)
     return false;
 
-  for (thread = cg_threadlist_gets(thread_list); thread != NULL;
-       thread = cg_thread_next(thread))
+  for (thread = cg_threadlist_gets(threadList); thread != NULL;
+      thread = cg_thread_next(thread))
     cg_thread_stop(thread);
 
   return true;

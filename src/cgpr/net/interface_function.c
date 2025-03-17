@@ -356,21 +356,21 @@ size_t cg_net_gethostinterfaces(CGNetworkInterfaceList* netIf_list)
 
 char* cg_net_selectaddr(struct sockaddr* remoteaddr)
 {
-  CGNetworkInterfaceList* netIf_list;
+  CGNetworkInterfaceList* netIfList;
   CGNetworkInterface* netIf;
-  CGNetworkInterface* select_netIf;
-  char* select_netIf_addr;
+  CGNetworkInterface* selectNetIf;
+  char* selectNetIfAddr;
   u_long laddr, lmask, raddr;
   struct addrinfo hints;
-  struct addrinfo* netIf_addr_info;
-  struct addrinfo* net_mask_addr_info;
+  struct addrinfo* netIfAddrInfo;
+  struct addrinfo* netMaskAddrInfo;
 
-  netIf_list = cg_net_interfacelist_new();
-  if (!netIf_list)
+  netIfList = cg_net_interfacelist_new();
+  if (!netIfList)
     return cg_strdup("127.0.0.1");
 
-  if (cg_net_gethostinterfaces(netIf_list) <= 0) {
-    cg_net_interfacelist_delete(netIf_list);
+  if (cg_net_gethostinterfaces(netIfList) <= 0) {
+    cg_net_interfacelist_delete(netIfList);
     return cg_strdup("127.0.0.1");
   }
 
@@ -379,34 +379,34 @@ char* cg_net_selectaddr(struct sockaddr* remoteaddr)
   memset(&hints, 0, sizeof(hints));
   hints.ai_flags = AI_NUMERICHOST | AI_PASSIVE;
 
-  select_netIf = NULL;
-  if (1 <= cg_net_gethostinterfaces(netIf_list)) {
-    for (netIf = cg_net_interfacelist_gets(netIf_list); netIf; netIf = cg_net_interface_next(netIf)) {
-      if (getaddrinfo(cg_net_interface_getaddress(netIf), NULL, &hints, &netIf_addr_info) != 0)
+  selectNetIf = NULL;
+  if (1 <= cg_net_gethostinterfaces(netIfList)) {
+    for (netIf = cg_net_interfacelist_gets(netIfList); netIf; netIf = cg_net_interface_next(netIf)) {
+      if (getaddrinfo(cg_net_interface_getaddress(netIf), NULL, &hints, &netIfAddrInfo) != 0)
         continue;
-      if (getaddrinfo(cg_net_interface_getnetmask(netIf), NULL, &hints, &net_mask_addr_info) != 0) {
-        freeaddrinfo(netIf_addr_info);
+      if (getaddrinfo(cg_net_interface_getnetmask(netIf), NULL, &hints, &netMaskAddrInfo) != 0) {
+        freeaddrinfo(netIfAddrInfo);
         continue;
       }
-      laddr = ntohl(((struct sockaddr_in*)netIf_addr_info->ai_addr)->sin_addr.s_addr);
-      lmask = ntohl(((struct sockaddr_in*)net_mask_addr_info->ai_addr)->sin_addr.s_addr);
+      laddr = ntohl(((struct sockaddr_in*)netIfAddrInfo->ai_addr)->sin_addr.s_addr);
+      lmask = ntohl(((struct sockaddr_in*)netMaskAddrInfo->ai_addr)->sin_addr.s_addr);
       if ((laddr & lmask) == (raddr & lmask))
-        select_netIf = netIf;
-      freeaddrinfo(netIf_addr_info);
-      freeaddrinfo(net_mask_addr_info);
-      if (select_netIf)
+        selectNetIf = netIf;
+      freeaddrinfo(netIfAddrInfo);
+      freeaddrinfo(netMaskAddrInfo);
+      if (selectNetIf)
         break;
     }
   }
 
-  if (!select_netIf)
-    select_netIf = cg_net_interfacelist_gets(netIf_list);
+  if (!selectNetIf)
+    selectNetIf = cg_net_interfacelist_gets(netIfList);
 
-  select_netIf_addr = cg_strdup(cg_net_interface_getaddress(select_netIf));
+  selectNetIfAddr = cg_strdup(cg_net_interface_getaddress(selectNetIf));
 
-  cg_net_interfacelist_delete(netIf_list);
+  cg_net_interfacelist_delete(netIfList);
 
-  return select_netIf_addr;
+  return selectNetIfAddr;
 }
 #else
 

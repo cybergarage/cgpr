@@ -36,8 +36,8 @@ CGString* cg_string_new(void)
 
   if (NULL != str) {
     str->value = NULL;
-    str->mem_size = 0;
-    str->value_size = 0;
+    str->memSize = 0;
+    str->valueSize = 0;
   }
 
   return str;
@@ -65,8 +65,8 @@ void cg_string_clear(CGString* str)
     if (str->value != NULL) {
       free(str->value);
       str->value = NULL;
-      str->mem_size = 0;
-      str->value_size = 0;
+      str->memSize = 0;
+      str->valueSize = 0;
     }
   }
 }
@@ -114,9 +114,9 @@ void cg_string_setnvalue(CGString* str, const char* value, size_t len)
   if (NULL != str) {
     cg_string_clear(str);
     if (value != NULL) {
-      str->value_size = len;
-      str->mem_size = str->value_size + 1;
-      str->value = (char*)malloc(str->mem_size * sizeof(char));
+      str->valueSize = len;
+      str->memSize = str->valueSize + 1;
+      str->value = (char*)malloc(str->memSize * sizeof(char));
 
       if (NULL == str->value) {
         return;
@@ -138,8 +138,8 @@ void cg_string_setpointervalue(CGString* str, char* value, size_t len)
   if (NULL != str) {
     cg_string_clear(str);
     str->value = value;
-    str->value_size = len;
-    str->mem_size = str->value_size + 1;
+    str->valueSize = len;
+    str->memSize = str->valueSize + 1;
   }
 }
 
@@ -161,7 +161,7 @@ size_t cg_string_getmemorysize(CGString* str)
   if (NULL == str)
     return 0;
 
-  return str->mem_size;
+  return str->memSize;
 }
 
 /****************************************
@@ -176,7 +176,7 @@ size_t cg_string_length(CGString* str)
   if (str->value == NULL)
     return 0;
 
-  return str->value_size;
+  return str->valueSize;
 }
 
 /****************************************
@@ -195,7 +195,7 @@ char* cg_string_addvalue(CGString* str, const char* value)
 char* cg_string_naddvalue(CGString* str, const char* value, size_t value_len)
 {
   char* new_value = NULL;
-  size_t new_mem_size = 0;
+  size_t new_memSize = 0;
 
   if (NULL == str)
     return NULL;
@@ -206,29 +206,29 @@ char* cg_string_naddvalue(CGString* str, const char* value, size_t value_len)
   }
 
   /* Check, if we need to allocate memory for the new data */
-  new_mem_size = str->value_size + value_len + 1;
-  if (new_mem_size > str->mem_size || str->value == NULL) {
+  new_memSize = str->valueSize + value_len + 1;
+  if (new_memSize > str->memSize || str->value == NULL) {
     /* realloc also some extra in order to avoid multiple reallocs */
-    new_mem_size += cg_STRING_REALLOC_EXTRA;
-    new_value = realloc(str->value, new_mem_size * sizeof(char));
+    new_memSize += cg_STRING_REALLOC_EXTRA;
+    new_value = realloc(str->value, new_memSize * sizeof(char));
 
     if (new_value == NULL) {
       /* Memory allocation failed, bail out */
       return NULL;
     }
 
-    str->mem_size = new_mem_size;
+    str->memSize = new_memSize;
     str->value = new_value;
   }
 
   /* memcpy works better with non-zero-terminated data
      than strncpy */
-  memcpy(str->value + str->value_size, value, value_len);
+  memcpy(str->value + str->valueSize, value, value_len);
 
-  str->value_size += value_len;
+  str->valueSize += value_len;
 
   /* In case this is a string, append a termination character */
-  str->value[str->value_size] = '\0';
+  str->value[str->valueSize] = '\0';
 
   return cg_string_getvalue(str);
 }

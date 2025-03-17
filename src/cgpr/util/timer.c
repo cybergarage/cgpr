@@ -48,11 +48,11 @@ void cg_wait(clock_t mtime)
 void cg_waitrandom(clock_t mtime)
 {
   double factor;
-  long wait_time;
+  long waitTime;
 
   factor = (double)rand() / (double)RAND_MAX;
-  wait_time = (long)((double)mtime * factor);
-  cg_wait(wait_time);
+  waitTime = (long)((double)mtime * factor);
+  cg_wait(waitTime);
 }
 
 /****************************************
@@ -70,11 +70,11 @@ clock_t cg_getcurrentsystemtime(void)
 
 float cg_random(void)
 {
-  static bool seed_done = false;
+  static bool seedDone = false;
 
-  if (seed_done == false) {
+  if (seedDone == false) {
     srand((int)(cg_getcurrentsystemtime() % INT_MAX));
-    seed_done = true;
+    seedDone = true;
   }
 
   return (float)rand() / (float)RAND_MAX;
