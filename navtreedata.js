@@ -53,8 +53,7 @@ var NAVTREEINDEX =
 [
 "__log_8h.html",
 "net__function_8c.html#aeed148cb1cf34fcf4d595748504e2900",
-"string__function_8c.html#a93f4463255fc0e65206088f6bb72849e",
-"timer_8c.html"
+"string__function_8c.html#a93f4463255fc0e65206088f6bb72849e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

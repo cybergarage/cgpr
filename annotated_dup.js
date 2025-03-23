@@ -13,7 +13,5 @@ var annotated_dup =
     [ "UEchoMutex", "structUEchoMutex.html", "structUEchoMutex" ],
     [ "UEchoSocket", "structUEchoSocket.html", "structUEchoSocket" ],
     [ "UEchoSocketOption", "structUEchoSocketOption.html", "structUEchoSocketOption" ],
-    [ "UEchoString", "structUEchoString.html", "structUEchoString" ],
-    [ "UEchoStringTokenizer", "structUEchoStringTokenizer.html", "structUEchoStringTokenizer" ],
     [ "UEchoThread", "structUEchoThread.html", "structUEchoThread" ]
 ];
