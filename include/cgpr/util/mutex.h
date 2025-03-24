@@ -55,18 +55,18 @@ extern "C" {
  */
 typedef struct _CGMutex {
 #if defined(WIN32) && !defined(ITRON)
-  HANDLE mutexID;
+  HANDLE mutexId;
 #elif defined(BTRON)
-  WERR mutexID;
+  WERR mutexId;
 #elif defined(ITRON)
-  ER_ID mutexID;
+  ER_ID mutexId;
 #elif defined(TENGINE) && !defined(PROCESS_BASE)
-  ID mutexID;
+  ID mutexId;
 #elif defined(TENGINE) && defined(PROCESS_BASE)
-  WERR mutexID;
+  WERR mutexId;
 #else
   /** The mutex entity */
-  pthread_mutex_t mutexID;
+  pthread_mutex_t mutexId;
 #endif
 } CGMutex;
 
