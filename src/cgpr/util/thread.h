@@ -43,8 +43,8 @@ extern "C" {
  * Data Type
  ****************************************/
 
-typedef struct UEchoThread {
-  cg_LIST_STRUCT_MEMBERS
+typedef struct _CGThread {
+  CG_LIST_STRUCT_MEMBERS
 
       bool runnableFlag;
 
@@ -55,7 +55,7 @@ typedef struct UEchoThread {
   pthread_t pThread;
 #endif
 
-  void (*action)(struct UEchoThread*);
+  void (*action)(struct _CGThread*);
   void* userData;
 } CGThread, CGThreadList;
 
