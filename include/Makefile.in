@@ -279,6 +279,7 @@ cgprheaders = \
 	./cgpr/net/socket.h \
 	./cgpr/net/interface.h \
 	./cgpr/net/socket_opt.h \
+	./cgpr/cgpr.h \
 	./cgpr/util/cond.h \
 	./cgpr/util/list.h \
 	./cgpr/util/log.h \

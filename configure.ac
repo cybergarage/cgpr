@@ -1,10 +1,6 @@
 ##################################################################
 #
-# cgpr for C
-#
-# Copyright (C) The Cyber Garage Portable Runtime for C Authors 2015
-#
-# This is licensed under BSD-style license, see file COPYING.
+# Cyber Garage Portable Runtime for C
 #
 ##################################################################
 
@@ -12,7 +8,7 @@ AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_HEADERS([config.h])
 
 AC_INIT([cgpr],[1.0.0])
-AC_CONFIG_SRCDIR([include/cgpr/typedef.h])
+AC_CONFIG_SRCDIR([include/cgpr/cgpr.h])
 AM_INIT_AUTOMAKE([subdir-objects])
 
 ##############################
