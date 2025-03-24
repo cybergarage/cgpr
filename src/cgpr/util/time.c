@@ -19,16 +19,15 @@
 #include <limits.h>
 #include <stdbool.h>
 #include <stdlib.h>
-
-#include <cgpr/util/time.h>
+#include <time.h>
 
 #if defined(WIN32)
-#include <time.h>
 #include <windows.h>
 #else
-#include <time.h>
 #include <unistd.h>
 #endif
+
+#include <cgpr/util/time.h>
 
 /****************************************
  * cg_time_wait
