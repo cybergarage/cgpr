@@ -16,9 +16,10 @@
  *
  ******************************************************************/
 
-#include <cgpr/util/cond.h>
-
+#include <stdlib.h>
 #include <errno.h>
+
+#include <cgpr/util/cond.h>
 
 /****************************************
  * cg_cond_new
