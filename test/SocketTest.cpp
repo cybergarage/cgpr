@@ -23,19 +23,19 @@
 
 BOOST_AUTO_TEST_CASE(BindAddrTest)
 {
-  int CGUdpPort = 1900;
+  int cgUdpPort = 1900;
 
-  CGNetworkInterfaceList* net_if_list = cg_net_interfacelist_new();
+  CGNetworkInterfaceList* netIfList = cg_net_interfacelist_new();
 
-  BOOST_REQUIRE(0 < cg_net_gethostinterfaces(net_if_list));
+  BOOST_REQUIRE(0 < cg_net_gethostinterfaces(netIfList));
 
-  if (cg_net_gethostinterfaces(net_if_list) <= 0) {
-    cg_net_interfacelist_delete(net_if_list);
+  if (cg_net_gethostinterfaces(netIfList) <= 0) {
+    cg_net_interfacelist_delete(netIfList);
     return;
   }
 
-  CGNetworkInterface* net_if = cg_net_interfacelist_gets(net_if_list);
-  const char* bind_addr = cg_net_interface_getaddress(net_if);
+  CGNetworkInterface* netIf = cg_net_interfacelist_gets(netIfList);
+  const char* bindAddr = cg_net_interface_getaddress(netIf);
 
   CGSocket* sock = cg_socket_dgram_new();
   CGSocketOption* opt = cg_socket_option_new();
@@ -46,7 +46,7 @@ BOOST_AUTO_TEST_CASE(BindAddrTest)
   cg_socket_option_setreuseaddress(opt, true);
   cg_socket_option_setmulticastloop(opt, false);
 
-  BOOST_REQUIRE(cg_socket_bind(sock, CGUdpPort, bind_addr, opt));
+  BOOST_REQUIRE(cg_socket_bind(sock, cgUdpPort, bindAddr, opt));
   BOOST_REQUIRE(cg_socket_close(sock));
 
   // Multicast binding
@@ -55,11 +55,11 @@ BOOST_AUTO_TEST_CASE(BindAddrTest)
   cg_socket_option_setreuseaddress(opt, true);
   cg_socket_option_setmulticastloop(opt, true);
 
-  BOOST_REQUIRE(cg_socket_bind(sock, CGUdpPort, bind_addr, opt));
+  BOOST_REQUIRE(cg_socket_bind(sock, cgUdpPort, bindAddr, opt));
   BOOST_REQUIRE(cg_socket_close(sock));
 
   cg_socket_option_delete(opt);
   cg_socket_delete(sock);
 
-  cg_net_interfacelist_delete(net_if_list);
+  cg_net_interfacelist_delete(netIfList);
 }

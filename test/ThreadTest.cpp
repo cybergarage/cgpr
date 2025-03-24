@@ -26,9 +26,9 @@ const int THREAD_TEST_LOOP_NUM = 10;
 
 void test_theread_func(CGThread* thread)
 {
-  int* test_counter = (int*)cg_thread_getuserdata(thread);
+  int* testCounter = (int*)cg_thread_getuserdata(thread);
   for (int n = 0; n < THREAD_TEST_LOOP_NUM; n++) {
-    (*test_counter)++;
+    (*testCounter)++;
   }
 }
 
@@ -36,15 +36,15 @@ BOOST_AUTO_TEST_CASE(ThreadTest)
 {
   CGThread* thread = cg_thread_new();
 
-  int test_counter = 0;
+  int testCounter = 0;
   cg_thread_setaction(thread, test_theread_func);
-  cg_thread_setuserdata(thread, &test_counter);
+  cg_thread_setuserdata(thread, &testCounter);
 
   BOOST_REQUIRE_EQUAL(cg_thread_start(thread), true);
-  while (test_counter != THREAD_TEST_LOOP_NUM) {
+  while (testCounter != THREAD_TEST_LOOP_NUM) {
     cg_sleep(100);
   }
-  BOOST_REQUIRE_EQUAL(test_counter, THREAD_TEST_LOOP_NUM);
+  BOOST_REQUIRE_EQUAL(testCounter, THREAD_TEST_LOOP_NUM);
   BOOST_REQUIRE_EQUAL(cg_thread_stop(thread), true);
 
   cg_thread_delete(thread);

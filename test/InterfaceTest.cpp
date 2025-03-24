@@ -22,9 +22,9 @@
 
 BOOST_AUTO_TEST_CASE(GetInterface)
 {
-  CGNetworkInterfaceList* netIf_list = cg_net_interfacelist_new();
+  CGNetworkInterfaceList* netIfList = cg_net_interfacelist_new();
 
-  BOOST_REQUIRE(0 < cg_net_gethostinterfaces(netIf_list));
+  BOOST_REQUIRE(0 < cg_net_gethostinterfaces(netIfList));
 
-  cg_net_interfacelist_delete(netIf_list);
+  cg_net_interfacelist_delete(netIfList);
 }
