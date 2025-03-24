@@ -16,9 +16,11 @@
  *
  ******************************************************************/
 
-#include <cgpr/util/timer.h>
-
+#include <stdbool.h>
+#include <stdlib.h>
 #include <limits.h>
+
+#include <cgpr/util/timer.h>
 
 #if defined(WIN32)
 #include <time.h>

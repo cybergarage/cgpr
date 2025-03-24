@@ -41,4 +41,4 @@ extern "C" {
 } /* extern "C" */
 #endif
 
-#endif /* __CGPR_UTIL_LOG_H_ */
+#endif // __CGPR_UTIL_LOG_H_

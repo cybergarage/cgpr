@@ -19,10 +19,16 @@
 #ifndef _CGPR_UTIL_COND_H_
 #define _CGPR_UTIL_COND_H_
 
+#include <stdbool.h>
+
 #if defined(WIN32)
 #include <winsock2.h>
 #else
 #include <pthread.h>
+#endif
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
 #endif
 
 #ifdef __cplusplus
@@ -50,9 +56,7 @@ bool cg_cond_timedwait(CGCond* cond, clock_t mtime);
 bool cg_cond_signal(CGCond* cond);
 
 #ifdef __cplusplus
-
 } /* extern "C" */
-
 #endif
 
-#endif
+#endif /* _CGPR_UTIL_COND_H_ */

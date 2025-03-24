@@ -9,6 +9,7 @@
  *
  ******************************************************************/
 
+#include <stdlib.h>
 #include <limits.h>
 
 #include <cgpr/util/log.h>

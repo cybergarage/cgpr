@@ -19,6 +19,10 @@
 #ifndef _CGPR_UTIL_LIST_H_
 #define _CGPR_UTIL_LIST_H_
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include <stdbool.h>
 #include <stdlib.h>
 
@@ -170,4 +174,4 @@ CGList* cg_list_gets(CGList* headList);
 } /* extern "C" */
 #endif
 
-#endif
+#endif /* _CGPR_UTIL_LIST_H_ */

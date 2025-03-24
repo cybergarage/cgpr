@@ -19,6 +19,12 @@
 #ifndef _CGPR_UTIL_MUTEX_H_
 #define _CGPR_UTIL_MUTEX_H_
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+#include <stdbool.h>
+
 #if defined(WIN32) && !defined(ITRON)
 #include <winsock2.h>
 #elif defined(BTRON)
@@ -115,9 +121,7 @@ bool cg_mutex_unlock(CGMutex* mutex);
 #endif
 
 #ifdef __cplusplus
-
 } /* extern "C" */
-
 #endif
 
-#endif
+#endif /* _CGPR_UTIL_MUTEX_H_ */

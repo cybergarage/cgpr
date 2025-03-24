@@ -16,23 +16,26 @@
  *
  ******************************************************************/
 
-#ifndef _CGPR_LOG_FUNC_H_
-#define _CGPR_LOG_FUNC_H_
+#ifndef _CGPR_UTIL_TYPEDEF_H_
+#define _CGPR_UTIL_TYPEDEF_H_
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
 
 #include <stddef.h>
+#include <sys/types.h>
 
-#include <cgpr/util/typedef.h>
-// #include <cgpr/_message.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#define CG_LOG_NET_PREFIX_SEND "S"
-#define CG_LOG_NET_PREFIX_RECV "R"
+#if !defined(byte)
+typedef unsigned char byte;
+#endif
 
-void cg_net_socket_error(const char* prefix, const char* fromAddr, const char* toAddr, const byte* pktBytes, size_t pktLen);
-void cg_net_socket_debug(const char* prefix, const char* fromAddr, const char* toAddr, const byte* pktBytes, size_t pktLen);
+#ifdef __cplusplus
+}
+#endif
 
-// void cg_net_datagram_packet_error(const char* prefix, CGDatagramPacket* dpkt);
-// void cg_net_datagram_packet_debug(const char* prefix, CGDatagramPacket* dpkt);
-
-// void cg_message_error(const char* prefix, CGMessage* msg);
-
-#endif //_CGPR_LOG_FUNC_H_
+#endif // _CGPR_UTIL_TYPEDEF_H_

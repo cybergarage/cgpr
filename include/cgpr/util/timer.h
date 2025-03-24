@@ -19,6 +19,10 @@
 #ifndef _CGPR_UTIL_TIME_H_
 #define _CGPR_UTIL_TIME_H_
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include <time.h>
 
 #ifdef __cplusplus
@@ -43,4 +47,4 @@ clock_t cg_getcurrentsystemtime(void);
 }
 #endif
 
-#endif
+#endif // _CGPR_UTIL_TIME_H_

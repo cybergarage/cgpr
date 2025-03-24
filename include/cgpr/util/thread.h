@@ -19,6 +19,10 @@
 #ifndef _CGPR_UTIL_THREAD_H_
 #define _CGPR_UTIL_THREAD_H_
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include <cgpr/util/cond.h>
 #include <cgpr/util/list.h>
 
@@ -273,9 +277,7 @@ bool cg_threadlist_start(CGThreadList* threadList);
 bool cg_threadlist_stop(CGThreadList* threadList);
 
 #ifdef __cplusplus
-
 } /* extern "C" */
-
 #endif
 
-#endif
+#endif // _CGPR_UTIL_THREAD_H_

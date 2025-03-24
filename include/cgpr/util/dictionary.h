@@ -21,6 +21,7 @@
 
 #include <cgpr/util/list.h>
 #include <cgpr/util/string.h>
+#include <cgpr/util/typedef.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -176,9 +177,7 @@ void cg_dictionary_setvalue(CGDictionary* dir, const char* key, const char* valu
 const char* cg_dictionary_getvalue(CGDictionary* dir, const char* key);
 
 #ifdef __cplusplus
-
 } /* extern "C" */
-
 #endif
 
-#endif
+#endif /* _CGPR_UTIL_DICTIONARY_H_ */

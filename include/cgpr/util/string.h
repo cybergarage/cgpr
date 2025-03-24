@@ -19,8 +19,13 @@
 #ifndef _CGPR_UTIL_STRING_H_
 #define _CGPR_UTIL_STRING_H_
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include <stdbool.h>
 #include <stdlib.h>
+#include <sys/types.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -154,4 +159,4 @@ size_t cg_string_getmemorysize(CGString* str);
 }
 #endif
 
-#endif
+#endif // _CGPR_UTIL_STRING_H_

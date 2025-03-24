@@ -19,6 +19,8 @@
 #ifndef _CGPR_UTIL_BYTES_H_
 #define _CGPR_UTIL_BYTES_H_
 
+#include <cgpr/util/typedef.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -34,4 +36,4 @@ byte* cg_bytes_fromint(int val, size_t bytesSize);
 }
 #endif
 
-#endif
+#endif // _CGPR_UTIL_BYTES_H_
