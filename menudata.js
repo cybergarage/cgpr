@@ -64,7 +64,8 @@ var menudata={children:[
 {text:"File List",url:"files.html"},
 {text:"Globals",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
-{text:"c",url:"globals.html#index_c"},
+{text:"b",url:"globals.html#index_b"},
+{text:"c",url:"globals_c.html#index_c"},
 {text:"l",url:"globals_l.html#index_l"},
 {text:"m",url:"globals_m.html#index_m"},
 {text:"p",url:"globals_p.html#index_p"},

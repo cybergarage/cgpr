@@ -76,6 +76,7 @@ $(function(){initNavTree('dictionary_8h.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="list_8h.html">cgpr/util/list.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="string_8h.html">cgpr/util/string.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="util_2typedef_8h.html">cgpr/util/typedef.h</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -154,7 +155,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="list_8c.html#a1702128a444c1dfab10fc8c3f5c6c98d">cg_list_add</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dir, (<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dirElem)</div>
 <div class="ttc" id="alist_8c_html_a1702128a444c1dfab10fc8c3f5c6c98d"><div class="ttname"><a href="list_8c.html#a1702128a444c1dfab10fc8c3f5c6c98d">cg_list_add</a></div><div class="ttdeci">bool cg_list_add(CGList *headList, CGList *list)</div><div class="ttdef"><b>Definition</b> list.c:114</div></div>
-<div class="ttc" id="astruct__CGList_html"><div class="ttname"><a href="struct__CGList.html">_CGList</a></div><div class="ttdoc">The generic list interface in mUPnP.</div><div class="ttdef"><b>Definition</b> list.h:64</div></div>
+<div class="ttc" id="astruct__CGList_html"><div class="ttname"><a href="struct__CGList.html">_CGList</a></div><div class="ttdoc">The generic list interface in mUPnP.</div><div class="ttdef"><b>Definition</b> list.h:68</div></div>
 </div><!-- fragment --><p>Add a dictionary into a dictionary list</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -183,7 +184,7 @@ Functions</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="list_8c.html#a9073eddccfcad6ed4ef8d20ead917142">cg_list_clear</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dir, (<a class="code hl_typedef" href="list_8h.html#a9f7470f132165d4fe4e6710d916f8a61">CG_LIST_DESTRUCTORFUNC</a>)<a class="code hl_function" href="#a88fc95b78f8c0e346b82f7a1e45befbf">cg_dictionary_element_delete</a>)</div>
 <div class="ttc" id="adictionary_8h_html_a88fc95b78f8c0e346b82f7a1e45befbf"><div class="ttname"><a href="#a88fc95b78f8c0e346b82f7a1e45befbf">cg_dictionary_element_delete</a></div><div class="ttdeci">bool cg_dictionary_element_delete(CGDictionaryElement *dirElem)</div><div class="ttdef"><b>Definition</b> dictionary_elem.c:45</div></div>
 <div class="ttc" id="alist_8c_html_a9073eddccfcad6ed4ef8d20ead917142"><div class="ttname"><a href="list_8c.html#a9073eddccfcad6ed4ef8d20ead917142">cg_list_clear</a></div><div class="ttdeci">bool cg_list_clear(CGList *headList, CG_LIST_DESTRUCTORFUNC dstructorFunc)</div><div class="ttdef"><b>Definition</b> list.c:234</div></div>
-<div class="ttc" id="alist_8h_html_a9f7470f132165d4fe4e6710d916f8a61"><div class="ttname"><a href="list_8h.html#a9f7470f132165d4fe4e6710d916f8a61">CG_LIST_DESTRUCTORFUNC</a></div><div class="ttdeci">void(* CG_LIST_DESTRUCTORFUNC)(void *)</div><div class="ttdef"><b>Definition</b> list.h:37</div></div>
+<div class="ttc" id="alist_8h_html_a9f7470f132165d4fe4e6710d916f8a61"><div class="ttname"><a href="list_8h.html#a9f7470f132165d4fe4e6710d916f8a61">CG_LIST_DESTRUCTORFUNC</a></div><div class="ttdeci">void(* CG_LIST_DESTRUCTORFUNC)(void *)</div><div class="ttdef"><b>Definition</b> list.h:41</div></div>
 </div><!-- fragment --><p>Clear the contents of a dictionary list</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -261,7 +262,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_struct" href="struct__CGDictionary.html">CGDictionaryElement</a>*)<a class="code hl_function" href="list_8c.html#a11f9ddd1ef90cfeaa903104b34d502c2">cg_list_next</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)dirElem)</div>
 <div class="ttc" id="alist_8c_html_a11f9ddd1ef90cfeaa903104b34d502c2"><div class="ttname"><a href="list_8c.html#a11f9ddd1ef90cfeaa903104b34d502c2">cg_list_next</a></div><div class="ttdeci">CGList * cg_list_next(CGList *list)</div><div class="ttdef"><b>Definition</b> list.c:216</div></div>
-<div class="ttc" id="astruct__CGDictionary_html"><div class="ttname"><a href="struct__CGDictionary.html">_CGDictionary</a></div><div class="ttdoc">The generic wrapper struct for mUPnP's dictionarys.</div><div class="ttdef"><b>Definition</b> dictionary.h:43</div></div>
+<div class="ttc" id="astruct__CGDictionary_html"><div class="ttname"><a href="struct__CGDictionary.html">_CGDictionary</a></div><div class="ttdoc">The generic wrapper struct for mUPnP's dictionarys.</div><div class="ttdef"><b>Definition</b> dictionary.h:44</div></div>
 </div><!-- fragment -->
 </div>
 </div>
