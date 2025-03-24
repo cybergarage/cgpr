@@ -19,7 +19,6 @@
 #ifndef _CGPR_UTIL_DICTIONARY_H_
 #define _CGPR_UTIL_DICTIONARY_H_
 
-#include <cgpr/typedef.h>
 #include <cgpr/util/list.h>
 #include <cgpr/util/string.h>
 

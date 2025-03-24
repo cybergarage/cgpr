@@ -24,7 +24,6 @@
 #endif
 
 #include <cgpr/net/socket_opt.h>
-#include <cgpr/typedef.h>
 #include <cgpr/util/string.h>
 
 #ifdef __cplusplus

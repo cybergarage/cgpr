@@ -17,7 +17,6 @@
 ######################################################################
 
 cgprheaders = \
-	./cgpr/typedef.h \
 	./cgpr/net/socket.h \
 	./cgpr/net/interface.h \
 	./cgpr/net/socket_opt.h \

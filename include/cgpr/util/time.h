@@ -23,8 +23,6 @@
 #include <time.h>
 #endif
 
-#include <cgpr/typedef.h>
-
 #if defined(BTRON)
 #include <btron/clk.h>
 #include <btron/proctask.h>

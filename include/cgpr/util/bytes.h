@@ -19,8 +19,6 @@
 #ifndef _CGPR_UTIL_BYTES_H_
 #define _CGPR_UTIL_BYTES_H_
 
-#include <cgpr/typedef.h>
-
 #ifdef __cplusplus
 extern "C" {
 #endif

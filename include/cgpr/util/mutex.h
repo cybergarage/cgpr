@@ -19,8 +19,6 @@
 #ifndef _CGPR_UTIL_MUTEX_H_
 #define _CGPR_UTIL_MUTEX_H_
 
-#include <cgpr/typedef.h>
-
 #if defined(WIN32) && !defined(ITRON)
 #include <winsock2.h>
 #elif defined(BTRON)

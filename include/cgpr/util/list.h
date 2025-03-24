@@ -19,7 +19,8 @@
 #ifndef _CGPR_UTIL_LIST_H_
 #define _CGPR_UTIL_LIST_H_
 
-#include <cgpr/typedef.h>
+#include <stdbool.h>
+#include <stdlib.h>
 
 #ifdef __cplusplus
 extern "C" {

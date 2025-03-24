@@ -20,10 +20,11 @@
 #include "config.h"
 #endif
 
+#include <string.h>
+#include <ctype.h>
+
 #include <cgpr/util/log.h>
 #include <cgpr/util/string.h>
-
-#include <ctype.h>
 
 #if defined(WINCE)
 // Theo Beisch - needed for _i64toa_s support -

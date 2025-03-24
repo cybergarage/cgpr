@@ -19,8 +19,6 @@
 #ifndef _CGPR_UTIL_COND_H_
 #define _CGPR_UTIL_COND_H_
 
-#include <cgpr/typedef.h>
-
 #if defined(WIN32)
 #include <winsock2.h>
 #else

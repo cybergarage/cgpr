@@ -19,7 +19,6 @@
 #ifndef _CGPR_NET_CINTERFACE_H_
 #define _CGPR_NET_CINTERFACE_H_
 
-#include <cgpr/typedef.h>
 #include <cgpr/util/list.h>
 #include <cgpr/util/string.h>
 

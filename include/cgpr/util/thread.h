@@ -19,7 +19,6 @@
 #ifndef _CGPR_UTIL_THREAD_H_
 #define _CGPR_UTIL_THREAD_H_
 
-#include <cgpr/typedef.h>
 #include <cgpr/util/cond.h>
 #include <cgpr/util/list.h>
 

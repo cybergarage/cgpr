@@ -19,7 +19,7 @@
 #ifndef _CGPR_UTIL_STRING_H_
 #define _CGPR_UTIL_STRING_H_
 
-#include <cgpr/typedef.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
 #ifdef __cplusplus

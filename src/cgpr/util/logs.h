@@ -19,7 +19,7 @@
 #ifndef _CGPR_LOG_FUNC_H_
 #define _CGPR_LOG_FUNC_H_
 
-#include <cgpr/typedef.h>
+#inclide <stdlib.h>
 // #include <cgpr/_message.h>
 
 #define CG_LOG_NET_PREFIX_SEND "S"

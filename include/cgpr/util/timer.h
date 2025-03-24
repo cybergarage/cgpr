@@ -19,7 +19,7 @@
 #ifndef _CGPR_UTIL_TIME_H_
 #define _CGPR_UTIL_TIME_H_
 
-#include <cgpr/typedef.h>
+#include <time.h>
 
 #ifdef __cplusplus
 extern "C" {
