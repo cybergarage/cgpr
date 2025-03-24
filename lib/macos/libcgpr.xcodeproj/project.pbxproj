@@ -13,12 +13,10 @@
 		212996F22D90629000810FBF /* time.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996E62D90629000810FBF /* time.h */; };
 		212996F32D90629000810FBF /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996E12D90629000810FBF /* list.h */; };
 		212996F42D90629000810FBF /* string.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996E42D90629000810FBF /* string.h */; };
-		212996F52D90629000810FBF /* typedef.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996E92D90629000810FBF /* typedef.h */; };
 		212996F62D90629000810FBF /* socket_opt.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996DC2D90629000810FBF /* socket_opt.h */; };
 		212996F72D90629000810FBF /* log.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996E22D90629000810FBF /* log.h */; };
 		212996F82D90629000810FBF /* mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996E32D90629000810FBF /* mutex.h */; };
 		212996F92D90629000810FBF /* cond.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996DF2D90629000810FBF /* cond.h */; };
-		212996FA2D90629000810FBF /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996E72D90629000810FBF /* timer.h */; };
 		212996FB2D90629000810FBF /* socket.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996DB2D90629000810FBF /* socket.h */; };
 		212996FC2D90629000810FBF /* dictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 212996E02D90629000810FBF /* dictionary.h */; };
 		2129971C2D9062C400810FBF /* mutex.h in Headers */ = {isa = PBXBuildFile; fileRef = 2129970E2D9062C400810FBF /* mutex.h */; };
@@ -27,7 +25,6 @@
 		2129971F2D9062C400810FBF /* _log.h in Headers */ = {isa = PBXBuildFile; fileRef = 212997052D9062C400810FBF /* _log.h */; };
 		212997202D9062C400810FBF /* time.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997162D9062C400810FBF /* time.c */; };
 		212997212D9062C400810FBF /* string.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997102D9062C400810FBF /* string.c */; };
-		212997222D9062C400810FBF /* time_wince.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997172D9062C400810FBF /* time_wince.c */; };
 		212997232D9062C400810FBF /* interface_function.c in Sources */ = {isa = PBXBuildFile; fileRef = 212996FF2D9062C400810FBF /* interface_function.c */; };
 		212997242D9062C400810FBF /* thread_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997152D9062C400810FBF /* thread_list.c */; };
 		212997252D9062C400810FBF /* net_function.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997012D9062C400810FBF /* net_function.c */; };
@@ -36,7 +33,6 @@
 		212997282D9062C400810FBF /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997142D9062C400810FBF /* thread.c */; };
 		212997292D9062C400810FBF /* dictionary_elem.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997092D9062C400810FBF /* dictionary_elem.c */; };
 		2129972A2D9062C400810FBF /* string_function.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997112D9062C400810FBF /* string_function.c */; };
-		2129972B2D9062C400810FBF /* timer.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997182D9062C400810FBF /* timer.c */; };
 		2129972C2D9062C400810FBF /* socket_opt.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997032D9062C400810FBF /* socket_opt.c */; };
 		2129972D2D9062C400810FBF /* bytes.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997062D9062C400810FBF /* bytes.c */; };
 		2129972E2D9062C400810FBF /* cond.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997072D9062C400810FBF /* cond.c */; };
@@ -63,8 +59,6 @@
 		212996E42D90629000810FBF /* string.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string.h; sourceTree = "<group>"; };
 		212996E52D90629000810FBF /* thread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = thread.h; sourceTree = "<group>"; };
 		212996E62D90629000810FBF /* time.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
-		212996E72D90629000810FBF /* timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
-		212996E92D90629000810FBF /* typedef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
 		212996EB2D90629000810FBF /* Makefile.am */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
 		212996EC2D90629000810FBF /* Makefile.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
 		212996ED2D90629000810FBF /* Makefile.am.build */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = Makefile.am.build; sourceTree = "<group>"; };
@@ -93,8 +87,6 @@
 		212997142D9062C400810FBF /* thread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = thread.c; sourceTree = "<group>"; };
 		212997152D9062C400810FBF /* thread_list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = thread_list.c; sourceTree = "<group>"; };
 		212997162D9062C400810FBF /* time.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = time.c; sourceTree = "<group>"; };
-		212997172D9062C400810FBF /* time_wince.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = time_wince.c; sourceTree = "<group>"; };
-		212997182D9062C400810FBF /* timer.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = timer.c; sourceTree = "<group>"; };
 		21E2ADBA2D90583C00FB4907 /* liblibcgpr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibcgpr.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,7 +123,6 @@
 				212996E42D90629000810FBF /* string.h */,
 				212996E52D90629000810FBF /* thread.h */,
 				212996E62D90629000810FBF /* time.h */,
-				212996E72D90629000810FBF /* timer.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -141,7 +132,6 @@
 			children = (
 				212996DD2D90629000810FBF /* net */,
 				212996E82D90629000810FBF /* util */,
-				212996E92D90629000810FBF /* typedef.h */,
 			);
 			path = cgpr;
 			sourceTree = "<group>";
@@ -193,8 +183,6 @@
 				212997142D9062C400810FBF /* thread.c */,
 				212997152D9062C400810FBF /* thread_list.c */,
 				212997162D9062C400810FBF /* time.c */,
-				212997172D9062C400810FBF /* time_wince.c */,
-				212997182D9062C400810FBF /* timer.c */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -247,12 +235,10 @@
 				212996F22D90629000810FBF /* time.h in Headers */,
 				212996F32D90629000810FBF /* list.h in Headers */,
 				212996F42D90629000810FBF /* string.h in Headers */,
-				212996F52D90629000810FBF /* typedef.h in Headers */,
 				212996F62D90629000810FBF /* socket_opt.h in Headers */,
 				212996F72D90629000810FBF /* log.h in Headers */,
 				212996F82D90629000810FBF /* mutex.h in Headers */,
 				212996F92D90629000810FBF /* cond.h in Headers */,
-				212996FA2D90629000810FBF /* timer.h in Headers */,
 				2129971C2D9062C400810FBF /* mutex.h in Headers */,
 				2129971D2D9062C400810FBF /* logs.h in Headers */,
 				2129971E2D9062C400810FBF /* thread.h in Headers */,
@@ -324,7 +310,6 @@
 			files = (
 				212997202D9062C400810FBF /* time.c in Sources */,
 				212997212D9062C400810FBF /* string.c in Sources */,
-				212997222D9062C400810FBF /* time_wince.c in Sources */,
 				212997232D9062C400810FBF /* interface_function.c in Sources */,
 				212997242D9062C400810FBF /* thread_list.c in Sources */,
 				212997252D9062C400810FBF /* net_function.c in Sources */,
@@ -333,7 +318,6 @@
 				212997282D9062C400810FBF /* thread.c in Sources */,
 				212997292D9062C400810FBF /* dictionary_elem.c in Sources */,
 				2129972A2D9062C400810FBF /* string_function.c in Sources */,
-				2129972B2D9062C400810FBF /* timer.c in Sources */,
 				2129972C2D9062C400810FBF /* socket_opt.c in Sources */,
 				2129972D2D9062C400810FBF /* bytes.c in Sources */,
 				2129972E2D9062C400810FBF /* cond.c in Sources */,
