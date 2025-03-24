@@ -75,8 +75,7 @@ $(function(){initNavTree('socket_8h.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="socket__opt_8h.html">cgpr/net/socket_opt.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="typedef_8h.html">cgpr/typedef.h</a>&gt;</code><br />
-<code>#include &lt;cgpr/util/strings.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="string_8h.html">cgpr/util/string.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="list_8h.html">cgpr/util/list.h</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -182,23 +181,23 @@ Functions</h2></td></tr>
 <tr class="separator:a9c45787ffe845eb4d68cf2e5ef67d5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaee8da3d61ecac9b0eecbbde4373810" id="r_afaee8da3d61ecac9b0eecbbde4373810"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afaee8da3d61ecac9b0eecbbde4373810">cg_socket_new</a> (int type)</td></tr>
 <tr class="separator:afaee8da3d61ecac9b0eecbbde4373810"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae99a8fdb876f19403fae66294560a695" id="r_ae99a8fdb876f19403fae66294560a695"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae99a8fdb876f19403fae66294560a695">cg_socket_delete</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket)</td></tr>
+<tr class="memitem:ae99a8fdb876f19403fae66294560a695" id="r_ae99a8fdb876f19403fae66294560a695"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae99a8fdb876f19403fae66294560a695">cg_socket_delete</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket)</td></tr>
 <tr class="separator:ae99a8fdb876f19403fae66294560a695"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaafc1d4a253f0f959cac235b635076a" id="r_aeaafc1d4a253f0f959cac235b635076a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeaafc1d4a253f0f959cac235b635076a">cg_socket_setid</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket, <a class="el" href="#a8dc8083897335125630f1af5dafd5831">SOCKET</a> value)</td></tr>
 <tr class="separator:aeaafc1d4a253f0f959cac235b635076a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ed0f3c490a621e0fc4bd93934cb077f" id="r_a7ed0f3c490a621e0fc4bd93934cb077f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ed0f3c490a621e0fc4bd93934cb077f">cg_socket_isboundaddress</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket, const char *addr)</td></tr>
+<tr class="memitem:a7ed0f3c490a621e0fc4bd93934cb077f" id="r_a7ed0f3c490a621e0fc4bd93934cb077f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ed0f3c490a621e0fc4bd93934cb077f">cg_socket_isboundaddress</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket, const char *addr)</td></tr>
 <tr class="separator:a7ed0f3c490a621e0fc4bd93934cb077f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d9b69d850d1aeb7d8095870abfc71bb" id="r_a4d9b69d850d1aeb7d8095870abfc71bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d9b69d850d1aeb7d8095870abfc71bb">cg_socket_isbound</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket)</td></tr>
+<tr class="memitem:a4d9b69d850d1aeb7d8095870abfc71bb" id="r_a4d9b69d850d1aeb7d8095870abfc71bb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d9b69d850d1aeb7d8095870abfc71bb">cg_socket_isbound</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket)</td></tr>
 <tr class="separator:a4d9b69d850d1aeb7d8095870abfc71bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ef77c04018e74e1cd0b95fc54588844" id="r_a6ef77c04018e74e1cd0b95fc54588844"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ef77c04018e74e1cd0b95fc54588844">cg_socket_close</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket)</td></tr>
+<tr class="memitem:a6ef77c04018e74e1cd0b95fc54588844" id="r_a6ef77c04018e74e1cd0b95fc54588844"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ef77c04018e74e1cd0b95fc54588844">cg_socket_close</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket)</td></tr>
 <tr class="separator:a6ef77c04018e74e1cd0b95fc54588844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01ce37a677a51d3cff5259bc91ff2c2f" id="r_a01ce37a677a51d3cff5259bc91ff2c2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01ce37a677a51d3cff5259bc91ff2c2f">cg_socket_listen</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket)</td></tr>
+<tr class="memitem:a01ce37a677a51d3cff5259bc91ff2c2f" id="r_a01ce37a677a51d3cff5259bc91ff2c2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01ce37a677a51d3cff5259bc91ff2c2f">cg_socket_listen</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket)</td></tr>
 <tr class="separator:a01ce37a677a51d3cff5259bc91ff2c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8695b57af08565f3be05ee892c04cfc8" id="r_a8695b57af08565f3be05ee892c04cfc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8695b57af08565f3be05ee892c04cfc8">cg_socket_bind</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, int bindPort, const char *bindAddr, <a class="el" href="socket__opt_8h.html#ad7e85d76988c6e0e4deb8258ab982e8c">CGSocketOption</a> *opt)</td></tr>
+<tr class="memitem:a8695b57af08565f3be05ee892c04cfc8" id="r_a8695b57af08565f3be05ee892c04cfc8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8695b57af08565f3be05ee892c04cfc8">cg_socket_bind</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, int bindPort, const char *bindAddr, <a class="el" href="socket__opt_8h.html#ad7e85d76988c6e0e4deb8258ab982e8c">CGSocketOption</a> *opt)</td></tr>
 <tr class="separator:a8695b57af08565f3be05ee892c04cfc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab04087bfaad29cdc909ed4945957c528" id="r_ab04087bfaad29cdc909ed4945957c528"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab04087bfaad29cdc909ed4945957c528">cg_socket_accept</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, <a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *clientSock)</td></tr>
+<tr class="memitem:ab04087bfaad29cdc909ed4945957c528" id="r_ab04087bfaad29cdc909ed4945957c528"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab04087bfaad29cdc909ed4945957c528">cg_socket_accept</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, <a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *clientSock)</td></tr>
 <tr class="separator:ab04087bfaad29cdc909ed4945957c528"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a899e6a1cf26c3ad7e9bbffe9d03c2c2e" id="r_a899e6a1cf26c3ad7e9bbffe9d03c2c2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a899e6a1cf26c3ad7e9bbffe9d03c2c2e">cg_socket_connect</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, const char *addr, int port)</td></tr>
+<tr class="memitem:a899e6a1cf26c3ad7e9bbffe9d03c2c2e" id="r_a899e6a1cf26c3ad7e9bbffe9d03c2c2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a899e6a1cf26c3ad7e9bbffe9d03c2c2e">cg_socket_connect</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, const char *addr, int port)</td></tr>
 <tr class="separator:a899e6a1cf26c3ad7e9bbffe9d03c2c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a533e130da68540e06e11e8dfe8c51ef3" id="r_a533e130da68540e06e11e8dfe8c51ef3"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a533e130da68540e06e11e8dfe8c51ef3">cg_socket_read</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, char *buffer, size_t bufferLen)</td></tr>
 <tr class="separator:a533e130da68540e06e11e8dfe8c51ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,29 +207,29 @@ Functions</h2></td></tr>
 <tr class="separator:aa834504af47b4fd2260c2565ee4b33a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace114f5b8d37242daff7fe437e81131e" id="r_ace114f5b8d37242daff7fe437e81131e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace114f5b8d37242daff7fe437e81131e">cg_socket_skip</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, size_t skipLen)</td></tr>
 <tr class="separator:ace114f5b8d37242daff7fe437e81131e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab00d3ca6de7c8193ee18bce30665148c" id="r_ab00d3ca6de7c8193ee18bce30665148c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab00d3ca6de7c8193ee18bce30665148c">cg_socket_sendto</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, const char *addr, int port, const <a class="el" href="typedef_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *data, size_t dataeLen)</td></tr>
+<tr class="memitem:ab00d3ca6de7c8193ee18bce30665148c" id="r_ab00d3ca6de7c8193ee18bce30665148c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab00d3ca6de7c8193ee18bce30665148c">cg_socket_sendto</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, const char *addr, int port, const byte *data, size_t dataeLen)</td></tr>
 <tr class="separator:ab00d3ca6de7c8193ee18bce30665148c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b3c1ad320a7b427bd71d89f501e6029" id="r_a9b3c1ad320a7b427bd71d89f501e6029"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b3c1ad320a7b427bd71d89f501e6029">cg_socket_recv</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, <a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *dgmPkt)</td></tr>
 <tr class="separator:a9b3c1ad320a7b427bd71d89f501e6029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b10a4d64096da92d3cdba229f7b707c" id="r_a7b10a4d64096da92d3cdba229f7b707c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b10a4d64096da92d3cdba229f7b707c">cg_socket_joingroup</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, const char *mcastAddr, const char *ifAddr)</td></tr>
+<tr class="memitem:a7b10a4d64096da92d3cdba229f7b707c" id="r_a7b10a4d64096da92d3cdba229f7b707c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b10a4d64096da92d3cdba229f7b707c">cg_socket_joingroup</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, const char *mcastAddr, const char *ifAddr)</td></tr>
 <tr class="separator:a7b10a4d64096da92d3cdba229f7b707c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6130c69350d7bba38583b83ac87a435" id="r_ad6130c69350d7bba38583b83ac87a435"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6130c69350d7bba38583b83ac87a435">cg_socket_setreuseaddress</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket, <a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> flag)</td></tr>
+<tr class="memitem:ad6130c69350d7bba38583b83ac87a435" id="r_ad6130c69350d7bba38583b83ac87a435"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6130c69350d7bba38583b83ac87a435">cg_socket_setreuseaddress</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *socket, bool flag)</td></tr>
 <tr class="separator:ad6130c69350d7bba38583b83ac87a435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cfe3f9a874f6929c9c15cd9684a8a33" id="r_a7cfe3f9a874f6929c9c15cd9684a8a33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cfe3f9a874f6929c9c15cd9684a8a33">cg_socket_setmulticastloop</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, <a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> flag)</td></tr>
+<tr class="memitem:a7cfe3f9a874f6929c9c15cd9684a8a33" id="r_a7cfe3f9a874f6929c9c15cd9684a8a33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cfe3f9a874f6929c9c15cd9684a8a33">cg_socket_setmulticastloop</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, bool flag)</td></tr>
 <tr class="separator:a7cfe3f9a874f6929c9c15cd9684a8a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f644e59728398801156b91d835c5f55" id="r_a3f644e59728398801156b91d835c5f55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f644e59728398801156b91d835c5f55">cg_socket_setmulticastttl</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, int ttl)</td></tr>
+<tr class="memitem:a3f644e59728398801156b91d835c5f55" id="r_a3f644e59728398801156b91d835c5f55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f644e59728398801156b91d835c5f55">cg_socket_setmulticastttl</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, int ttl)</td></tr>
 <tr class="separator:a3f644e59728398801156b91d835c5f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd9d5fc1e7819859f75ecbbb6baf3743" id="r_acd9d5fc1e7819859f75ecbbb6baf3743"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd9d5fc1e7819859f75ecbbb6baf3743">cg_socket_settimeout</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, int sec)</td></tr>
+<tr class="memitem:acd9d5fc1e7819859f75ecbbb6baf3743" id="r_acd9d5fc1e7819859f75ecbbb6baf3743"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd9d5fc1e7819859f75ecbbb6baf3743">cg_socket_settimeout</a> (<a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *sock, int sec)</td></tr>
 <tr class="separator:acd9d5fc1e7819859f75ecbbb6baf3743"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace3ff39d3b5bff9781429b19182cb0dc" id="r_ace3ff39d3b5bff9781429b19182cb0dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace3ff39d3b5bff9781429b19182cb0dc">cg_socket_datagram_packet_new</a> (void)</td></tr>
 <tr class="separator:ace3ff39d3b5bff9781429b19182cb0dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac823ee3ba0d4c18a01e17b156ce233b" id="r_aac823ee3ba0d4c18a01e17b156ce233b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac823ee3ba0d4c18a01e17b156ce233b">cg_socket_datagram_packet_delete</a> (<a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *dgmPkt)</td></tr>
 <tr class="separator:aac823ee3ba0d4c18a01e17b156ce233b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a761f5068e96fcee6eb4edb1358d47983" id="r_a761f5068e96fcee6eb4edb1358d47983"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a761f5068e96fcee6eb4edb1358d47983">cg_socket_datagram_packet_setdata</a> (<a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *dgmPkt, const <a class="el" href="typedef_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *data, size_t dataLen)</td></tr>
+<tr class="memitem:a761f5068e96fcee6eb4edb1358d47983" id="r_a761f5068e96fcee6eb4edb1358d47983"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a761f5068e96fcee6eb4edb1358d47983">cg_socket_datagram_packet_setdata</a> (<a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *dgmPkt, const byte *data, size_t dataLen)</td></tr>
 <tr class="separator:a761f5068e96fcee6eb4edb1358d47983"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9654dfd327aa83ce4407a2bc334ac9e6" id="r_a9654dfd327aa83ce4407a2bc334ac9e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9654dfd327aa83ce4407a2bc334ac9e6">cg_socket_datagram_packet_clear</a> (<a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *dgmPkt)</td></tr>
+<tr class="memitem:a9654dfd327aa83ce4407a2bc334ac9e6" id="r_a9654dfd327aa83ce4407a2bc334ac9e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9654dfd327aa83ce4407a2bc334ac9e6">cg_socket_datagram_packet_clear</a> (<a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *dgmPkt)</td></tr>
 <tr class="separator:a9654dfd327aa83ce4407a2bc334ac9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b3b9c8c7c03885e8aee0dee4fca28c2" id="r_a8b3b9c8c7c03885e8aee0dee4fca28c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b3b9c8c7c03885e8aee0dee4fca28c2">cg_socket_datagram_packet_copy</a> (<a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *dstDgmPkt, <a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *srcDgmPkt)</td></tr>
+<tr class="memitem:a8b3b9c8c7c03885e8aee0dee4fca28c2" id="r_a8b3b9c8c7c03885e8aee0dee4fca28c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b3b9c8c7c03885e8aee0dee4fca28c2">cg_socket_datagram_packet_copy</a> (<a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *dstDgmPkt, <a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *srcDgmPkt)</td></tr>
 <tr class="separator:a8b3b9c8c7c03885e8aee0dee4fca28c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -615,7 +614,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#afaee8da3d61ecac9b0eecbbde4373810">cg_socket_new</a>(<a class="code hl_define" href="#a6e8292b9c69310ef1cd67a9d103698e1">CG_NET_SOCKET_DGRAM</a>)</div>
-<div class="ttc" id="asocket_8h_html_a6e8292b9c69310ef1cd67a9d103698e1"><div class="ttname"><a href="#a6e8292b9c69310ef1cd67a9d103698e1">CG_NET_SOCKET_DGRAM</a></div><div class="ttdeci">#define CG_NET_SOCKET_DGRAM</div><div class="ttdef"><b>Definition</b> socket.h:41</div></div>
+<div class="ttc" id="asocket_8h_html_a6e8292b9c69310ef1cd67a9d103698e1"><div class="ttname"><a href="#a6e8292b9c69310ef1cd67a9d103698e1">CG_NET_SOCKET_DGRAM</a></div><div class="ttdeci">#define CG_NET_SOCKET_DGRAM</div><div class="ttdef"><b>Definition</b> socket.h:40</div></div>
 <div class="ttc" id="asocket_8h_html_afaee8da3d61ecac9b0eecbbde4373810"><div class="ttname"><a href="#afaee8da3d61ecac9b0eecbbde4373810">cg_socket_new</a></div><div class="ttdeci">CGSocket * cg_socket_new(int type)</div><div class="ttdef"><b>Definition</b> socket.c:114</div></div>
 </div><!-- fragment -->
 </div>
@@ -724,9 +723,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((socket-&gt;direction == <a class="code hl_define" href="#af4b8e61ac164a2aaa6d8b12ddfe3efd8">CG_NET_SOCKET_CLIENT</a>) ? <a class="code hl_define" href="typedef_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a> : <span class="keyword">false</span>)</div>
-<div class="ttc" id="asocket_8h_html_af4b8e61ac164a2aaa6d8b12ddfe3efd8"><div class="ttname"><a href="#af4b8e61ac164a2aaa6d8b12ddfe3efd8">CG_NET_SOCKET_CLIENT</a></div><div class="ttdeci">#define CG_NET_SOCKET_CLIENT</div><div class="ttdef"><b>Definition</b> socket.h:43</div></div>
-<div class="ttc" id="atypedef_8h_html_a41f9c5fb8b08eb5dc3edce4dcb37fee7"><div class="ttname"><a href="typedef_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a></div><div class="ttdeci">#define true</div><div class="ttdef"><b>Definition</b> typedef.h:63</div></div>
+<b>Value:</b><div class="fragment"><div class="line">((socket-&gt;direction == <a class="code hl_define" href="#af4b8e61ac164a2aaa6d8b12ddfe3efd8">CG_NET_SOCKET_CLIENT</a>) ? true : <span class="keyword">false</span>)</div>
+<div class="ttc" id="asocket_8h_html_af4b8e61ac164a2aaa6d8b12ddfe3efd8"><div class="ttname"><a href="#af4b8e61ac164a2aaa6d8b12ddfe3efd8">CG_NET_SOCKET_CLIENT</a></div><div class="ttdeci">#define CG_NET_SOCKET_CLIENT</div><div class="ttdef"><b>Definition</b> socket.h:42</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -744,7 +742,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((socket-&gt;type &amp; <a class="code hl_define" href="#a6e8292b9c69310ef1cd67a9d103698e1">CG_NET_SOCKET_DGRAM</a>) ? <a class="code hl_define" href="typedef_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a> : <span class="keyword">false</span>)</div>
+<b>Value:</b><div class="fragment"><div class="line">((socket-&gt;type &amp; <a class="code hl_define" href="#a6e8292b9c69310ef1cd67a9d103698e1">CG_NET_SOCKET_DGRAM</a>) ? true : <span class="keyword">false</span>)</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -762,8 +760,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((socket-&gt;direction == <a class="code hl_define" href="#ae6ef794576b9909c91479760db768d20">CG_NET_SOCKET_SERVER</a>) ? <a class="code hl_define" href="typedef_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a> : <span class="keyword">false</span>)</div>
-<div class="ttc" id="asocket_8h_html_ae6ef794576b9909c91479760db768d20"><div class="ttname"><a href="#ae6ef794576b9909c91479760db768d20">CG_NET_SOCKET_SERVER</a></div><div class="ttdeci">#define CG_NET_SOCKET_SERVER</div><div class="ttdef"><b>Definition</b> socket.h:44</div></div>
+<b>Value:</b><div class="fragment"><div class="line">((socket-&gt;direction == <a class="code hl_define" href="#ae6ef794576b9909c91479760db768d20">CG_NET_SOCKET_SERVER</a>) ? true : <span class="keyword">false</span>)</div>
+<div class="ttc" id="asocket_8h_html_ae6ef794576b9909c91479760db768d20"><div class="ttname"><a href="#ae6ef794576b9909c91479760db768d20">CG_NET_SOCKET_SERVER</a></div><div class="ttdeci">#define CG_NET_SOCKET_SERVER</div><div class="ttdef"><b>Definition</b> socket.h:43</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -781,8 +779,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((socket-&gt;type &amp; <a class="code hl_define" href="#acef9d4d68d8cc51b4b95c572457f8d11">CG_NET_SOCKET_STREAM</a>) ? <a class="code hl_define" href="typedef_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a> : <span class="keyword">false</span>)</div>
-<div class="ttc" id="asocket_8h_html_acef9d4d68d8cc51b4b95c572457f8d11"><div class="ttname"><a href="#acef9d4d68d8cc51b4b95c572457f8d11">CG_NET_SOCKET_STREAM</a></div><div class="ttdeci">#define CG_NET_SOCKET_STREAM</div><div class="ttdef"><b>Definition</b> socket.h:40</div></div>
+<b>Value:</b><div class="fragment"><div class="line">((socket-&gt;type &amp; <a class="code hl_define" href="#acef9d4d68d8cc51b4b95c572457f8d11">CG_NET_SOCKET_STREAM</a>) ? true : <span class="keyword">false</span>)</div>
+<div class="ttc" id="asocket_8h_html_acef9d4d68d8cc51b4b95c572457f8d11"><div class="ttname"><a href="#acef9d4d68d8cc51b4b95c572457f8d11">CG_NET_SOCKET_STREAM</a></div><div class="ttdeci">#define CG_NET_SOCKET_STREAM</div><div class="ttdef"><b>Definition</b> socket.h:39</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -957,7 +955,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_accept </td>
+          <td class="memname">bool cg_socket_accept </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
         </tr>
@@ -978,7 +976,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_bind </td>
+          <td class="memname">bool cg_socket_bind </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
         </tr>
@@ -1026,7 +1024,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_close </td>
+          <td class="memname">bool cg_socket_close </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span></td><td>)</td>
           <td></td>
@@ -1043,7 +1041,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_connect </td>
+          <td class="memname">bool cg_socket_connect </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
         </tr>
@@ -1069,7 +1067,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_datagram_packet_clear </td>
+          <td class="memname">bool cg_socket_datagram_packet_clear </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>dgmPkt</em></span></td><td>)</td>
           <td></td>
@@ -1086,7 +1084,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_datagram_packet_copy </td>
+          <td class="memname">bool cg_socket_datagram_packet_copy </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>dstDgmPkt</em></span>, </td>
         </tr>
@@ -1141,14 +1139,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_datagram_packet_setdata </td>
+          <td class="memname">bool cg_socket_datagram_packet_setdata </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a92716790e27d3bd56fecf3975d2decb6">CGDatagramPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>dgmPkt</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="typedef_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+          <td class="paramtype">const byte *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1167,7 +1165,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_delete </td>
+          <td class="memname">bool cg_socket_delete </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span></td><td>)</td>
           <td></td>
@@ -1184,7 +1182,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_isbound </td>
+          <td class="memname">bool cg_socket_isbound </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span></td><td>)</td>
           <td></td>
@@ -1201,7 +1199,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_isboundaddress </td>
+          <td class="memname">bool cg_socket_isboundaddress </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
         </tr>
@@ -1222,7 +1220,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_joingroup </td>
+          <td class="memname">bool cg_socket_joingroup </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
         </tr>
@@ -1248,7 +1246,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_listen </td>
+          <td class="memname">bool cg_socket_listen </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span></td><td>)</td>
           <td></td>
@@ -1372,7 +1370,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="typedef_8h.html#a0c8186d9b9b7880309c27230bbb5e69d">byte</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+          <td class="paramtype">const byte *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1412,14 +1410,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_setmulticastloop </td>
+          <td class="memname">bool cg_socket_setmulticastloop </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a></td>          <td class="paramname"><span class="paramname"><em>flag</em></span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>flag</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1433,7 +1431,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_setmulticastttl </td>
+          <td class="memname">bool cg_socket_setmulticastttl </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
         </tr>
@@ -1454,14 +1452,14 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_setreuseaddress </td>
+          <td class="memname">bool cg_socket_setreuseaddress </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>socket</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a></td>          <td class="paramname"><span class="paramname"><em>flag</em></span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>flag</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1475,7 +1473,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_socket_settimeout </td>
+          <td class="memname">bool cg_socket_settimeout </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a273cec38443813085eaa764068c7cf48">CGSocket</a> *</td>          <td class="paramname"><span class="paramname"><em>sock</em></span>, </td>
         </tr>

@@ -74,9 +74,8 @@ $(function(){initNavTree('interface_8h.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">interface.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="typedef_8h.html">cgpr/typedef.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="list_8h.html">cgpr/util/list.h</a>&gt;</code><br />
-<code>#include &lt;cgpr/util/strings.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="list_8h.html">cgpr/util/list.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="string_8h.html">cgpr/util/string.h</a>&gt;</code><br />
 <code>#include &lt;arpa/inet.h&gt;</code><br />
 <code>#include &lt;netinet/in.h&gt;</code><br />
 <code>#include &lt;sys/socket.h&gt;</code><br />
@@ -152,7 +151,7 @@ Functions</h2></td></tr>
 <tr class="separator:a53fa34c20b3beacc79474455ab796536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31525a598d0af2039ca49e974c89db2d" id="r_a31525a598d0af2039ca49e974c89db2d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31525a598d0af2039ca49e974c89db2d">cg_net_gethostinterfaces</a> (<a class="el" href="#a1a19bba906a968bf774047109360fb4b">CGNetworkInterfaceList</a> *netIfList)</td></tr>
 <tr class="separator:a31525a598d0af2039ca49e974c89db2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ef91f38ba38734d4bdbff8af95a33be" id="r_a1ef91f38ba38734d4bdbff8af95a33be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ef91f38ba38734d4bdbff8af95a33be">cg_net_isipv6address</a> (const char *addr)</td></tr>
+<tr class="memitem:a1ef91f38ba38734d4bdbff8af95a33be" id="r_a1ef91f38ba38734d4bdbff8af95a33be"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ef91f38ba38734d4bdbff8af95a33be">cg_net_isipv6address</a> (const char *addr)</td></tr>
 <tr class="separator:a1ef91f38ba38734d4bdbff8af95a33be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6353876c87139b537e7b27d7a7d01066" id="r_a6353876c87139b537e7b27d7a7d01066"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6353876c87139b537e7b27d7a7d01066">cg_net_getipv6scopeid</a> (const char *addr)</td></tr>
 <tr class="separator:a6353876c87139b537e7b27d7a7d01066"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,7 +198,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">memcpy(buf, netIf-&gt;macaddr, <a class="code hl_define" href="#ad42bc44c4a153160fedebbb6df425709">CG_NET_MACADDR_SIZE</a>)</div>
-<div class="ttc" id="ainterface_8h_html_ad42bc44c4a153160fedebbb6df425709"><div class="ttname"><a href="#ad42bc44c4a153160fedebbb6df425709">CG_NET_MACADDR_SIZE</a></div><div class="ttdeci">#define CG_NET_MACADDR_SIZE</div><div class="ttdef"><b>Definition</b> interface.h:45</div></div>
+<div class="ttc" id="ainterface_8h_html_ad42bc44c4a153160fedebbb6df425709"><div class="ttname"><a href="#ad42bc44c4a153160fedebbb6df425709">CG_NET_MACADDR_SIZE</a></div><div class="ttdeci">#define CG_NET_MACADDR_SIZE</div><div class="ttdef"><b>Definition</b> interface.h:44</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -219,8 +218,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_struct" href="structCGNetworkInterface.html">CGNetworkInterface</a>*)<a class="code hl_function" href="list_8c.html#a11f9ddd1ef90cfeaa903104b34d502c2">cg_list_next</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)netIf)</div>
 <div class="ttc" id="alist_8c_html_a11f9ddd1ef90cfeaa903104b34d502c2"><div class="ttname"><a href="list_8c.html#a11f9ddd1ef90cfeaa903104b34d502c2">cg_list_next</a></div><div class="ttdeci">CGList * cg_list_next(CGList *list)</div><div class="ttdef"><b>Definition</b> list.c:216</div></div>
-<div class="ttc" id="astructCGNetworkInterface_html"><div class="ttname"><a href="structCGNetworkInterface.html">CGNetworkInterface</a></div><div class="ttdef"><b>Definition</b> interface.h:51</div></div>
-<div class="ttc" id="astruct__CGList_html"><div class="ttname"><a href="struct__CGList.html">_CGList</a></div><div class="ttdoc">The generic list interface in mUPnP.</div><div class="ttdef"><b>Definition</b> list.h:63</div></div>
+<div class="ttc" id="astructCGNetworkInterface_html"><div class="ttname"><a href="structCGNetworkInterface.html">CGNetworkInterface</a></div><div class="ttdef"><b>Definition</b> interface.h:50</div></div>
+<div class="ttc" id="astruct__CGList_html"><div class="ttname"><a href="struct__CGList.html">_CGList</a></div><div class="ttdoc">The generic list interface in mUPnP.</div><div class="ttdef"><b>Definition</b> list.h:64</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -327,7 +326,7 @@ Functions</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="list_8c.html#a9073eddccfcad6ed4ef8d20ead917142">cg_list_clear</a>((<a class="code hl_struct" href="struct__CGList.html">CGList</a>*)netIfList, (<a class="code hl_typedef" href="list_8h.html#a9f7470f132165d4fe4e6710d916f8a61">CG_LIST_DESTRUCTORFUNC</a>)<a class="code hl_function" href="#a840717ecff0308810d5e75eab79f030c">cg_net_interface_delete</a>)</div>
 <div class="ttc" id="ainterface_8h_html_a840717ecff0308810d5e75eab79f030c"><div class="ttname"><a href="#a840717ecff0308810d5e75eab79f030c">cg_net_interface_delete</a></div><div class="ttdeci">void cg_net_interface_delete(CGNetworkInterface *netIf)</div><div class="ttdef"><b>Definition</b> interface.c:53</div></div>
 <div class="ttc" id="alist_8c_html_a9073eddccfcad6ed4ef8d20ead917142"><div class="ttname"><a href="list_8c.html#a9073eddccfcad6ed4ef8d20ead917142">cg_list_clear</a></div><div class="ttdeci">bool cg_list_clear(CGList *headList, CG_LIST_DESTRUCTORFUNC dstructorFunc)</div><div class="ttdef"><b>Definition</b> list.c:234</div></div>
-<div class="ttc" id="alist_8h_html_a9f7470f132165d4fe4e6710d916f8a61"><div class="ttname"><a href="list_8h.html#a9f7470f132165d4fe4e6710d916f8a61">CG_LIST_DESTRUCTORFUNC</a></div><div class="ttdeci">void(* CG_LIST_DESTRUCTORFUNC)(void *)</div><div class="ttdef"><b>Definition</b> list.h:36</div></div>
+<div class="ttc" id="alist_8h_html_a9f7470f132165d4fe4e6710d916f8a61"><div class="ttname"><a href="list_8h.html#a9f7470f132165d4fe4e6710d916f8a61">CG_LIST_DESTRUCTORFUNC</a></div><div class="ttdeci">void(* CG_LIST_DESTRUCTORFUNC)(void *)</div><div class="ttdef"><b>Definition</b> list.h:37</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -694,7 +693,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="typedef_8h.html#abb452686968e48b67397da5f97445f5b">bool</a> cg_net_isipv6address </td>
+          <td class="memname">bool cg_net_isipv6address </td>
           <td>(</td>
           <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span></td><td>)</td>
           <td></td>
