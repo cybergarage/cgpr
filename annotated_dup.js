@@ -7,7 +7,6 @@ var annotated_dup =
     [ "_CGStringTokenizer", "struct__CGStringTokenizer.html", "struct__CGStringTokenizer" ],
     [ "_CGThread", "struct__CGThread.html", "struct__CGThread" ],
     [ "CGNetworkInterface", "structCGNetworkInterface.html", "structCGNetworkInterface" ],
-    [ "tm", "structtm.html", "structtm" ],
     [ "UEchoCond", "structUEchoCond.html", "structUEchoCond" ],
     [ "UEchoDatagramPacket", "structUEchoDatagramPacket.html", "structUEchoDatagramPacket" ],
     [ "UEchoMutex", "structUEchoMutex.html", "structUEchoMutex" ],

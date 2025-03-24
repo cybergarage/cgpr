@@ -74,8 +74,8 @@ $(function(){initNavTree('socket_8h.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">socket.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;sys/types.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="socket__opt_8h.html">cgpr/net/socket_opt.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="socket__opt_8h.html">cgpr/net/socket_opt.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="net_2typedef_8h.html">cgpr/net/typedef.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="string_8h.html">cgpr/util/string.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="list_8h.html">cgpr/util/list.h</a>&gt;</code><br />
 </div><table class="memberdecls">
@@ -615,7 +615,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><a class="code hl_function" href="#afaee8da3d61ecac9b0eecbbde4373810">cg_socket_new</a>(<a class="code hl_define" href="#a6e8292b9c69310ef1cd67a9d103698e1">CG_NET_SOCKET_DGRAM</a>)</div>
-<div class="ttc" id="asocket_8h_html_a6e8292b9c69310ef1cd67a9d103698e1"><div class="ttname"><a href="#a6e8292b9c69310ef1cd67a9d103698e1">CG_NET_SOCKET_DGRAM</a></div><div class="ttdeci">#define CG_NET_SOCKET_DGRAM</div><div class="ttdef"><b>Definition</b> socket.h:42</div></div>
+<div class="ttc" id="asocket_8h_html_a6e8292b9c69310ef1cd67a9d103698e1"><div class="ttname"><a href="#a6e8292b9c69310ef1cd67a9d103698e1">CG_NET_SOCKET_DGRAM</a></div><div class="ttdeci">#define CG_NET_SOCKET_DGRAM</div><div class="ttdef"><b>Definition</b> socket.h:41</div></div>
 <div class="ttc" id="asocket_8h_html_afaee8da3d61ecac9b0eecbbde4373810"><div class="ttname"><a href="#afaee8da3d61ecac9b0eecbbde4373810">cg_socket_new</a></div><div class="ttdeci">CGSocket * cg_socket_new(int type)</div><div class="ttdef"><b>Definition</b> socket.c:115</div></div>
 </div><!-- fragment -->
 </div>
@@ -725,7 +725,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((socket-&gt;direction == <a class="code hl_define" href="#af4b8e61ac164a2aaa6d8b12ddfe3efd8">CG_NET_SOCKET_CLIENT</a>) ? true : <span class="keyword">false</span>)</div>
-<div class="ttc" id="asocket_8h_html_af4b8e61ac164a2aaa6d8b12ddfe3efd8"><div class="ttname"><a href="#af4b8e61ac164a2aaa6d8b12ddfe3efd8">CG_NET_SOCKET_CLIENT</a></div><div class="ttdeci">#define CG_NET_SOCKET_CLIENT</div><div class="ttdef"><b>Definition</b> socket.h:44</div></div>
+<div class="ttc" id="asocket_8h_html_af4b8e61ac164a2aaa6d8b12ddfe3efd8"><div class="ttname"><a href="#af4b8e61ac164a2aaa6d8b12ddfe3efd8">CG_NET_SOCKET_CLIENT</a></div><div class="ttdeci">#define CG_NET_SOCKET_CLIENT</div><div class="ttdef"><b>Definition</b> socket.h:43</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -762,7 +762,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((socket-&gt;direction == <a class="code hl_define" href="#ae6ef794576b9909c91479760db768d20">CG_NET_SOCKET_SERVER</a>) ? true : <span class="keyword">false</span>)</div>
-<div class="ttc" id="asocket_8h_html_ae6ef794576b9909c91479760db768d20"><div class="ttname"><a href="#ae6ef794576b9909c91479760db768d20">CG_NET_SOCKET_SERVER</a></div><div class="ttdeci">#define CG_NET_SOCKET_SERVER</div><div class="ttdef"><b>Definition</b> socket.h:45</div></div>
+<div class="ttc" id="asocket_8h_html_ae6ef794576b9909c91479760db768d20"><div class="ttname"><a href="#ae6ef794576b9909c91479760db768d20">CG_NET_SOCKET_SERVER</a></div><div class="ttdeci">#define CG_NET_SOCKET_SERVER</div><div class="ttdef"><b>Definition</b> socket.h:44</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -781,7 +781,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((socket-&gt;type &amp; <a class="code hl_define" href="#acef9d4d68d8cc51b4b95c572457f8d11">CG_NET_SOCKET_STREAM</a>) ? true : <span class="keyword">false</span>)</div>
-<div class="ttc" id="asocket_8h_html_acef9d4d68d8cc51b4b95c572457f8d11"><div class="ttname"><a href="#acef9d4d68d8cc51b4b95c572457f8d11">CG_NET_SOCKET_STREAM</a></div><div class="ttdeci">#define CG_NET_SOCKET_STREAM</div><div class="ttdef"><b>Definition</b> socket.h:41</div></div>
+<div class="ttc" id="asocket_8h_html_acef9d4d68d8cc51b4b95c572457f8d11"><div class="ttname"><a href="#acef9d4d68d8cc51b4b95c572457f8d11">CG_NET_SOCKET_STREAM</a></div><div class="ttdeci">#define CG_NET_SOCKET_STREAM</div><div class="ttdef"><b>Definition</b> socket.h:40</div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -17,7 +17,5 @@ var dir_6d06adcb3c06841e316cf33ee6fcb9d7 =
     [ "thread.c", "thread_8c.html", "thread_8c" ],
     [ "thread.h", "src_2cgpr_2util_2thread_8h.html", "src_2cgpr_2util_2thread_8h" ],
     [ "thread_list.c", "thread__list_8c.html", "thread__list_8c" ],
-    [ "time.c", "time_8c.html", "time_8c" ],
-    [ "time_wince.c", "time__wince_8c.html", null ],
-    [ "timer.c", "timer_8c.html", "timer_8c" ]
+    [ "time.c", "time_8c.html", "time_8c" ]
 ];

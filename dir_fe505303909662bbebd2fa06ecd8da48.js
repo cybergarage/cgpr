@@ -9,6 +9,5 @@ var dir_fe505303909662bbebd2fa06ecd8da48 =
     [ "string.h", "string_8h.html", "string_8h" ],
     [ "thread.h", "include_2cgpr_2util_2thread_8h.html", "include_2cgpr_2util_2thread_8h" ],
     [ "time.h", "time_8h.html", "time_8h" ],
-    [ "timer.h", "timer_8h.html", "timer_8h" ],
     [ "typedef.h", "util_2typedef_8h.html", null ]
 ];
