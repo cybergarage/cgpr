@@ -62,7 +62,7 @@ size_t cg_list_size(CGList* headList)
 
   listCnt = 0;
   for (list = cg_list_next(headList); list != NULL;
-      list = cg_list_next(list))
+       list = cg_list_next(list))
     listCnt++;
 
   return listCnt;

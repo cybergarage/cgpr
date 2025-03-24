@@ -16,9 +16,23 @@
  *
  ******************************************************************/
 
-#ifndef _CGPR_H_
-#define _CGPR_H_
+#ifndef _CGPR_NET_TYPEDEF_H_
+#define _CGPR_NET_TYPEDEF_H_
 
-#include <cgpr/util/string.h>
-
+#ifdef HAVE_CONFIG_H
+#include "config.h"
 #endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#if !defined(byte)
+typedef unsigned char byte;
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // _CGPR_NET_TYPEDEF_H_

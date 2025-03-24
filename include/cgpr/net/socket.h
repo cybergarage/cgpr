@@ -19,6 +19,9 @@
 #ifndef _CGPR_NET_CSOCKET_H_
 #define _CGPR_NET_CSOCKET_H_
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #if defined(CG_USE_OPENSSL)
 #include <openssl/ssl.h>
 #endif
@@ -186,4 +189,4 @@ bool cg_socket_datagram_packet_copy(CGDatagramPacket* dstDgmPkt, CGDatagramPacke
 }
 #endif
 
-#endif
+#endif // _CGPR_NET_CSOCKET_H_

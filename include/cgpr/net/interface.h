@@ -22,6 +22,8 @@
 #include <cgpr/util/list.h>
 #include <cgpr/util/string.h>
 
+#include <cgpr/net/typedef.h>
+
 #if !defined(WIN32)
 #include <arpa/inet.h>
 #include <netinet/in.h>
@@ -107,4 +109,4 @@ int cg_net_getipv6scopeid(const char* addr);
 }
 #endif
 
-#endif
+#endif // _CGPR_NET_CINTERFACE_H_

@@ -21,6 +21,8 @@
 
 #include <stdbool.h>
 
+#include <cgpr/net/typedef.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -55,4 +57,4 @@ bool cg_socket_option_delete(CGSocketOption* opt);
 }
 #endif
 
-#endif
+#endif // _CGPR_NET_CSOCKET_OPTION_H_
