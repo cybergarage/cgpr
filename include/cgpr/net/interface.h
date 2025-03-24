@@ -21,7 +21,7 @@
 
 #include <cgpr/typedef.h>
 #include <cgpr/util/list.h>
-#include <cgpr/util/strings.h>
+#include <cgpr/util/string.h>
 
 #if !defined(WIN32)
 #include <arpa/inet.h>
