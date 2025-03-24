@@ -12,6 +12,5 @@ var annotated_dup =
     [ "UEchoDatagramPacket", "structUEchoDatagramPacket.html", "structUEchoDatagramPacket" ],
     [ "UEchoMutex", "structUEchoMutex.html", "structUEchoMutex" ],
     [ "UEchoSocket", "structUEchoSocket.html", "structUEchoSocket" ],
-    [ "UEchoSocketOption", "structUEchoSocketOption.html", "structUEchoSocketOption" ],
-    [ "UEchoThread", "structUEchoThread.html", "structUEchoThread" ]
+    [ "UEchoSocketOption", "structUEchoSocketOption.html", "structUEchoSocketOption" ]
 ];

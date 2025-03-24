@@ -1,6 +1,6 @@
 var src_2cgpr_2util_2thread_8h =
 [
-    [ "UEchoThread", "structUEchoThread.html", "structUEchoThread" ],
+    [ "_CGThread", "struct__CGThread.html", "struct__CGThread" ],
     [ "CG_THREAD_MIN_SLEEP", "src_2cgpr_2util_2thread_8h.html#a93cfb9a9775afcf0de865379983b02ee", null ],
     [ "cg_thread_next", "src_2cgpr_2util_2thread_8h.html#a7b4c41a398e0281acc6834a93e7e5b00", null ],
     [ "cg_thread_remove", "src_2cgpr_2util_2thread_8h.html#a0d6b9968a7f8ad26d3e0f8eaf702a65a", null ],
@@ -10,8 +10,8 @@ var src_2cgpr_2util_2thread_8h =
     [ "cg_threadlist_remove", "src_2cgpr_2util_2thread_8h.html#adf22a31607953be5cc25ec214ec45f3d", null ],
     [ "cg_threadlist_size", "src_2cgpr_2util_2thread_8h.html#acd252d7359c016f676e0181b5c6575c5", null ],
     [ "CG_THREAD_FUNC", "src_2cgpr_2util_2thread_8h.html#a05d7933ad3597528689a0eb2f93b11f4", null ],
-    [ "CGThread", "src_2cgpr_2util_2thread_8h.html#ac3f999660f1a00a76a9b731293795b6c", null ],
-    [ "CGThreadList", "src_2cgpr_2util_2thread_8h.html#aefa474fab9bd44ee84d58c1bbf3ea0b5", null ],
+    [ "CGThread", "src_2cgpr_2util_2thread_8h.html#a359505029d6f276e155ddf6bb5eafbf6", null ],
+    [ "CGThreadList", "src_2cgpr_2util_2thread_8h.html#a38b10333916991393948dfcccdf50ba1", null ],
     [ "cg_thread_delete", "src_2cgpr_2util_2thread_8h.html#af25ed88684a7042954120e151fd5f6cb", null ],
     [ "cg_thread_getuserdata", "src_2cgpr_2util_2thread_8h.html#a8b06d077f6ee2b50a729b39efc28e201", null ],
     [ "cg_thread_isrunnable", "src_2cgpr_2util_2thread_8h.html#a10bc065f70c6b3b5a24743563341a277", null ],
