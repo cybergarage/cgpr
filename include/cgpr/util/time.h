@@ -23,7 +23,7 @@
 #include "config.h"
 #endif
 
-#include <stdbool.h>
+#include <cgpr/util/typedef.h>
 
 #if !defined(BTRON) && !defined(ITRON)
 #include <time.h>

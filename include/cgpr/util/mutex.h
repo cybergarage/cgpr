@@ -23,7 +23,7 @@
 #include "config.h"
 #endif
 
-#include <stdbool.h>
+#include <cgpr/util/typedef.h>
 
 #if defined(WIN32) && !defined(ITRON)
 #include <winsock2.h>

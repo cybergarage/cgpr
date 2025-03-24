@@ -23,8 +23,9 @@
 #include "config.h"
 #endif
 
-#include <stdbool.h>
 #include <stdlib.h>
+
+#include <cgpr/util/typedef.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -174,4 +175,4 @@ CGList* cg_list_gets(CGList* headList);
 } /* extern "C" */
 #endif
 
-#endif /* _CGPR_UTIL_LIST_H_ */
+#endif // _CGPR_UTIL_LIST_H_

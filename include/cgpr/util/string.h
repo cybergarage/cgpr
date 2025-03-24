@@ -23,9 +23,9 @@
 #include "config.h"
 #endif
 
-#include <stdbool.h>
 #include <stdlib.h>
-#include <sys/types.h>
+
+#include <cgpr/util/typedef.h>
 
 #ifdef __cplusplus
 extern "C" {

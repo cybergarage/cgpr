@@ -19,13 +19,12 @@
 #ifndef _CGPR_NET_CSOCKET_H_
 #define _CGPR_NET_CSOCKET_H_
 
-#include <sys/types.h>
-
 #if defined(CG_USE_OPENSSL)
 #include <openssl/ssl.h>
 #endif
 
 #include <cgpr/net/socket_opt.h>
+#include <cgpr/net/typedef.h>
 #include <cgpr/util/string.h>
 
 #ifdef __cplusplus
