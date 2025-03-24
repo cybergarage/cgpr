@@ -20,7 +20,7 @@
 #include <boost/thread.hpp>
 
 #include <cgpr/util/thread.h>
-#include <cgpr/util/timer.h>
+#include <cgpr/util/time.h>
 
 const int THREAD_TEST_LOOP_NUM = 10;
 

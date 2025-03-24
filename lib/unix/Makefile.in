@@ -166,7 +166,6 @@ am__objects_1 = ../../src/cgpr/net/libcgpr_a-socket_opt.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-thread.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-logs.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-dictionary_elem.$(OBJEXT) \
-	../../src/cgpr/util/libcgpr_a-time_wince.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-string_function.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-list.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-string_tokenizer.$(OBJEXT) \
@@ -176,7 +175,6 @@ am__objects_1 = ../../src/cgpr/net/libcgpr_a-socket_opt.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-cond.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-string.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-log.$(OBJEXT) \
-	../../src/cgpr/util/libcgpr_a-timer.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-bytes.$(OBJEXT)
 am_libcgpr_a_OBJECTS = $(am__objects_1)
 libcgpr_a_OBJECTS = $(am_libcgpr_a_OBJECTS)
@@ -216,9 +214,7 @@ am__depfiles_remade =  \
 	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_tokenizer.Po \
 	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread.Po \
 	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread_list.Po \
-	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time.Po \
-	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time_wince.Po \
-	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-timer.Po
+	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time.Po
 am__mv = mv -f
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -375,7 +371,6 @@ cg_sources = \
 	../../src/cgpr/util/thread.c \
 	../../src/cgpr/util/logs.c \
 	../../src/cgpr/util/dictionary_elem.c \
-	../../src/cgpr/util/time_wince.c \
 	../../src/cgpr/util/string_function.c \
 	../../src/cgpr/util/list.c \
 	../../src/cgpr/util/string_tokenizer.c \
@@ -385,7 +380,6 @@ cg_sources = \
 	../../src/cgpr/util/cond.c \
 	../../src/cgpr/util/string.c \
 	../../src/cgpr/util/log.c \
-	../../src/cgpr/util/timer.c \
 	../../src/cgpr/util/bytes.c
 
 libcgprincludedir = $(includedir)/cgpr
@@ -511,9 +505,6 @@ clean-libLIBRARIES:
 ../../src/cgpr/util/libcgpr_a-dictionary_elem.$(OBJEXT):  \
 	../../src/cgpr/util/$(am__dirstamp) \
 	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
-../../src/cgpr/util/libcgpr_a-time_wince.$(OBJEXT):  \
-	../../src/cgpr/util/$(am__dirstamp) \
-	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
 ../../src/cgpr/util/libcgpr_a-string_function.$(OBJEXT):  \
 	../../src/cgpr/util/$(am__dirstamp) \
 	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
@@ -539,9 +530,6 @@ clean-libLIBRARIES:
 	../../src/cgpr/util/$(am__dirstamp) \
 	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
 ../../src/cgpr/util/libcgpr_a-log.$(OBJEXT):  \
-	../../src/cgpr/util/$(am__dirstamp) \
-	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
-../../src/cgpr/util/libcgpr_a-timer.$(OBJEXT):  \
 	../../src/cgpr/util/$(am__dirstamp) \
 	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
 ../../src/cgpr/util/libcgpr_a-bytes.$(OBJEXT):  \
@@ -582,8 +570,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread_list.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time_wince.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-timer.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -761,20 +747,6 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-dictionary_elem.obj `if test -f '../../src/cgpr/util/dictionary_elem.c'; then $(CYGPATH_W) '../../src/cgpr/util/dictionary_elem.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/dictionary_elem.c'; fi`
 
-../../src/cgpr/util/libcgpr_a-time_wince.o: ../../src/cgpr/util/time_wince.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-time_wince.o -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time_wince.Tpo -c -o ../../src/cgpr/util/libcgpr_a-time_wince.o `test -f '../../src/cgpr/util/time_wince.c' || echo '$(srcdir)/'`../../src/cgpr/util/time_wince.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time_wince.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time_wince.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/time_wince.c' object='../../src/cgpr/util/libcgpr_a-time_wince.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-time_wince.o `test -f '../../src/cgpr/util/time_wince.c' || echo '$(srcdir)/'`../../src/cgpr/util/time_wince.c
-
-../../src/cgpr/util/libcgpr_a-time_wince.obj: ../../src/cgpr/util/time_wince.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-time_wince.obj -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time_wince.Tpo -c -o ../../src/cgpr/util/libcgpr_a-time_wince.obj `if test -f '../../src/cgpr/util/time_wince.c'; then $(CYGPATH_W) '../../src/cgpr/util/time_wince.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/time_wince.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time_wince.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time_wince.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/time_wince.c' object='../../src/cgpr/util/libcgpr_a-time_wince.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-time_wince.obj `if test -f '../../src/cgpr/util/time_wince.c'; then $(CYGPATH_W) '../../src/cgpr/util/time_wince.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/time_wince.c'; fi`
-
 ../../src/cgpr/util/libcgpr_a-string_function.o: ../../src/cgpr/util/string_function.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-string_function.o -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_function.Tpo -c -o ../../src/cgpr/util/libcgpr_a-string_function.o `test -f '../../src/cgpr/util/string_function.c' || echo '$(srcdir)/'`../../src/cgpr/util/string_function.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_function.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_function.Po
@@ -900,20 +872,6 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/log.c' object='../../src/cgpr/util/libcgpr_a-log.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-log.obj `if test -f '../../src/cgpr/util/log.c'; then $(CYGPATH_W) '../../src/cgpr/util/log.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/log.c'; fi`
-
-../../src/cgpr/util/libcgpr_a-timer.o: ../../src/cgpr/util/timer.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-timer.o -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-timer.Tpo -c -o ../../src/cgpr/util/libcgpr_a-timer.o `test -f '../../src/cgpr/util/timer.c' || echo '$(srcdir)/'`../../src/cgpr/util/timer.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-timer.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-timer.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/timer.c' object='../../src/cgpr/util/libcgpr_a-timer.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-timer.o `test -f '../../src/cgpr/util/timer.c' || echo '$(srcdir)/'`../../src/cgpr/util/timer.c
-
-../../src/cgpr/util/libcgpr_a-timer.obj: ../../src/cgpr/util/timer.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-timer.obj -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-timer.Tpo -c -o ../../src/cgpr/util/libcgpr_a-timer.obj `if test -f '../../src/cgpr/util/timer.c'; then $(CYGPATH_W) '../../src/cgpr/util/timer.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/timer.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-timer.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-timer.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/timer.c' object='../../src/cgpr/util/libcgpr_a-timer.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-timer.obj `if test -f '../../src/cgpr/util/timer.c'; then $(CYGPATH_W) '../../src/cgpr/util/timer.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/timer.c'; fi`
 
 ../../src/cgpr/util/libcgpr_a-bytes.o: ../../src/cgpr/util/bytes.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-bytes.o -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-bytes.Tpo -c -o ../../src/cgpr/util/libcgpr_a-bytes.o `test -f '../../src/cgpr/util/bytes.c' || echo '$(srcdir)/'`../../src/cgpr/util/bytes.c
@@ -1104,8 +1062,6 @@ distclean: distclean-am
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread_list.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time.Po
-	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time_wince.Po
-	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-timer.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -1172,8 +1128,6 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread_list.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time.Po
-	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time_wince.Po
-	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-timer.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

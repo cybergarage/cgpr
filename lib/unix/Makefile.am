@@ -36,7 +36,6 @@ cg_sources = \
 	../../src/cgpr/util/thread.c \
 	../../src/cgpr/util/logs.c \
 	../../src/cgpr/util/dictionary_elem.c \
-	../../src/cgpr/util/time_wince.c \
 	../../src/cgpr/util/string_function.c \
 	../../src/cgpr/util/list.c \
 	../../src/cgpr/util/string_tokenizer.c \
@@ -46,7 +45,6 @@ cg_sources = \
 	../../src/cgpr/util/cond.c \
 	../../src/cgpr/util/string.c \
 	../../src/cgpr/util/log.c \
-	../../src/cgpr/util/timer.c \
 	../../src/cgpr/util/bytes.c
 
 libcgprincludedir = $(includedir)/cgpr

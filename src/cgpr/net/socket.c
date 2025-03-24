@@ -22,7 +22,7 @@
 #include <cgpr/net/interface.h>
 #include <cgpr/net/socket.h>
 #include <cgpr/util/logs.h>
-#include <cgpr/util/timer.h>
+#include <cgpr/util/time.h>
 
 #if defined(WIN32)
 #include <winsock2.h>

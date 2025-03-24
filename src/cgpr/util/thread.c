@@ -21,7 +21,7 @@
 #endif
 
 #include <cgpr/util/thread.h>
-#include <cgpr/util/timer.h>
+#include <cgpr/util/time.h>
 #include <string.h>
 
 static void cg_sig_handler(int sign);

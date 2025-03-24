@@ -1,35 +1,32 @@
 /******************************************************************
  *
- * mUPnP for C
+ * Copyright (C) 2025 The Cyber Garage Portable Runtime for C Authors
  *
- * Copyright (C) Satoshi Konno 2005
- * Copyright (C) 2006 Nokia Corporation. All rights reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * This is licensed under BSD-style license, see file COPYING.
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  ******************************************************************/
 
 #include <limits.h>
+#include <stdbool.h>
 #include <stdlib.h>
 
-#include <cgpr/util/log.h>
 #include <cgpr/util/time.h>
 
-#if defined(WIN32) && !defined(ITRON) && !defined(WINCE)
+#if defined(WIN32)
+#include <time.h>
 #include <windows.h>
-#elif defined(WIN32) && defined(WINCE)
-#include <windows.h>
-#elif defined(BTRON)
-#include <btron/clk.h>
-#include <btron/proctask.h>
-#elif defined(ITRON)
-#include <kernel.h>
-#elif defined(TENGINE) && !defined(PROCESS_BASE)
-#include <tk/tkernel.h>
-#elif defined(TENGINE) && defined(PROCESS_BASE)
-#include <btron/proctask.h>
-#include <tk/tkernel.h>
 #else
+#include <time.h>
 #include <unistd.h>
 #endif
 
@@ -37,28 +34,20 @@
  * cg_time_wait
  ****************************************/
 
-void cg_wait(CGTime mtime)
+void cg_wait(clock_t mtime)
 {
-#if defined(WIN32) && !defined(ITRON)
+#if defined(WIN32)
   Sleep(mtime);
-#elif defined(BTRON)
-  slp_tsk(mtime);
-#elif defined(ITRON)
-  tslp_tsk(mtime);
-#elif defined(TENGINE) && !defined(PROCESS_BASE)
-  tk_slp_tsk(mtime);
-#elif defined(TENGINE) && defined(PROCESS_BASE)
-  b_slp_tsk(mtime);
 #else
   usleep(((useconds_t)(mtime * 1000)));
 #endif
 }
 
 /****************************************
- * cg_waitrandom
+ * cg_time_wait
  ****************************************/
 
-void cg_waitrandom(CGTime mtime)
+void cg_waitrandom(clock_t mtime)
 {
   double factor;
   long waitTime;
@@ -69,36 +58,12 @@ void cg_waitrandom(CGTime mtime)
 }
 
 /****************************************
- * cg_getcurrentsystemtime
+ * cg_time_wait
  ****************************************/
 
-CGTime cg_getcurrentsystemtime(void)
+clock_t cg_getcurrentsystemtime(void)
 {
-#if defined(BTRON)
-  STIME CGTime;
-  TIMEZONE tz;
-  STIME localtime;
-  if (get_tim(&CGTime, &tz) != 0)
-    return 0;
-  localtime = CGTime - tz.adjust + (tz.dst_flg ? (tz.dst_adj * 60) : 0);
-#elif defined(ITRON)
-  static bool initialized = false;
-  SYSTIM sysTim;
-  if (initialized == false) {
-    sysTim.utime = 0;
-    sysTim.ltime = 0;
-    set_tim(&sysTim);
-  }
-  get_tim(&sysTim);
-#endif
-
-#if defined(BTRON)
-  return localtime;
-#elif defined(ITRON)
-  return ((sysTim.utime / 1000) << 32) + (sysTim.ltime / 1000);
-#else
-  return time((time_t*)NULL);
-#endif
+  return (size_t)(time((time_t*)NULL));
 }
 
 /****************************************

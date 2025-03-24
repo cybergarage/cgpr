@@ -21,7 +21,7 @@
 
 #include <cgpr/util/list.h>
 
-#include <cgpr/util/timer.h>
+#include <cgpr/util/time.h>
 #if defined(WIN32)
 #include <windows.h>
 #else
