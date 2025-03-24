@@ -35,13 +35,11 @@ cg_sources = \
 	../../src/cgpr/util/time.c \
 	../../src/cgpr/util/thread.c \
 	../../src/cgpr/util/logs.c \
-	../../src/cgpr/util/strings_tokenizer.c \
 	../../src/cgpr/util/dictionary_elem.c \
 	../../src/cgpr/util/time_wince.c \
 	../../src/cgpr/util/string_function.c \
 	../../src/cgpr/util/list.c \
 	../../src/cgpr/util/string_tokenizer.c \
-	../../src/cgpr/util/strings_function.c \
 	../../src/cgpr/util/thread_list.c \
 	../../src/cgpr/util/mutex.c \
 	../../src/cgpr/util/dictionary.c \
@@ -49,8 +47,7 @@ cg_sources = \
 	../../src/cgpr/util/string.c \
 	../../src/cgpr/util/log.c \
 	../../src/cgpr/util/timer.c \
-	../../src/cgpr/util/bytes.c \
-	../../src/cgpr/util/strings.c
+	../../src/cgpr/util/bytes.c
 
 libcgprincludedir = $(includedir)/cgpr
 nobase_libcgprinclude_HEADERS =  \

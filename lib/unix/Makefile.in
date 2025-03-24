@@ -165,13 +165,11 @@ am__objects_1 = ../../src/cgpr/net/libcgpr_a-socket_opt.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-time.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-thread.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-logs.$(OBJEXT) \
-	../../src/cgpr/util/libcgpr_a-strings_tokenizer.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-dictionary_elem.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-time_wince.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-string_function.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-list.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-string_tokenizer.$(OBJEXT) \
-	../../src/cgpr/util/libcgpr_a-strings_function.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-thread_list.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-mutex.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-dictionary.$(OBJEXT) \
@@ -179,8 +177,7 @@ am__objects_1 = ../../src/cgpr/net/libcgpr_a-socket_opt.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-string.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-log.$(OBJEXT) \
 	../../src/cgpr/util/libcgpr_a-timer.$(OBJEXT) \
-	../../src/cgpr/util/libcgpr_a-bytes.$(OBJEXT) \
-	../../src/cgpr/util/libcgpr_a-strings.$(OBJEXT)
+	../../src/cgpr/util/libcgpr_a-bytes.$(OBJEXT)
 am_libcgpr_a_OBJECTS = $(am__objects_1)
 libcgpr_a_OBJECTS = $(am_libcgpr_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -217,9 +214,6 @@ am__depfiles_remade =  \
 	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string.Po \
 	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_function.Po \
 	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_tokenizer.Po \
-	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings.Po \
-	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_function.Po \
-	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_tokenizer.Po \
 	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread.Po \
 	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread_list.Po \
 	../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time.Po \
@@ -380,13 +374,11 @@ cg_sources = \
 	../../src/cgpr/util/time.c \
 	../../src/cgpr/util/thread.c \
 	../../src/cgpr/util/logs.c \
-	../../src/cgpr/util/strings_tokenizer.c \
 	../../src/cgpr/util/dictionary_elem.c \
 	../../src/cgpr/util/time_wince.c \
 	../../src/cgpr/util/string_function.c \
 	../../src/cgpr/util/list.c \
 	../../src/cgpr/util/string_tokenizer.c \
-	../../src/cgpr/util/strings_function.c \
 	../../src/cgpr/util/thread_list.c \
 	../../src/cgpr/util/mutex.c \
 	../../src/cgpr/util/dictionary.c \
@@ -394,8 +386,7 @@ cg_sources = \
 	../../src/cgpr/util/string.c \
 	../../src/cgpr/util/log.c \
 	../../src/cgpr/util/timer.c \
-	../../src/cgpr/util/bytes.c \
-	../../src/cgpr/util/strings.c
+	../../src/cgpr/util/bytes.c
 
 libcgprincludedir = $(includedir)/cgpr
 nobase_libcgprinclude_HEADERS = \
@@ -517,9 +508,6 @@ clean-libLIBRARIES:
 ../../src/cgpr/util/libcgpr_a-logs.$(OBJEXT):  \
 	../../src/cgpr/util/$(am__dirstamp) \
 	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
-../../src/cgpr/util/libcgpr_a-strings_tokenizer.$(OBJEXT):  \
-	../../src/cgpr/util/$(am__dirstamp) \
-	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
 ../../src/cgpr/util/libcgpr_a-dictionary_elem.$(OBJEXT):  \
 	../../src/cgpr/util/$(am__dirstamp) \
 	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
@@ -533,9 +521,6 @@ clean-libLIBRARIES:
 	../../src/cgpr/util/$(am__dirstamp) \
 	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
 ../../src/cgpr/util/libcgpr_a-string_tokenizer.$(OBJEXT):  \
-	../../src/cgpr/util/$(am__dirstamp) \
-	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
-../../src/cgpr/util/libcgpr_a-strings_function.$(OBJEXT):  \
 	../../src/cgpr/util/$(am__dirstamp) \
 	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
 ../../src/cgpr/util/libcgpr_a-thread_list.$(OBJEXT):  \
@@ -560,9 +545,6 @@ clean-libLIBRARIES:
 	../../src/cgpr/util/$(am__dirstamp) \
 	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
 ../../src/cgpr/util/libcgpr_a-bytes.$(OBJEXT):  \
-	../../src/cgpr/util/$(am__dirstamp) \
-	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
-../../src/cgpr/util/libcgpr_a-strings.$(OBJEXT):  \
 	../../src/cgpr/util/$(am__dirstamp) \
 	../../src/cgpr/util/$(DEPDIR)/$(am__dirstamp)
 
@@ -597,9 +579,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_function.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_tokenizer.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_function.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_tokenizer.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread_list.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time.Po@am__quote@ # am--include-marker
@@ -768,20 +747,6 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-logs.obj `if test -f '../../src/cgpr/util/logs.c'; then $(CYGPATH_W) '../../src/cgpr/util/logs.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/logs.c'; fi`
 
-../../src/cgpr/util/libcgpr_a-strings_tokenizer.o: ../../src/cgpr/util/strings_tokenizer.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-strings_tokenizer.o -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_tokenizer.Tpo -c -o ../../src/cgpr/util/libcgpr_a-strings_tokenizer.o `test -f '../../src/cgpr/util/strings_tokenizer.c' || echo '$(srcdir)/'`../../src/cgpr/util/strings_tokenizer.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_tokenizer.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_tokenizer.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/strings_tokenizer.c' object='../../src/cgpr/util/libcgpr_a-strings_tokenizer.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-strings_tokenizer.o `test -f '../../src/cgpr/util/strings_tokenizer.c' || echo '$(srcdir)/'`../../src/cgpr/util/strings_tokenizer.c
-
-../../src/cgpr/util/libcgpr_a-strings_tokenizer.obj: ../../src/cgpr/util/strings_tokenizer.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-strings_tokenizer.obj -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_tokenizer.Tpo -c -o ../../src/cgpr/util/libcgpr_a-strings_tokenizer.obj `if test -f '../../src/cgpr/util/strings_tokenizer.c'; then $(CYGPATH_W) '../../src/cgpr/util/strings_tokenizer.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/strings_tokenizer.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_tokenizer.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_tokenizer.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/strings_tokenizer.c' object='../../src/cgpr/util/libcgpr_a-strings_tokenizer.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-strings_tokenizer.obj `if test -f '../../src/cgpr/util/strings_tokenizer.c'; then $(CYGPATH_W) '../../src/cgpr/util/strings_tokenizer.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/strings_tokenizer.c'; fi`
-
 ../../src/cgpr/util/libcgpr_a-dictionary_elem.o: ../../src/cgpr/util/dictionary_elem.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-dictionary_elem.o -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-dictionary_elem.Tpo -c -o ../../src/cgpr/util/libcgpr_a-dictionary_elem.o `test -f '../../src/cgpr/util/dictionary_elem.c' || echo '$(srcdir)/'`../../src/cgpr/util/dictionary_elem.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-dictionary_elem.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-dictionary_elem.Po
@@ -851,20 +816,6 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/string_tokenizer.c' object='../../src/cgpr/util/libcgpr_a-string_tokenizer.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-string_tokenizer.obj `if test -f '../../src/cgpr/util/string_tokenizer.c'; then $(CYGPATH_W) '../../src/cgpr/util/string_tokenizer.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/string_tokenizer.c'; fi`
-
-../../src/cgpr/util/libcgpr_a-strings_function.o: ../../src/cgpr/util/strings_function.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-strings_function.o -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_function.Tpo -c -o ../../src/cgpr/util/libcgpr_a-strings_function.o `test -f '../../src/cgpr/util/strings_function.c' || echo '$(srcdir)/'`../../src/cgpr/util/strings_function.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_function.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_function.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/strings_function.c' object='../../src/cgpr/util/libcgpr_a-strings_function.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-strings_function.o `test -f '../../src/cgpr/util/strings_function.c' || echo '$(srcdir)/'`../../src/cgpr/util/strings_function.c
-
-../../src/cgpr/util/libcgpr_a-strings_function.obj: ../../src/cgpr/util/strings_function.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-strings_function.obj -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_function.Tpo -c -o ../../src/cgpr/util/libcgpr_a-strings_function.obj `if test -f '../../src/cgpr/util/strings_function.c'; then $(CYGPATH_W) '../../src/cgpr/util/strings_function.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/strings_function.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_function.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_function.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/strings_function.c' object='../../src/cgpr/util/libcgpr_a-strings_function.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-strings_function.obj `if test -f '../../src/cgpr/util/strings_function.c'; then $(CYGPATH_W) '../../src/cgpr/util/strings_function.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/strings_function.c'; fi`
 
 ../../src/cgpr/util/libcgpr_a-thread_list.o: ../../src/cgpr/util/thread_list.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-thread_list.o -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread_list.Tpo -c -o ../../src/cgpr/util/libcgpr_a-thread_list.o `test -f '../../src/cgpr/util/thread_list.c' || echo '$(srcdir)/'`../../src/cgpr/util/thread_list.c
@@ -977,20 +928,6 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/bytes.c' object='../../src/cgpr/util/libcgpr_a-bytes.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-bytes.obj `if test -f '../../src/cgpr/util/bytes.c'; then $(CYGPATH_W) '../../src/cgpr/util/bytes.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/bytes.c'; fi`
-
-../../src/cgpr/util/libcgpr_a-strings.o: ../../src/cgpr/util/strings.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-strings.o -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings.Tpo -c -o ../../src/cgpr/util/libcgpr_a-strings.o `test -f '../../src/cgpr/util/strings.c' || echo '$(srcdir)/'`../../src/cgpr/util/strings.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/strings.c' object='../../src/cgpr/util/libcgpr_a-strings.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-strings.o `test -f '../../src/cgpr/util/strings.c' || echo '$(srcdir)/'`../../src/cgpr/util/strings.c
-
-../../src/cgpr/util/libcgpr_a-strings.obj: ../../src/cgpr/util/strings.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -MT ../../src/cgpr/util/libcgpr_a-strings.obj -MD -MP -MF ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings.Tpo -c -o ../../src/cgpr/util/libcgpr_a-strings.obj `if test -f '../../src/cgpr/util/strings.c'; then $(CYGPATH_W) '../../src/cgpr/util/strings.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/strings.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings.Tpo ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='../../src/cgpr/util/strings.c' object='../../src/cgpr/util/libcgpr_a-strings.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcgpr_a_CFLAGS) $(CFLAGS) -c -o ../../src/cgpr/util/libcgpr_a-strings.obj `if test -f '../../src/cgpr/util/strings.c'; then $(CYGPATH_W) '../../src/cgpr/util/strings.c'; else $(CYGPATH_W) '$(srcdir)/../../src/cgpr/util/strings.c'; fi`
 install-nobase_libcgprincludeHEADERS: $(nobase_libcgprinclude_HEADERS)
 	@$(NORMAL_INSTALL)
 	@list='$(nobase_libcgprinclude_HEADERS)'; test -n "$(libcgprincludedir)" || list=; \
@@ -1164,9 +1101,6 @@ distclean: distclean-am
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_function.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_tokenizer.Po
-	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings.Po
-	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_function.Po
-	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_tokenizer.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread_list.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time.Po
@@ -1235,9 +1169,6 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_function.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-string_tokenizer.Po
-	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings.Po
-	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_function.Po
-	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-strings_tokenizer.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-thread_list.Po
 	-rm -f ../../src/cgpr/util/$(DEPDIR)/libcgpr_a-time.Po
