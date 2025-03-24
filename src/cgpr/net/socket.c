@@ -24,7 +24,6 @@
 #include <cgpr/util/logs.h>
 #include <cgpr/util/timer.h>
 
-
 #if defined(WIN32)
 #include <winsock2.h>
 #include <ws2tcpip.h>
@@ -47,14 +46,14 @@
  * static variable
  ****************************************/
 
-static int socket_cnt = 0;
+static int socketCnt = 0;
 
 /****************************************
  * prototype
  ****************************************/
 
-bool cg_socket_tosockaddrin(const char* addr, int port, struct sockaddr_in* sockaddr, bool is_bind_addr);
-bool cg_socket_tosockaddrinfo(int sock_type, const char* addr, int port, struct addrinfo** addr_info, bool is_bind_addr);
+bool cg_socket_tosockaddrin(const char* addr, int port, struct sockaddr_in* sockaddr, bool isBindAddr);
+bool cg_socket_tosockaddrinfo(int sockType, const char* addr, int port, struct addrinfo** addrInfo, bool isBindAddr);
 
 #define cg_socket_getrawtype(socket) (((socket->type & CG_NET_SOCKET_STREAM) == CG_NET_SOCKET_STREAM) ? SOCK_STREAM : SOCK_DGRAM)
 
@@ -70,7 +69,7 @@ bool cg_socket_tosockaddrinfo(int sock_type, const char* addr, int port, struct 
 
 void cg_socket_startup(void)
 {
-  if (socket_cnt == 0) {
+  if (socketCnt == 0) {
 #if defined(WIN32)
     WSADATA wsaData;
     int err;
@@ -87,7 +86,7 @@ void cg_socket_startup(void)
     SSL_library_init();
 #endif
   }
-  socket_cnt++;
+  socketCnt++;
 }
 
 /****************************************
@@ -96,8 +95,8 @@ void cg_socket_startup(void)
 
 void cg_socket_cleanup(void)
 {
-  socket_cnt--;
-  if (socket_cnt <= 0) {
+  socketCnt--;
+  if (socketCnt <= 0) {
 #if defined(WIN32)
     WSACleanup();
 #endif
@@ -281,20 +280,20 @@ bool cg_socket_listen(CGSocket* sock)
  * cg_socket_bind
  ****************************************/
 
-bool cg_socket_bind(CGSocket* sock, int bind_port, const char* bind_addr, CGSocketOption* opt)
+bool cg_socket_bind(CGSocket* sock, int bindPort, const char* bindAddr, CGSocketOption* opt)
 {
-  struct addrinfo* addr_info;
+  struct addrinfo* addrInfo;
   int ret;
 
   if (!sock)
     return false;
 
-  if (bind_port <= 0 /* || bindAddr == NULL*/)
+  if (bindPort <= 0 /* || bindAddr == NULL*/)
     return false;
 
-  if (cg_socket_tosockaddrinfo(cg_socket_getrawtype(sock), bind_addr, bind_port, &addr_info, cg_socket_option_isbindinterface(opt)) == false)
+  if (cg_socket_tosockaddrinfo(cg_socket_getrawtype(sock), bindAddr, bindPort, &addrInfo, cg_socket_option_isbindinterface(opt)) == false)
     return false;
-  cg_socket_setid(sock, socket(addr_info->ai_family, addr_info->ai_socktype, 0));
+  cg_socket_setid(sock, socket(addrInfo->ai_family, addrInfo->ai_socktype, 0));
   if (sock->id == -1) {
     cg_socket_close(sock);
     return false;
@@ -314,15 +313,15 @@ bool cg_socket_bind(CGSocket* sock, int bind_port, const char* bind_addr, CGSock
     }
   }
 
-  ret = bind(sock->id, addr_info->ai_addr, addr_info->ai_addrlen);
-  freeaddrinfo(addr_info);
+  ret = bind(sock->id, addrInfo->ai_addr, addrInfo->ai_addrlen);
+  freeaddrinfo(addrInfo);
 
   if (ret != 0)
     return false;
 
   cg_socket_setdirection(sock, CG_NET_SOCKET_SERVER);
-  cg_socket_setaddress(sock, bind_addr);
-  cg_socket_setport(sock, bind_port);
+  cg_socket_setaddress(sock, bindAddr);
+  cg_socket_setport(sock, bindPort);
 
   return true;
 }
@@ -331,32 +330,32 @@ bool cg_socket_bind(CGSocket* sock, int bind_port, const char* bind_addr, CGSock
  * cg_socket_accept
  ****************************************/
 
-bool cg_socket_accept(CGSocket* server_sock, CGSocket* client_sock)
+bool cg_socket_accept(CGSocket* serverSock, CGSocket* clientSock)
 {
   struct sockaddr_in sockaddr;
   socklen_t socklen;
   char localAddr[CG_NET_SOCKET_MAXHOST];
   char localPort[CG_NET_SOCKET_MAXSERV];
-  struct sockaddr_storage sock_client_addr;
-  socklen_t n_length = sizeof(sock_client_addr);
+  struct sockaddr_storage sockClientAddr;
+  socklen_t nLength = sizeof(sockClientAddr);
 
-  cg_socket_setid(client_sock, accept(server_sock->id, (struct sockaddr*)&sock_client_addr, &n_length));
+  cg_socket_setid(clientSock, accept(serverSock->id, (struct sockaddr*)&sockClientAddr, &nLength));
 
 #if defined(WIN32)
   if (clientSock->id == INVALID_SOCKET)
     return false;
 #else
-  if (client_sock->id < 0)
+  if (clientSock->id < 0)
     return false;
 #endif
 
-  cg_socket_setaddress(client_sock, cg_socket_getaddress(server_sock));
-  cg_socket_setport(client_sock, cg_socket_getport(server_sock));
+  cg_socket_setaddress(clientSock, cg_socket_getaddress(serverSock));
+  cg_socket_setport(clientSock, cg_socket_getport(serverSock));
   socklen = sizeof(struct sockaddr_in);
 
-  if (getsockname(client_sock->id, (struct sockaddr*)&sockaddr, &socklen) == 0 && getnameinfo((struct sockaddr*)&sockaddr, socklen, localAddr, sizeof(localAddr), localPort, sizeof(localPort), NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
+  if (getsockname(clientSock->id, (struct sockaddr*)&sockaddr, &socklen) == 0 && getnameinfo((struct sockaddr*)&sockaddr, socklen, localAddr, sizeof(localAddr), localPort, sizeof(localPort), NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
     /* Set address for the sockaddr to real addr */
-    cg_socket_setaddress(client_sock, localAddr);
+    cg_socket_setaddress(clientSock, localAddr);
   }
 
   return true;
@@ -368,21 +367,21 @@ bool cg_socket_accept(CGSocket* server_sock, CGSocket* client_sock)
 
 bool cg_socket_connect(CGSocket* sock, const char* addr, int port)
 {
-  struct addrinfo* toaddr_info;
+  struct addrinfo* toaddrInfo;
   int ret;
 
   if (!sock)
     return false;
 
-  if (cg_socket_tosockaddrinfo(cg_socket_getrawtype(sock), addr, port, &toaddr_info, true) == false)
+  if (cg_socket_tosockaddrinfo(cg_socket_getrawtype(sock), addr, port, &toaddrInfo, true) == false)
     return false;
 
   if (cg_socket_isbound(sock) == false) {
-    cg_socket_setid(sock, socket(toaddr_info->ai_family, toaddr_info->ai_socktype, 0));
+    cg_socket_setid(sock, socket(toaddrInfo->ai_family, toaddrInfo->ai_socktype, 0));
   }
 
-  ret = connect(sock->id, toaddr_info->ai_addr, toaddr_info->ai_addrlen);
-  freeaddrinfo(toaddr_info);
+  ret = connect(sock->id, toaddrInfo->ai_addr, toaddrInfo->ai_addrlen);
+  freeaddrinfo(toaddrInfo);
 
   cg_socket_setdirection(sock, CG_NET_SOCKET_CLIENT);
 
@@ -408,9 +407,9 @@ bool cg_socket_connect(CGSocket* sock, const char* addr, int port)
  * cg_socket_read
  ****************************************/
 
-ssize_t cg_socket_read(CGSocket* sock, char* buffer, size_t buffer_len)
+ssize_t cg_socket_read(CGSocket* sock, char* buffer, size_t bufferLen)
 {
-  ssize_t recv_len;
+  ssize_t recvLen;
 
   if (!sock)
     return -1;
@@ -419,7 +418,7 @@ ssize_t cg_socket_read(CGSocket* sock, char* buffer, size_t buffer_len)
   if (cg_socket_isssl(sock) == false) {
 #endif
 
-    recv_len = recv(sock->id, buffer, buffer_len, 0);
+    recvLen = recv(sock->id, buffer, bufferLen, 0);
 
 #if defined(CG_USE_OPENSSL)
   }
@@ -428,7 +427,7 @@ ssize_t cg_socket_read(CGSocket* sock, char* buffer, size_t buffer_len)
   }
 #endif
 
-  return recv_len;
+  return recvLen;
 }
 
 /****************************************
@@ -438,17 +437,17 @@ ssize_t cg_socket_read(CGSocket* sock, char* buffer, size_t buffer_len)
 #define CG_NET_SOCKET_SEND_RETRY_CNT 10
 #define CG_NET_SOCKET_SEND_RETRY_WAIT_MSEC 20
 
-size_t cg_socket_write(CGSocket* sock, const char* cmd, size_t cmd_len)
+size_t cg_socket_write(CGSocket* sock, const char* cmd, size_t cmdLen)
 {
-  ssize_t n_sent;
-  size_t n_total_sent = 0;
-  size_t cmd_pos = 0;
-  int retry_cnt = 0;
+  ssize_t nSent;
+  size_t nTotalSent = 0;
+  size_t cmdPos = 0;
+  int retryCnt = 0;
 
   if (!sock)
     return 0;
 
-  if (cmd_len <= 0)
+  if (cmdLen <= 0)
     return 0;
 
   do {
@@ -456,7 +455,7 @@ size_t cg_socket_write(CGSocket* sock, const char* cmd, size_t cmd_len)
     if (cg_socket_isssl(sock) == false) {
 #endif
 
-      n_sent = send(sock->id, cmd + cmd_pos, cmd_len, 0);
+      nSent = send(sock->id, cmd + cmdPos, cmdLen, 0);
 
 #if defined(CG_USE_OPENSSL)
     }
@@ -465,82 +464,82 @@ size_t cg_socket_write(CGSocket* sock, const char* cmd, size_t cmd_len)
     }
 #endif
 
-    if (n_sent <= 0) {
-      retry_cnt++;
-      if (CG_NET_SOCKET_SEND_RETRY_CNT < retry_cnt) {
-        n_total_sent = 0;
+    if (nSent <= 0) {
+      retryCnt++;
+      if (CG_NET_SOCKET_SEND_RETRY_CNT < retryCnt) {
+        nTotalSent = 0;
         break;
       }
 
       cg_wait(CG_NET_SOCKET_SEND_RETRY_WAIT_MSEC);
     }
     else {
-      n_total_sent += n_sent;
-      cmd_pos += n_sent;
-      cmd_len -= n_sent;
-      retry_cnt = 0;
+      nTotalSent += nSent;
+      cmdPos += nSent;
+      cmdLen -= nSent;
+      retryCnt = 0;
     }
 
-  } while (0 < cmd_len);
+  } while (0 < cmdLen);
 
-  return n_total_sent;
+  return nTotalSent;
 }
 /****************************************
  * cg_socket_readline
  ****************************************/
 
-ssize_t cg_socket_readline(CGSocket* sock, char* buffer, size_t buffer_len)
+ssize_t cg_socket_readline(CGSocket* sock, char* buffer, size_t bufferLen)
 {
-  ssize_t read_cnt;
-  ssize_t read_len;
+  ssize_t readCnt;
+  ssize_t readLen;
   char c;
 
   if (!sock)
     return -1;
 
-  read_cnt = 0;
-  while (read_cnt < (buffer_len - 1)) {
-    read_len = cg_socket_read(sock, &buffer[read_cnt], sizeof(char));
-    if (read_len <= 0)
+  readCnt = 0;
+  while (readCnt < (bufferLen - 1)) {
+    readLen = cg_socket_read(sock, &buffer[readCnt], sizeof(char));
+    if (readLen <= 0)
       return -1;
-    read_cnt++;
-    if (buffer[read_cnt - 1] == CG_SOCKET_LF)
+    readCnt++;
+    if (buffer[readCnt - 1] == CG_SOCKET_LF)
       break;
   }
-  buffer[read_cnt] = '\0';
-  if (buffer[read_cnt - 1] != CG_SOCKET_LF) {
+  buffer[readCnt] = '\0';
+  if (buffer[readCnt - 1] != CG_SOCKET_LF) {
     do {
-      read_len = cg_socket_read(sock, &c, sizeof(char));
-      if (read_len <= 0)
+      readLen = cg_socket_read(sock, &c, sizeof(char));
+      if (readLen <= 0)
         break;
     } while (c != CG_SOCKET_LF);
   }
 
-  return read_cnt;
+  return readCnt;
 }
 
 /****************************************
  * cg_socket_skip
  ****************************************/
 
-size_t cg_socket_skip(CGSocket* sock, size_t skip_len)
+size_t cg_socket_skip(CGSocket* sock, size_t skipLen)
 {
-  ssize_t read_cnt;
-  ssize_t read_len;
+  ssize_t readCnt;
+  ssize_t readLen;
   char c;
 
   if (!sock)
     return 0;
 
-  read_cnt = 0;
-  while (read_cnt < skip_len) {
-    read_len = cg_socket_read(sock, &c, sizeof(char));
-    if (read_len <= 0)
+  readCnt = 0;
+  while (readCnt < skipLen) {
+    readLen = cg_socket_read(sock, &c, sizeof(char));
+    if (readLen <= 0)
       break;
-    read_cnt++;
+    readCnt++;
   }
 
-  return read_cnt;
+  return readCnt;
 }
 
 /****************************************
@@ -549,9 +548,9 @@ size_t cg_socket_skip(CGSocket* sock, size_t skip_len)
 
 size_t cg_socket_sendto(CGSocket* sock, const char* addr, int port, const byte* data, size_t dataLen)
 {
-  struct addrinfo* addr_info;
-  ssize_t sent_len;
-  bool is_bound_flag;
+  struct addrinfo* addrInfo;
+  ssize_t sentLen;
+  bool isBoundFlag;
 
   if (!sock)
     return 0;
@@ -559,72 +558,72 @@ size_t cg_socket_sendto(CGSocket* sock, const char* addr, int port, const byte* 
   if (!data && (dataLen <= 0))
     return 0;
 
-  is_bound_flag = cg_socket_isbound(sock);
-  sent_len = -1;
+  isBoundFlag = cg_socket_isbound(sock);
+  sentLen = -1;
 
-  if (cg_socket_tosockaddrinfo(cg_socket_getrawtype(sock), addr, port, &addr_info, true) == false)
+  if (cg_socket_tosockaddrinfo(cg_socket_getrawtype(sock), addr, port, &addrInfo, true) == false)
     return -1;
-  if (is_bound_flag == false)
-    cg_socket_setid(sock, socket(addr_info->ai_family, addr_info->ai_socktype, 0));
+  if (isBoundFlag == false)
+    cg_socket_setid(sock, socket(addrInfo->ai_family, addrInfo->ai_socktype, 0));
 
   /* Setting multicast time to live in any case to default */
   cg_socket_setmulticastttl(sock, CG_NET_SOCKET_MULTICAST_DEFAULT_TTL);
 
   if (0 <= sock->id)
-    sent_len = sendto(sock->id, data, dataLen, 0, addr_info->ai_addr, addr_info->ai_addrlen);
+    sentLen = sendto(sock->id, data, dataLen, 0, addrInfo->ai_addr, addrInfo->ai_addrlen);
 
   cg_net_socket_debug(CG_LOG_NET_PREFIX_SEND, cg_socket_getaddress(sock), addr, data, dataLen);
 
-  freeaddrinfo(addr_info);
+  freeaddrinfo(addrInfo);
 
-  if (is_bound_flag == false)
+  if (isBoundFlag == false)
     cg_socket_close(sock);
 
-  return sent_len;
+  return sentLen;
 }
 
 /****************************************
  * cg_socket_recv
  ****************************************/
 
-ssize_t cg_socket_recv(CGSocket* sock, CGDatagramPacket* dgm_pkt)
+ssize_t cg_socket_recv(CGSocket* sock, CGDatagramPacket* dgmPkt)
 {
-  ssize_t recv_len = 0;
-  byte recv_buf[CG_NET_SOCKET_DGRAM_RECV_BUFSIZE + 1];
+  ssize_t recvLen = 0;
+  byte recvBuf[CG_NET_SOCKET_DGRAM_RECV_BUFSIZE + 1];
   char remoteAddr[CG_NET_SOCKET_MAXHOST];
   char remotePort[CG_NET_SOCKET_MAXSERV];
   char* localAddr;
   struct sockaddr_storage from;
-  socklen_t from_len;
+  socklen_t fromLen;
 
   if (!sock)
     return -1;
 
-  from_len = sizeof(from);
-  recv_len = recvfrom(sock->id, recv_buf, sizeof(recv_buf) - 1, 0, (struct sockaddr*)&from, &from_len);
+  fromLen = sizeof(from);
+  recvLen = recvfrom(sock->id, recvBuf, sizeof(recvBuf) - 1, 0, (struct sockaddr*)&from, &fromLen);
 
-  if (recv_len <= 0)
-    return recv_len;
+  if (recvLen <= 0)
+    return recvLen;
 
-  cg_socket_datagram_packet_setdata(dgm_pkt, recv_buf, recv_len);
+  cg_socket_datagram_packet_setdata(dgmPkt, recvBuf, recvLen);
 
-  cg_socket_datagram_packet_setlocalport(dgm_pkt, cg_socket_getport(sock));
-  cg_socket_datagram_packet_setremoteAddr(dgm_pkt, "");
-  cg_socket_datagram_packet_setremoteport(dgm_pkt, 0);
+  cg_socket_datagram_packet_setlocalport(dgmPkt, cg_socket_getport(sock));
+  cg_socket_datagram_packet_setremoteAddr(dgmPkt, "");
+  cg_socket_datagram_packet_setremoteport(dgmPkt, 0);
 
-  if (getnameinfo((struct sockaddr*)&from, from_len, remoteAddr, sizeof(remoteAddr), remotePort, sizeof(remotePort), NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
-    cg_socket_datagram_packet_setremoteAddr(dgm_pkt, remoteAddr);
-    cg_socket_datagram_packet_setremoteport(dgm_pkt, cg_str2int(remotePort));
+  if (getnameinfo((struct sockaddr*)&from, fromLen, remoteAddr, sizeof(remoteAddr), remotePort, sizeof(remotePort), NI_NUMERICHOST | NI_NUMERICSERV) == 0) {
+    cg_socket_datagram_packet_setremoteAddr(dgmPkt, remoteAddr);
+    cg_socket_datagram_packet_setremoteport(dgmPkt, cg_str2int(remotePort));
   }
 
   localAddr = cg_net_selectaddr((struct sockaddr*)&from);
-  cg_socket_datagram_packet_setlocalAddr(dgm_pkt, localAddr);
+  cg_socket_datagram_packet_setlocalAddr(dgmPkt, localAddr);
 
-  cg_net_socket_debug(CG_LOG_NET_PREFIX_RECV, remoteAddr, localAddr, recv_buf, recv_len);
+  cg_net_socket_debug(CG_LOG_NET_PREFIX_RECV, remoteAddr, localAddr, recvBuf, recvLen);
 
   free(localAddr);
 
-  return recv_len;
+  return recvLen;
 }
 
 /****************************************
@@ -633,7 +632,7 @@ ssize_t cg_socket_recv(CGSocket* sock, CGDatagramPacket* dgm_pkt)
 
 bool cg_socket_setreuseaddress(CGSocket* sock, bool flag)
 {
-  int sock_opt_ret;
+  int sockOptRet;
 #if defined(WIN32)
   bool optval;
 #else
@@ -648,7 +647,7 @@ bool cg_socket_setreuseaddress(CGSocket* sock, bool flag)
   sockOptRet = setsockopt(sock->id, SOL_SOCKET, SO_REUSEADDR, (const char*)&optval, sizeof(optval));
 #else
   optval = (flag == true) ? 1 : 0;
-  sock_opt_ret = setsockopt(sock->id, SOL_SOCKET, SO_REUSEADDR, (const char*)&optval, sizeof(optval));
+  sockOptRet = setsockopt(sock->id, SOL_SOCKET, SO_REUSEADDR, (const char*)&optval, sizeof(optval));
 #if defined(USE_SO_REUSEPORT) || defined(TARGET_OS_MAC) || defined(TARGET_OS_IPHONE)
   if (sock_opt_ret == 0) {
     sock_opt_ret = setsockopt(sock->id, SOL_SOCKET, SO_REUSEPORT, (const char*)&optval, sizeof(optval));
@@ -656,7 +655,7 @@ bool cg_socket_setreuseaddress(CGSocket* sock, bool flag)
 #endif
 #endif
 
-  return (sock_opt_ret == 0) ? true : false;
+  return (sockOptRet == 0) ? true : false;
 }
 
 /****************************************
@@ -665,7 +664,7 @@ bool cg_socket_setreuseaddress(CGSocket* sock, bool flag)
 
 bool cg_socket_setmulticastloop(CGSocket* sock, bool flag)
 {
-  int sock_opt_ret;
+  int sockOptRet;
 #if defined(WIN32)
   bool optval;
 #else
@@ -680,10 +679,10 @@ bool cg_socket_setmulticastloop(CGSocket* sock, bool flag)
   sockOptRet = setsockopt(sock->id, IPPROTO_IP, IP_MULTICAST_TTL, (const char*)&optval, sizeof(optval));
 #else
   optval = (flag == true) ? 1 : 0;
-  sock_opt_ret = setsockopt(sock->id, IPPROTO_IP, IP_MULTICAST_TTL, (const char*)&optval, sizeof(optval));
+  sockOptRet = setsockopt(sock->id, IPPROTO_IP, IP_MULTICAST_TTL, (const char*)&optval, sizeof(optval));
 #endif
 
-  return (sock_opt_ret == 0) ? true : false;
+  return (sockOptRet == 0) ? true : false;
 }
 
 /****************************************
@@ -692,7 +691,7 @@ bool cg_socket_setmulticastloop(CGSocket* sock, bool flag)
 
 bool cg_socket_setmulticastttl(CGSocket* sock, int val)
 {
-  int sock_opt_ret;
+  int sockOptRet;
   int ttl;
   unsigned int len = 0;
 
@@ -703,14 +702,14 @@ bool cg_socket_setmulticastttl(CGSocket* sock, int val)
 #if defined(WIN32)
   sockOptRet = setsockopt(sock->id, IPPROTO_IP, IP_MULTICAST_TTL, (const char*)&ttl, sizeof(ttl));
 #else
-  sock_opt_ret = setsockopt(sock->id, IPPROTO_IP, IP_MULTICAST_TTL, (const unsigned char*)&ttl, sizeof(ttl));
-  if (sock_opt_ret == 0) {
+  sockOptRet = setsockopt(sock->id, IPPROTO_IP, IP_MULTICAST_TTL, (const unsigned char*)&ttl, sizeof(ttl));
+  if (sockOptRet == 0) {
     len = sizeof(ttl);
     getsockopt(sock->id, IPPROTO_IP, IP_MULTICAST_TTL, &ttl, (socklen_t*)&len);
   }
 #endif
 
-  return (sock_opt_ret == 0) ? true : false;
+  return (sockOptRet == 0) ? true : false;
 }
 
 /****************************************
@@ -719,7 +718,7 @@ bool cg_socket_setmulticastttl(CGSocket* sock, int val)
 
 bool cg_socket_settimeout(CGSocket* sock, int sec)
 {
-  int sock_opt_ret;
+  int sockOptRet;
 
 #if defined(WIN32)
   struct timeval timeout;
@@ -740,34 +739,34 @@ bool cg_socket_settimeout(CGSocket* sock, int sec)
   if (!sock)
     return false;
 
-  sock_opt_ret = setsockopt(sock->id, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout));
-  if (sock_opt_ret == 0)
-    sock_opt_ret = setsockopt(sock->id, SOL_SOCKET, SO_SNDTIMEO, (const char*)&timeout, sizeof(timeout));
+  sockOptRet = setsockopt(sock->id, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout));
+  if (sockOptRet == 0)
+    sockOptRet = setsockopt(sock->id, SOL_SOCKET, SO_SNDTIMEO, (const char*)&timeout, sizeof(timeout));
 #endif
 
-  return (sock_opt_ret == 0) ? true : false;
+  return (sockOptRet == 0) ? true : false;
 }
 
 /****************************************
  * cg_socket_joingroup
  ****************************************/
 
-bool cg_socket_joingroup(CGSocket* sock, const char* mcast_addr, const char* if_addr)
+bool cg_socket_joingroup(CGSocket* sock, const char* mcastAddr, const char* ifAddr)
 {
   struct addrinfo hints;
-  struct addrinfo *mcast_addr_info, *if_addr_info;
+  struct addrinfo *mcastAddrInfo, *ifAddrInfo;
 
   /**** for IPv6 ****/
   struct ipv6_mreq ipv6mr;
   struct sockaddr_in6 toaddr6, ifaddr6;
-  int scope_id;
+  int scopeId;
 
   /**** for IPv4 ****/
   struct ip_mreq ipmr;
   struct sockaddr_in toaddr, ifaddr;
 
-  bool join_success;
-  int sock_opt_ret_code;
+  bool joinSuccess;
+  int sockOptRetCode;
 
   if (!sock)
     return false;
@@ -775,58 +774,58 @@ bool cg_socket_joingroup(CGSocket* sock, const char* mcast_addr, const char* if_
   memset(&hints, 0, sizeof(hints));
   hints.ai_flags = AI_NUMERICHOST | AI_PASSIVE;
 
-  if (getaddrinfo(mcast_addr, NULL, &hints, &mcast_addr_info) != 0)
+  if (getaddrinfo(mcastAddr, NULL, &hints, &mcastAddrInfo) != 0)
     return false;
 
-  if (getaddrinfo(if_addr, NULL, &hints, &if_addr_info) != 0) {
-    freeaddrinfo(mcast_addr_info);
+  if (getaddrinfo(ifAddr, NULL, &hints, &ifAddrInfo) != 0) {
+    freeaddrinfo(mcastAddrInfo);
     return false;
   }
 
-  join_success = true;
+  joinSuccess = true;
 
-  if (cg_net_isipv6address(mcast_addr) == true) {
-    memcpy(&toaddr6, mcast_addr_info->ai_addr, sizeof(struct sockaddr_in6));
-    memcpy(&ifaddr6, if_addr_info->ai_addr, sizeof(struct sockaddr_in6));
+  if (cg_net_isipv6address(mcastAddr) == true) {
+    memcpy(&toaddr6, mcastAddrInfo->ai_addr, sizeof(struct sockaddr_in6));
+    memcpy(&ifaddr6, ifAddrInfo->ai_addr, sizeof(struct sockaddr_in6));
     ipv6mr.ipv6mr_multiaddr = toaddr6.sin6_addr;
-    scope_id = cg_net_getipv6scopeid(if_addr);
-    ipv6mr.ipv6mr_interface = scope_id /*if_nametoindex*/;
+    scopeId = cg_net_getipv6scopeid(ifAddr);
+    ipv6mr.ipv6mr_interface = scopeId /*if_nametoindex*/;
 
-    sock_opt_ret_code = setsockopt(sock->id, IPPROTO_IPV6, IPV6_MULTICAST_IF, (char*)&scope_id, sizeof(scope_id));
+    sockOptRetCode = setsockopt(sock->id, IPPROTO_IPV6, IPV6_MULTICAST_IF, (char*)&scopeId, sizeof(scopeId));
 
-    if (sock_opt_ret_code != 0)
-      join_success = false;
+    if (sockOptRetCode != 0)
+      joinSuccess = false;
 
-    sock_opt_ret_code = setsockopt(sock->id, IPPROTO_IPV6, IPV6_JOIN_GROUP, (char*)&ipv6mr, sizeof(ipv6mr));
+    sockOptRetCode = setsockopt(sock->id, IPPROTO_IPV6, IPV6_JOIN_GROUP, (char*)&ipv6mr, sizeof(ipv6mr));
 
-    if (sock_opt_ret_code != 0)
-      join_success = false;
+    if (sockOptRetCode != 0)
+      joinSuccess = false;
   }
   else {
-    memcpy(&toaddr, mcast_addr_info->ai_addr, sizeof(struct sockaddr_in));
-    memcpy(&ifaddr, if_addr_info->ai_addr, sizeof(struct sockaddr_in));
+    memcpy(&toaddr, mcastAddrInfo->ai_addr, sizeof(struct sockaddr_in));
+    memcpy(&ifaddr, ifAddrInfo->ai_addr, sizeof(struct sockaddr_in));
     memcpy(&ipmr.imr_multiaddr.s_addr, &toaddr.sin_addr, sizeof(struct in_addr));
     memcpy(&ipmr.imr_interface.s_addr, &ifaddr.sin_addr, sizeof(struct in_addr));
-    sock_opt_ret_code = setsockopt(sock->id, IPPROTO_IP, IP_MULTICAST_IF, (char*)&ipmr.imr_interface.s_addr, sizeof(struct in_addr));
-    if (sock_opt_ret_code != 0)
-      join_success = false;
-    sock_opt_ret_code = setsockopt(sock->id, IPPROTO_IP, IP_ADD_MEMBERSHIP, (char*)&ipmr, sizeof(ipmr));
+    sockOptRetCode = setsockopt(sock->id, IPPROTO_IP, IP_MULTICAST_IF, (char*)&ipmr.imr_interface.s_addr, sizeof(struct in_addr));
+    if (sockOptRetCode != 0)
+      joinSuccess = false;
+    sockOptRetCode = setsockopt(sock->id, IPPROTO_IP, IP_ADD_MEMBERSHIP, (char*)&ipmr, sizeof(ipmr));
 
-    if (sock_opt_ret_code != 0)
-      join_success = false;
+    if (sockOptRetCode != 0)
+      joinSuccess = false;
   }
 
-  freeaddrinfo(mcast_addr_info);
-  freeaddrinfo(if_addr_info);
+  freeaddrinfo(mcastAddrInfo);
+  freeaddrinfo(ifAddrInfo);
 
-  return join_success;
+  return joinSuccess;
 }
 
 /****************************************
  * cg_socket_tosockaddrin
  ****************************************/
 
-bool cg_socket_tosockaddrin(const char* addr, int port, struct sockaddr_in* sockaddr, bool is_bind_addr)
+bool cg_socket_tosockaddrin(const char* addr, int port, struct sockaddr_in* sockaddr, bool isBindAddr)
 {
   cg_socket_startup();
 
@@ -836,7 +835,7 @@ bool cg_socket_tosockaddrin(const char* addr, int port, struct sockaddr_in* sock
   sockaddr->sin_addr.s_addr = htonl(INADDR_ANY);
   sockaddr->sin_port = htons((unsigned short)port);
 
-  if (is_bind_addr == true) {
+  if (isBindAddr == true) {
     sockaddr->sin_addr.s_addr = inet_addr(addr);
     if (sockaddr->sin_addr.s_addr == INADDR_NONE) {
       struct hostent* hent = gethostbyname(addr);
@@ -853,25 +852,25 @@ bool cg_socket_tosockaddrin(const char* addr, int port, struct sockaddr_in* sock
  * cg_socket_tosockaddrinfo
  ****************************************/
 
-bool cg_socket_tosockaddrinfo(int sock_type, const char* addr, int port, struct addrinfo** addr_info, bool is_bind_addr)
+bool cg_socket_tosockaddrinfo(int sockType, const char* addr, int port, struct addrinfo** addrInfo, bool isBindAddr)
 {
   struct addrinfo hints;
-  char port_str[32];
+  char portStr[32];
   int errorn;
 
   cg_socket_startup();
 
   memset(&hints, 0, sizeof(struct addrinfo));
-  hints.ai_socktype = sock_type;
+  hints.ai_socktype = sockType;
   hints.ai_flags = /*AI_NUMERICHOST | */ AI_PASSIVE;
-  sprintf(port_str, "%d", port);
-  if ((errorn = getaddrinfo(addr, port_str, &hints, addr_info)) != 0)
+  sprintf(portStr, "%d", port);
+  if ((errorn = getaddrinfo(addr, portStr, &hints, addrInfo)) != 0)
     return false;
-  if (is_bind_addr == true)
+  if (isBindAddr == true)
     return true;
-  hints.ai_family = (*addr_info)->ai_family;
-  freeaddrinfo(*addr_info);
-  if ((errorn = getaddrinfo(NULL, port_str, &hints, addr_info)) != 0)
+  hints.ai_family = (*addrInfo)->ai_family;
+  freeaddrinfo(*addrInfo);
+  if ((errorn = getaddrinfo(NULL, portStr, &hints, addrInfo)) != 0)
     return false;
   return true;
 }

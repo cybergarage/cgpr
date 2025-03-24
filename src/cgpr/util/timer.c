@@ -16,9 +16,9 @@
  *
  ******************************************************************/
 
+#include <limits.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <limits.h>
 
 #include <cgpr/util/timer.h>
 
