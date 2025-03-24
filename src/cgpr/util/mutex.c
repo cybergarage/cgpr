@@ -16,9 +16,10 @@
  *
  ******************************************************************/
 
-#include <cgpr/util/mutex.h>
-
+#include <stdlib.h>
 #include <errno.h>
+
+#include <cgpr/util/mutex.h>
 
 /****************************************
  * cg_mutex_new
@@ -34,9 +35,9 @@ CGMutex* cg_mutex_new(void)
     return NULL;
 
 #if defined(WIN32)
-  mutex->mutexID = CreateMutex(NULL, false, NULL);
+  mutex->mutexId = CreateMutex(NULL, false, NULL);
 #else
-  pthread_mutex_init(&mutex->mutexID, NULL);
+  pthread_mutex_init(&mutex->mutexId, NULL);
 #endif
 
   return mutex;
@@ -52,9 +53,9 @@ bool cg_mutex_delete(CGMutex* mutex)
     return false;
 
 #if defined(WIN32)
-  CloseHandle(mutex->mutexID);
+  CloseHandle(mutex->mutexId);
 #else
-  pthread_mutex_destroy(&mutex->mutexID);
+  pthread_mutex_destroy(&mutex->mutexId);
 #endif
   free(mutex);
 
@@ -71,9 +72,9 @@ bool cg_mutex_lock(CGMutex* mutex)
     return false;
 
 #if defined(WIN32)
-  WaitForSingleObject(mutex->mutexID, INFINITE);
+  WaitForSingleObject(mutex->mutexId, INFINITE);
 #else
-  pthread_mutex_lock(&mutex->mutexID);
+  pthread_mutex_lock(&mutex->mutexId);
 #endif
 
   return true;
@@ -89,9 +90,9 @@ bool cg_mutex_unlock(CGMutex* mutex)
     return false;
 
 #if defined(WIN32)
-  ReleaseMutex(mutex->mutexID);
+  ReleaseMutex(mutex->mutexId);
 #else
-  pthread_mutex_unlock(&mutex->mutexID);
+  pthread_mutex_unlock(&mutex->mutexId);
 #endif
   return true;
 }

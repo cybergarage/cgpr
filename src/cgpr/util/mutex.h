@@ -35,7 +35,7 @@ extern "C" {
 
 typedef struct UEchoMutex {
 #if defined(WIN32)
-  HANDLE mutex_id;
+  HANDLE mutexId;
 #else
   pthread_mutex_t mutexId;
 #endif
