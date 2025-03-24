@@ -23,6 +23,10 @@
 #include "config.h"
 #endif
 
+#include <stddef.h>
+#include <sys/types.h>
+#include <stdbool.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
