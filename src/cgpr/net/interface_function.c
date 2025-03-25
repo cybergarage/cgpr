@@ -317,8 +317,13 @@ size_t cg_net_gethostinterfaces(CGNetworkInterfaceList* netIf_list)
   }
 
   // Skip the first two lines
-  fgets(buffer, sizeof(buffer) - 1, fd);
-  fgets(buffer, sizeof(buffer) - 1, fd);
+  for (int i = 0; i < 2; i++) {
+    if (fgets(buffer, sizeof(buffer) - 1, fd) == NULL) {
+      fclose(fd);
+      close(s);
+      return 0;
+    }
+  }
 
   while (!feof(fd)) {
     ifname = buffer;
