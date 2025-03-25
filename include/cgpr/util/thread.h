@@ -277,7 +277,7 @@ bool cg_threadlist_start(CGThreadList* threadList);
 bool cg_threadlist_stop(CGThreadList* threadList);
 
 #ifdef __cplusplus
-} /* extern "C" */
+}
 #endif
 
 #endif // _CGPR_UTIL_THREAD_H_

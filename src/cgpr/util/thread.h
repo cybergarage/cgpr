@@ -106,7 +106,7 @@ bool cg_threadlist_stop(CGThreadList* thread_list);
 
 #ifdef __cplusplus
 
-} /* extern "C" */
+}
 
 #endif
 

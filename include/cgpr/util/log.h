@@ -65,7 +65,7 @@ void cg_log_setlevel(CGLogLevel level);
 void cg_log_output(int severity, const char* file, int lineN, const char* function, const char* format, ...);
 
 #ifdef __cplusplus
-} /* extern "C" */
+}
 #endif
 
 #endif /* _CGPR_UTIL_LOG_H_ */

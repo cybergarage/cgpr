@@ -53,7 +53,7 @@ bool cg_mutex_unlock(CGMutex* mutex);
 
 #ifdef __cplusplus
 
-} /* extern "C" */
+}
 
 #endif
 

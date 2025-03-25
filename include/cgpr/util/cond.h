@@ -56,7 +56,7 @@ bool cg_cond_timedwait(CGCond* cond, clock_t mtime);
 bool cg_cond_signal(CGCond* cond);
 
 #ifdef __cplusplus
-} /* extern "C" */
+}
 #endif
 
 #endif /* _CGPR_UTIL_COND_H_ */

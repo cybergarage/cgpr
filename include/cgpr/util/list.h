@@ -172,7 +172,7 @@ bool cg_list_clear(CGList* headList, CG_LIST_DESTRUCTORFUNC destructorFunc);
 CGList* cg_list_gets(CGList* headList);
 
 #ifdef __cplusplus
-} /* extern "C" */
+}
 #endif
 
 #endif // _CGPR_UTIL_LIST_H_

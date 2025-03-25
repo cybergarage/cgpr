@@ -121,7 +121,7 @@ bool cg_mutex_unlock(CGMutex* mutex);
 #endif
 
 #ifdef __cplusplus
-} /* extern "C" */
+}
 #endif
 
 #endif /* _CGPR_UTIL_MUTEX_H_ */

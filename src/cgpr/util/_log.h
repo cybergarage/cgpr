@@ -38,7 +38,7 @@ extern "C" {
 #define CG_LOG_DEBUG_S "DEBUG"
 
 #ifdef __cplusplus
-} /* extern "C" */
+}
 #endif
 
 #endif // __CGPR_UTIL_LOG_H_
