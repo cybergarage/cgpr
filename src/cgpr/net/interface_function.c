@@ -309,9 +309,17 @@ size_t cg_net_gethostinterfaces(CGNetworkInterfaceList* netIf_list)
   s = socket(AF_INET, SOCK_DGRAM, 0);
   if (s < 0)
     return 0;
+
   fd = fopen(path_proc_net_dev, "r");
+  if (!fd) {
+    close(s);
+    return 0;
+  }
+
+  // Skip the first two lines
   fgets(buffer, sizeof(buffer) - 1, fd);
   fgets(buffer, sizeof(buffer) - 1, fd);
+
   while (!feof(fd)) {
     ifname = buffer;
     sep;
