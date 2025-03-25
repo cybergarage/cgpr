@@ -21,6 +21,7 @@
 #endif
 
 #include <ctype.h>
+#include <stdio.h>
 #include <string.h>
 
 #include <cgpr/util/log.h>
