@@ -52,7 +52,6 @@ bool cg_mutex_lock(CGMutex* mutex);
 bool cg_mutex_unlock(CGMutex* mutex);
 
 #ifdef __cplusplus
-
 }
 
 #endif

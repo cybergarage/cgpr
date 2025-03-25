@@ -16,8 +16,8 @@
  *
  ******************************************************************/
 
-#include <stdlib.h>
 #include <errno.h>
+#include <stdlib.h>
 
 #include <cgpr/util/cond.h>
 

@@ -46,7 +46,7 @@ extern "C" {
 typedef struct _CGThread {
   CG_LIST_STRUCT_MEMBERS
 
-      bool runnableFlag;
+  bool runnableFlag;
 
 #if defined(WIN32)
   HANDLE hThread;
@@ -74,7 +74,7 @@ bool cg_thread_restart(CGThread* thread);
 bool cg_thread_isrunnable(CGThread* thread);
 bool cg_thread_isrunning(CGThread* thread);
 
-void cg_thread_setaction(CGThread* thread, CG_THREAD_FUNC action_func);
+void cg_thread_setaction(CGThread* thread, CG_THREAD_FUNC actionFunc);
 void cg_thread_setuserdata(CGThread* thread, void* data);
 void* cg_thread_getuserdata(CGThread* thread);
 
@@ -87,7 +87,7 @@ void* cg_thread_getuserdata(CGThread* thread);
  ****************************************/
 
 CGThreadList* cg_threadlist_new(void);
-void cg_threadlist_delete(CGThreadList* thread_list);
+void cg_threadlist_delete(CGThreadList* threadList);
 
 #define cg_threadlist_clear(threadList) \
   cg_list_clear((CGList*)threadList,    \
@@ -101,11 +101,10 @@ void cg_threadlist_delete(CGThreadList* thread_list);
 #define cg_threadlist_remove(thread) \
   cg_list_remove((CGList*)thread)
 
-bool cg_threadlist_start(CGThreadList* thread_list);
-bool cg_threadlist_stop(CGThreadList* thread_list);
+bool cg_threadlist_start(CGThreadList* threadList);
+bool cg_threadlist_stop(CGThreadList* threadList);
 
 #ifdef __cplusplus
-
 }
 
 #endif
