@@ -1,8 +1,8 @@
 var datagram__packet_8c =
 [
-    [ "cg_socket_datagram_packet_clear", "datagram__packet_8c.html#ac445d57ad446f508d8b556919d169254", null ],
-    [ "cg_socket_datagram_packet_copy", "datagram__packet_8c.html#a7adc90e14584610bd9c93f60668be1bd", null ],
-    [ "cg_socket_datagram_packet_delete", "datagram__packet_8c.html#aadcff6f75bd3e9a4c96840494e67a901", null ],
+    [ "cg_socket_datagram_packet_clear", "datagram__packet_8c.html#a9654dfd327aa83ce4407a2bc334ac9e6", null ],
+    [ "cg_socket_datagram_packet_copy", "datagram__packet_8c.html#a8b3b9c8c7c03885e8aee0dee4fca28c2", null ],
+    [ "cg_socket_datagram_packet_delete", "datagram__packet_8c.html#aac823ee3ba0d4c18a01e17b156ce233b", null ],
     [ "cg_socket_datagram_packet_new", "datagram__packet_8c.html#ace3ff39d3b5bff9781429b19182cb0dc", null ],
-    [ "cg_socket_datagram_packet_setdata", "datagram__packet_8c.html#a6a340983d56a07d9fb3c901da50de3f3", null ]
+    [ "cg_socket_datagram_packet_setdata", "datagram__packet_8c.html#a761f5068e96fcee6eb4edb1358d47983", null ]
 ];
