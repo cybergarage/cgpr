@@ -25,27 +25,27 @@ lib_LIBRARIES = libcgpr.a
 AM_CFLAGS = -I$(top_builddir)/include -I$(top_builddir)/src
 
 cg_sources = \
-	../../src/cgpr/net/socket_opt.c \
-	../../src/cgpr/net/socket.c \
 	../../src/cgpr/net/interface_function.c \
-	../../src/cgpr/net/net_function.c \
 	../../src/cgpr/net/interface.c \
 	../../src/cgpr/net/datagram_packet.c \
 	../../src/cgpr/net/interface_list.c \
-	../../src/cgpr/util/time.c \
+	../../src/cgpr/net/net_function.c \
+	../../src/cgpr/net/socket.c \
+	../../src/cgpr/net/socket_opt.c \
+	../../src/cgpr/util/dictionary.c \
+	../../src/cgpr/util/log.c \
 	../../src/cgpr/util/thread.c \
-	../../src/cgpr/util/logs.c \
-	../../src/cgpr/util/dictionary_elem.c \
-	../../src/cgpr/util/string_function.c \
 	../../src/cgpr/util/list.c \
-	../../src/cgpr/util/string_tokenizer.c \
+	../../src/cgpr/util/bytes.c \
+	../../src/cgpr/util/dictionary_elem.c \
 	../../src/cgpr/util/thread_list.c \
 	../../src/cgpr/util/mutex.c \
-	../../src/cgpr/util/dictionary.c \
 	../../src/cgpr/util/cond.c \
 	../../src/cgpr/util/string.c \
-	../../src/cgpr/util/log.c \
-	../../src/cgpr/util/bytes.c
+	../../src/cgpr/util/string_function.c \
+	../../src/cgpr/util/time.c \
+	../../src/cgpr/util/logs.c \
+	../../src/cgpr/util/string_tokenizer.c
 
 libcgprincludedir = $(includedir)/cgpr
 nobase_libcgprinclude_HEADERS =  \

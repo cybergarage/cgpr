@@ -17,21 +17,21 @@
 ######################################################################
 
 cgprheaders = \
+	./cgpr/net/socket_opt.h \
+	./cgpr/net/interface.h \
 	./cgpr/net/socket.h \
 	./cgpr/net/typedef.h \
-	./cgpr/net/interface.h \
-	./cgpr/net/socket_opt.h \
-	./cgpr/cgpr.h \
-	./cgpr/util/cond.h \
-	./cgpr/util/typedef.h \
+	./cgpr/util/time.h \
 	./cgpr/util/list.h \
-	./cgpr/util/log.h \
-	./cgpr/util/dictionary.h \
-	./cgpr/util/string.h \
-	./cgpr/util/mutex.h \
-	./cgpr/util/bytes.h \
 	./cgpr/util/thread.h \
-	./cgpr/util/time.h
+	./cgpr/util/dictionary.h \
+	./cgpr/util/log.h \
+	./cgpr/util/bytes.h \
+	./cgpr/util/cond.h \
+	./cgpr/util/mutex.h \
+	./cgpr/util/typedef.h \
+	./cgpr/util/string.h \
+	./cgpr/cgpr.h
 
 nobase_include_HEADERS = \
 	$(cgprheaders)
