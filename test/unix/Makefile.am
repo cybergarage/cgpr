@@ -24,14 +24,14 @@ AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/src -I../
 
 
 cgprtest_SOURCES = \
-	..//BytesTest.cpp \
-	..//ThreadTest.cpp \
-	..//DictionaryTest.cpp \
-	..//TestMain.cpp \
-	..//SocketTest.cpp \
-	..//StringTest.cpp \
-	..//MutexTest.cpp \
-	..//InterfaceTest.cpp
+	../BytesTest.cpp \
+	../StringTest.cpp \
+	../ThreadTest.cpp \
+	../InterfaceTest.cpp \
+	../TestMain.cpp \
+	../MutexTest.cpp \
+	../SocketTest.cpp \
+	../DictionaryTest.cpp
 
 #if HAVE_LIBTOOL
 #cgprtest_LDADD = ../../lib/unix/libcgpr.la
