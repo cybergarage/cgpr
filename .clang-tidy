@@ -3,6 +3,8 @@ HeaderFilterRegex: '.*'
 CheckOptions:
   - key:             readability-identifier-naming.GlobalConstantCase
     value:           UPPER_CASE
+  - key:             readability-identifier-naming.GlobalConstantPrefix
+    value:           'CG_'
   - key:             readability-identifier-naming.GlobalVariableCase
     value:           CamelCase
   - key:             readability-identifier-naming.GlobalVariablePrefix
@@ -13,6 +15,8 @@ CheckOptions:
     value:           CamelCase
   - key:             readability-identifier-naming.StructCase
     value:           CamelCase
+  - key:             readability-identifier-naming.StructPrefix
+    value:           'CG'    
   - key:             readability-identifier-naming.StructIgnoredRegexp
     value:           '^_.*'
   - key:             readability-identifier-naming.EnumCase
