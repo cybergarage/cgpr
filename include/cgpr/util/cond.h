@@ -39,7 +39,7 @@ extern "C" {
  * Data Types
  ****************************************/
 
-typedef struct UEchoCond {
+typedef struct {
   pthread_mutex_t mutexId;
   pthread_cond_t condId;
 } CGCond;

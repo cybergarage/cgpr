@@ -64,7 +64,7 @@ typedef int SOCKET;
 
 #include <cgpr/util/list.h>
 
-typedef struct UEchoSocket {
+typedef struct {
   SOCKET id;
   int type;
   int direction;
@@ -76,7 +76,7 @@ typedef struct UEchoSocket {
 #endif
 } CGSocket;
 
-typedef struct UEchoDatagramPacket {
+typedef struct {
   byte* data;
   size_t dataLen;
 

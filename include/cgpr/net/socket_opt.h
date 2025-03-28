@@ -31,7 +31,7 @@ extern "C" {
  * Data Type
  ****************************************/
 
-typedef struct UEchoSocketOption {
+typedef struct {
   bool reuse;
   bool bind;
   bool loop;

@@ -22,12 +22,12 @@
 #include <cgpr/util/thread.h>
 #include <cgpr/util/time.h>
 
-const int THREAD_TEST_LOOP_NUM = 10;
+const int CG_THREAD_TEST_LOOP_NUM = 10;
 
 void cg_test_theread_func(CGThread* thread)
 {
   int* testCounter = (int*)cg_thread_getuserdata(thread);
-  for (int n = 0; n < THREAD_TEST_LOOP_NUM; n++) {
+  for (int n = 0; n < CG_THREAD_TEST_LOOP_NUM; n++) {
     (*testCounter)++;
   }
 }
@@ -41,10 +41,10 @@ BOOST_AUTO_TEST_CASE(ThreadTest)
   cg_thread_setuserdata(thread, &testCounter);
 
   BOOST_REQUIRE_EQUAL(cg_thread_start(thread), true);
-  while (testCounter != THREAD_TEST_LOOP_NUM) {
+  while (testCounter != CG_THREAD_TEST_LOOP_NUM) {
     cg_sleep(100);
   }
-  BOOST_REQUIRE_EQUAL(testCounter, THREAD_TEST_LOOP_NUM);
+  BOOST_REQUIRE_EQUAL(testCounter, CG_THREAD_TEST_LOOP_NUM);
   BOOST_REQUIRE_EQUAL(cg_thread_stop(thread), true);
 
   cg_thread_delete(thread);
