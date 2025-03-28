@@ -28,5 +28,5 @@ var socket_8c =
     [ "cg_socket_tosockaddrin", "socket_8c.html#a2f841e13763ddb3507eddb9b00fef761", null ],
     [ "cg_socket_tosockaddrinfo", "socket_8c.html#abd95e2e1c88b8f9caf840a71593ee7f1", null ],
     [ "cg_socket_write", "socket_8c.html#af0b6afd53ab0b0049d25648bc8f09772", null ],
-    [ "socketCnt", "socket_8c.html#a0c2df24dcbbd578f09658f73f032953c", null ]
+    [ "_gSocketCnt", "socket_8c.html#a4d86154b24aa257bb5cd4bb903b7caa4", null ]
 ];
