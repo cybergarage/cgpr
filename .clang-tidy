@@ -6,7 +6,7 @@ CheckOptions:
   - key:             readability-identifier-naming.GlobalVariableCase
     value:           CamelCase
   - key:             readability-identifier-naming.GlobalVariablePrefix
-    value:           "CG"
+    value:           'CG'
   - key:             readability-identifier-naming.GlobalVariableIgnoredRegexp
     value:           '^_.*'
   - key:             readability-identifier-naming.ClassCase
@@ -21,6 +21,8 @@ CheckOptions:
     value:           CamelCase
   - key:             readability-identifier-naming.FunctionCase
     value:           lower_case
+  - key:             readability-identifier-naming.FunctionPrefix
+    value:           'cg_'
   - key:             readability-identifier-naming.MemberCase
     value:           camelBack
   - key:             readability-identifier-naming.ParameterCase
