@@ -42,7 +42,7 @@ static DWORD WINAPI Win32ThreadProc(LPVOID lpParam)
   return 0;
 }
 #else
-static void* posix_thread_proc(void* param)
+static void* cg_posix_thread_proc(void* param)
 {
   sigset_t set;
   struct sigaction actions;
@@ -133,7 +133,7 @@ bool cg_thread_start(CGThread* thread)
     return false;
   }
 
-  if (pthread_create(&thread->pThread, &threadAttr, posix_thread_proc, thread) != 0) {
+  if (pthread_create(&thread->pThread, &threadAttr, cg_posix_thread_proc, thread) != 0) {
     thread->runnableFlag = false;
     pthread_attr_destroy(&threadAttr);
     return false;
