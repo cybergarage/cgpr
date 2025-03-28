@@ -46,7 +46,7 @@
  * static variable
  ****************************************/
 
-static int socketCnt = 0;
+static int _gSocketCnt = 0;
 
 /****************************************
  * prototype
@@ -69,7 +69,7 @@ bool cg_socket_tosockaddrinfo(int sockType, const char* addr, int port, struct a
 
 void cg_socket_startup(void)
 {
-  if (socketCnt == 0) {
+  if (_gSocketCnt == 0) {
 #if defined(WIN32)
     WSADATA wsaData;
     int err;
@@ -86,7 +86,7 @@ void cg_socket_startup(void)
     SSL_library_init();
 #endif
   }
-  socketCnt++;
+  _gSocketCnt++;
 }
 
 /****************************************
@@ -95,8 +95,8 @@ void cg_socket_startup(void)
 
 void cg_socket_cleanup(void)
 {
-  socketCnt--;
-  if (socketCnt <= 0) {
+  _gSocketCnt--;
+  if (_gSocketCnt <= 0) {
 #if defined(WIN32)
     WSACleanup();
 #endif

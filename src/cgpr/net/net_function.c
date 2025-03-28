@@ -26,8 +26,8 @@
  * global variables
  ****************************************/
 
-static bool cgNetUseOnlyIpV4Addr = false;
-static bool cgNetUseOnlyIpV6Addr = false;
+static bool CGNetUseOnlyIpV4Addr = false;
+static bool CGNetUseOnlyIpV6Addr = false;
 
 ////////////////////////////////////////////////
 // cg_net_isuseaddress
@@ -35,11 +35,11 @@ static bool cgNetUseOnlyIpV6Addr = false;
 
 bool cg_net_isuseaddress(char* addr)
 {
-  if (cgNetUseOnlyIpV6Addr == true) {
+  if (CGNetUseOnlyIpV6Addr == true) {
     if (cg_net_isipv6address(addr) == false)
       return false;
   }
-  if (cgNetUseOnlyIpV4Addr == true) {
+  if (CGNetUseOnlyIpV4Addr == true) {
     if (cg_net_isipv6address(addr) == true)
       return false;
   }

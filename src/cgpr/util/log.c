@@ -30,36 +30,36 @@
 #define vsnprintf _vsnprintf
 #endif
 
-static CGLogLevel logLevel = CG_LOG_NONE;
-static const char* logErrorS = CG_LOG_ERROR_S;
-static const char* logWarningS = CG_LOG_WARN_S;
-static const char* logInfoS = CG_LOG_INFO_S;
-static const char* logDebugS = CG_LOG_DEBUG_S;
+static CGLogLevel _gLogLevel = CG_LOG_NONE;
+static const char* _gLogErrorS = CG_LOG_ERROR_S;
+static const char* _gLogWarningS = CG_LOG_WARN_S;
+static const char* _gLogInfoS = CG_LOG_INFO_S;
+static const char* _gLogDebugS = CG_LOG_DEBUG_S;
 
 static const char* cg_log_type2string(int type)
 {
   switch (type) {
   case CG_LOG_ERROR:
-    return logErrorS;
+    return _gLogErrorS;
     break;
 
   case CG_LOG_WARN:
-    return logWarningS;
+    return _gLogWarningS;
     break;
 
   case CG_LOG_INFO:
-    return logInfoS;
+    return _gLogInfoS;
     break;
 
   case CG_LOG_DEBUG:
-    return logDebugS;
+    return _gLogDebugS;
     break;
   }
 
   return "";
 }
 
-void cg_log_setlevel(CGLogLevel level) { logLevel = level; }
+void cg_log_setlevel(CGLogLevel level) { _gLogLevel = level; }
 
 void cg_log_output(int severity, const char* file, int lineN, const char* function, const char* format, ...)
 {
@@ -70,7 +70,7 @@ void cg_log_output(int severity, const char* file, int lineN, const char* functi
   struct tm* localts;
   size_t prefixLen = -1;
 
-  if (logLevel < severity)
+  if (_gLogLevel < severity)
     return;
 
   ts = time(NULL);
