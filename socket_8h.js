@@ -1,7 +1,7 @@
 var socket_8h =
 [
-    [ "UEchoSocket", "structUEchoSocket.html", "structUEchoSocket" ],
-    [ "UEchoDatagramPacket", "structUEchoDatagramPacket.html", "structUEchoDatagramPacket" ],
+    [ "CGSocket", "structCGSocket.html", "structCGSocket" ],
+    [ "CGDatagramPacket", "structCGDatagramPacket.html", "structCGDatagramPacket" ],
     [ "CG_NET_SOCKET_AUTO_IP_MASK", "socket_8h.html#adbe49a30c27ddbbe1372685aa4cf7c74", null ],
     [ "CG_NET_SOCKET_AUTO_IP_NET", "socket_8h.html#ae796fdbaa3bd4b9b614b7a86bda2a092", null ],
     [ "CG_NET_SOCKET_CLIENT", "socket_8h.html#af4b8e61ac164a2aaa6d8b12ddfe3efd8", null ],
@@ -40,8 +40,6 @@ var socket_8h =
     [ "cg_socket_setport", "socket_8h.html#ab86c327bd7ff3518980a804e58cd317d", null ],
     [ "cg_socket_settype", "socket_8h.html#a38c8de22dc677c60a48b286a6942d09b", null ],
     [ "cg_socket_stream_new", "socket_8h.html#a5dd7abc2fc554815796dd8ccd4f07b86", null ],
-    [ "CGDatagramPacket", "socket_8h.html#a92716790e27d3bd56fecf3975d2decb6", null ],
-    [ "CGSocket", "socket_8h.html#a273cec38443813085eaa764068c7cf48", null ],
     [ "SOCKET", "socket_8h.html#a8dc8083897335125630f1af5dafd5831", null ],
     [ "cg_socket_accept", "socket_8h.html#ab04087bfaad29cdc909ed4945957c528", null ],
     [ "cg_socket_bind", "socket_8h.html#a8695b57af08565f3be05ee892c04cfc8", null ],

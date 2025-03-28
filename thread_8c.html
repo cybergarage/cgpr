@@ -80,8 +80,8 @@ $(function(){initNavTree('thread_8c.html',''); initResizable(true); });
 Functions</h2></td></tr>
 <tr class="memitem:a09bc91c06bee1377f0f9ba8d078ec7e3" id="r_a09bc91c06bee1377f0f9ba8d078ec7e3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09bc91c06bee1377f0f9ba8d078ec7e3">cg_sig_handler</a> (int sign)</td></tr>
 <tr class="separator:a09bc91c06bee1377f0f9ba8d078ec7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f2ff5c7da7238bebf3e56d1e33a0f0d" id="r_a9f2ff5c7da7238bebf3e56d1e33a0f0d"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f2ff5c7da7238bebf3e56d1e33a0f0d">posix_thread_proc</a> (void *param)</td></tr>
-<tr class="separator:a9f2ff5c7da7238bebf3e56d1e33a0f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13979b4c61046ef9b2f693e94e41371" id="r_aa13979b4c61046ef9b2f693e94e41371"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa13979b4c61046ef9b2f693e94e41371">cg_posix_thread_proc</a> (void *param)</td></tr>
+<tr class="separator:aa13979b4c61046ef9b2f693e94e41371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11a3ebf0e63fb95402d55587998658d8" id="r_a11a3ebf0e63fb95402d55587998658d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="src_2cgpr_2util_2thread_8h.html#a359505029d6f276e155ddf6bb5eafbf6">CGThread</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11a3ebf0e63fb95402d55587998658d8">cg_thread_new</a> (void)</td></tr>
 <tr class="separator:a11a3ebf0e63fb95402d55587998658d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af25ed88684a7042954120e151fd5f6cb" id="r_af25ed88684a7042954120e151fd5f6cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af25ed88684a7042954120e151fd5f6cb">cg_thread_delete</a> (<a class="el" href="src_2cgpr_2util_2thread_8h.html#a359505029d6f276e155ddf6bb5eafbf6">CGThread</a> *thread)</td></tr>
@@ -104,6 +104,31 @@ Functions</h2></td></tr>
 <tr class="separator:a8b06d077f6ee2b50a729b39efc28e201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aa13979b4c61046ef9b2f693e94e41371" name="aa13979b4c61046ef9b2f693e94e41371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13979b4c61046ef9b2f693e94e41371">&#9670;&#160;</a></span>cg_posix_thread_proc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * cg_posix_thread_proc </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a09bc91c06bee1377f0f9ba8d078ec7e3" name="a09bc91c06bee1377f0f9ba8d078ec7e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09bc91c06bee1377f0f9ba8d078ec7e3">&#9670;&#160;</a></span>cg_sig_handler()</h2>
 
@@ -363,31 +388,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a9f2ff5c7da7238bebf3e56d1e33a0f0d" name="a9f2ff5c7da7238bebf3e56d1e33a0f0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f2ff5c7da7238bebf3e56d1e33a0f0d">&#9670;&#160;</a></span>posix_thread_proc()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void * posix_thread_proc </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
