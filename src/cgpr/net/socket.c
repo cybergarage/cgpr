@@ -649,8 +649,8 @@ bool cg_socket_setreuseaddress(CGSocket* sock, bool flag)
   optval = (flag == true) ? 1 : 0;
   sockOptRet = setsockopt(sock->id, SOL_SOCKET, SO_REUSEADDR, (const char*)&optval, sizeof(optval));
 #if defined(USE_SO_REUSEPORT) || defined(TARGET_OS_MAC) || defined(TARGET_OS_IPHONE)
-  if (sock_opt_ret == 0) {
-    sock_opt_ret = setsockopt(sock->id, SOL_SOCKET, SO_REUSEPORT, (const char*)&optval, sizeof(optval));
+  if (sockOptRet == 0) {
+      sockOptRet = setsockopt(sock->id, SOL_SOCKET, SO_REUSEPORT, (const char*)&optval, sizeof(optval));
   }
 #endif
 #endif
