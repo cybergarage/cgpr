@@ -19,6 +19,10 @@
 #ifndef _CGPR_NET_TYPEDEF_H_
 #define _CGPR_NET_TYPEDEF_H_
 
+#if defined(__APPLE_CPP__) || defined(__APPLE_CC__)
+#include <TargetConditionals.h>
+#endif
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
