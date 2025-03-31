@@ -44,6 +44,7 @@
 		212997342D9062C400810FBF /* interface.c in Sources */ = {isa = PBXBuildFile; fileRef = 212996FE2D9062C400810FBF /* interface.c */; };
 		212997352D9062C400810FBF /* dictionary.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997082D9062C400810FBF /* dictionary.c */; };
 		212997362D9062C400810FBF /* string_tokenizer.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997122D9062C400810FBF /* string_tokenizer.c */; };
+		21D027862D9A39F100534F14 /* typedef.h in Headers */ = {isa = PBXBuildFile; fileRef = 21D027852D9A39F100534F14 /* typedef.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		212997142D9062C400810FBF /* thread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = thread.c; sourceTree = "<group>"; };
 		212997152D9062C400810FBF /* thread_list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = thread_list.c; sourceTree = "<group>"; };
 		212997162D9062C400810FBF /* time.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = time.c; sourceTree = "<group>"; };
+		21D027852D9A39F100534F14 /* typedef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
 		21E2ADBA2D90583C00FB4907 /* liblibcgpr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibcgpr.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		212996DD2D90629000810FBF /* net */ = {
 			isa = PBXGroup;
 			children = (
+				21D027852D9A39F100534F14 /* typedef.h */,
 				212996DA2D90629000810FBF /* interface.h */,
 				212996DB2D90629000810FBF /* socket.h */,
 				212996DC2D90629000810FBF /* socket_opt.h */,
@@ -243,6 +246,7 @@
 				2129971D2D9062C400810FBF /* logs.h in Headers */,
 				2129971E2D9062C400810FBF /* thread.h in Headers */,
 				2129971F2D9062C400810FBF /* _log.h in Headers */,
+				21D027862D9A39F100534F14 /* typedef.h in Headers */,
 				212996FB2D90629000810FBF /* socket.h in Headers */,
 				212996FC2D90629000810FBF /* dictionary.h in Headers */,
 			);
