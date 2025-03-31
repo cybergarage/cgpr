@@ -45,6 +45,7 @@
 		212997352D9062C400810FBF /* dictionary.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997082D9062C400810FBF /* dictionary.c */; };
 		212997362D9062C400810FBF /* string_tokenizer.c in Sources */ = {isa = PBXBuildFile; fileRef = 212997122D9062C400810FBF /* string_tokenizer.c */; };
 		21D027862D9A39F100534F14 /* typedef.h in Headers */ = {isa = PBXBuildFile; fileRef = 21D027852D9A39F100534F14 /* typedef.h */; };
+		21D027882D9A3A2400534F14 /* typedef.h in Headers */ = {isa = PBXBuildFile; fileRef = 21D027872D9A3A2400534F14 /* typedef.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		212997152D9062C400810FBF /* thread_list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = thread_list.c; sourceTree = "<group>"; };
 		212997162D9062C400810FBF /* time.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = time.c; sourceTree = "<group>"; };
 		21D027852D9A39F100534F14 /* typedef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
+		21D027872D9A3A2400534F14 /* typedef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
 		21E2ADBA2D90583C00FB4907 /* liblibcgpr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibcgpr.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 		212996E82D90629000810FBF /* util */ = {
 			isa = PBXGroup;
 			children = (
+				21D027872D9A3A2400534F14 /* typedef.h */,
 				212996DE2D90629000810FBF /* bytes.h */,
 				212996DF2D90629000810FBF /* cond.h */,
 				212996E02D90629000810FBF /* dictionary.h */,
@@ -240,6 +243,7 @@
 				212996F42D90629000810FBF /* string.h in Headers */,
 				212996F62D90629000810FBF /* socket_opt.h in Headers */,
 				212996F72D90629000810FBF /* log.h in Headers */,
+				21D027882D9A3A2400534F14 /* typedef.h in Headers */,
 				212996F82D90629000810FBF /* mutex.h in Headers */,
 				212996F92D90629000810FBF /* cond.h in Headers */,
 				2129971C2D9062C400810FBF /* mutex.h in Headers */,
