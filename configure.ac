@@ -4,23 +4,32 @@
 #
 ##################################################################
 
+AC_PREREQ([2.69])
+AC_INIT([cgpr],[1.0.0])
+
 AC_CONFIG_AUX_DIR(config)
 AC_CONFIG_HEADERS([config.h])
 
-AC_INIT([cgpr],[1.0.0])
-AC_CONFIG_SRCDIR([include/cgpr/cgpr.h])
-AM_INIT_AUTOMAKE([subdir-objects])
+AC_CONFIG_HEADER([include/cgpr/cgpr.h])
+AC_CONFIG_SRCDIR([include/cgpr/src/util/bytes.c])
+AM_INIT_AUTOMAKE([-Wall -Werror foreign subdir-objects])
+AC_CONFIG_MACRO_DIR([m4])
 
 ##############################
 # Checks for programs.
 ##############################
 
 AC_PROG_CC
+AC_PROG_CC_C99
 AC_PROG_CXX
 AC_PROG_INSTALL
 AC_PROG_AWK
 #AC_PROG_LIBTOOL
 AC_PROG_RANLIB
+
+if test x"$ac_cv_prog_cc_c99" = xno; then
+   AC_MSG_ERROR([a C99 compiler is required to build cgpr])
+fi
 
 ##############################
 # Checks for header files.
